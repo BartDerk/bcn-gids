@@ -179,3 +179,30 @@ body.full{padding:0;overflow:hidden}
 .sheet.hasphoto:not(.more){overflow:hidden}
 .pinbike{display:none;position:absolute;left:-7px;top:-7px;width:18px;height:18px;border-radius:50%;background:#1d4ed8;border:1.5px solid #fff;font-style:normal;font-size:.6rem;align-items:center;justify-content:center}
 .isbike .pinbike{display:flex}
+
+/* fietsroute */
+.bbar{gap:6px}
+.bsumrow{display:flex;align-items:center;gap:6px}
+.bsum{flex:1;min-width:0;font-size:.95rem}
+.bsumrow .chip{padding:7px 10px;font-size:.82rem}
+.bsumrow .chip:disabled{opacity:.4}
+.brow{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.brow .btn{min-height:40px}
+.bhint{color:var(--muted);font-size:.88rem}
+.bnum{width:32px;height:32px;border-radius:50%;background:#1d4ed8;border:3px solid #fff;color:#fff;font-weight:800;font-size:.95rem;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 5px rgba(0,0,0,.55)}
+.bnum.last{background:#15803d}
+.bnum.sm{width:26px;height:26px;border-width:2px;font-size:.8rem;flex:none;box-shadow:none}
+.bdot{width:15px;height:15px;margin:7.5px;border-radius:50%;border:2px solid #fff;opacity:.7;box-shadow:0 0 3px rgba(0,0,0,.5)}
+.zsmall .bdot{transform:scale(.8)}
+.bsheet{padding:12px 14px calc(14px + env(safe-area-inset-bottom,0px))}
+.bcard{display:flex;align-items:center;gap:10px}
+.bcard .shname{flex:1;min-width:0}
+.bcard h2{margin:0;font-family:var(--display);font-size:1.15rem;line-height:1.15}
+.bcard small{color:var(--muted)}
+.sxp{flex:none;width:40px;height:40px;border:0;border-radius:50%;background:transparent;color:var(--muted);font-size:1.6rem;cursor:pointer}
+.bdesc{font-size:.9rem;margin:8px 0 0}
+.bstops{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:4px}
+.bstops li{display:flex;align-items:center;gap:8px}
+.bname{flex:1;min-width:0}
+.bstops button{flex:none;width:40px;height:40px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--fg);font-size:.9rem;cursor:pointer}
+.bstops button:disabled{opacity:.3}

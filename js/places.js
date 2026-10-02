@@ -46,10 +46,16 @@ function placePass(p) {
   return true;
 }
 
-async function viewPlaces() {
+async function ensurePlaces() {
   if (!pl.all) {
     pl.all = (await load("places")).map(p => ({...p, hay: norm(p.name + " " + (p.district || "") + " " + (p.desc || "") + " " + (CATS[p.cat] ? CATS[p.cat][0] : ""))}));
+    pl.byId = Object.fromEntries(pl.all.map(p => [p.id, p]));
+    pl.bike = pl.bike.filter(id => pl.byId[id]);   // plaatsen die uit de lijst verdwenen zijn
   }
+}
+
+async function viewPlaces() {
+  await ensurePlaces();
   document.body.classList.add("full");
   app.classList.add("full");
   const districts = [...new Set(pl.all.map(p => p.district).filter(Boolean))].sort((a, b) => a.localeCompare(b));

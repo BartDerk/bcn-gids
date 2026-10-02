@@ -12,7 +12,7 @@ const ROUTES = [
   {id: "zinnen",   tab: "Zinnen", ico: "💬", name: "Vertalingen", sub: "Zinnen in het Catalaans en Spaans"},
   {id: "tapas",    tab: "Tapas", ico: "🍤", name: "Tapas",       sub: "Zoek, filter en toon aan de ober"},
   {id: "bezoeken", tab: "Bezoeken", ico: "📍", name: "Te bezoeken", sub: "Kaart en lijst met plaatsen"},
-  {id: "fietsen",  tab: "Fietsen", ico: "🚲", name: "Fietsroutes", sub: "Tochten met Google Maps", soon: true}
+  {id: "fietsen",  tab: "Fietsen", ico: "🚲", name: "Fietsroutes", sub: "Stops kiezen en openen in Maps"}
 ];
 
 /* ---------- data ---------- */
@@ -221,6 +221,7 @@ async function viewZinnen() {
 /* ---------- router ---------- */
 async function route() {
   if (typeof leavePlaces === "function") leavePlaces();
+  if (typeof leaveBike === "function") leaveBike();
   if (!$("show").hidden) { $("show").hidden = true; showCtx = null; }
   const id = location.hash.replace(/^#\/?/, "");
   renderTabs(id);
@@ -229,7 +230,7 @@ async function route() {
     if (id === "tapas") await viewTapas();
     else if (id === "zinnen") await viewZinnen();
     else if (id === "bezoeken") await viewPlaces();
-    else if (id === "fietsen") viewSoon(id);
+    else if (id === "fietsen") await viewBike();
     else viewHome();
   } catch (e) {
     app.innerHTML = '<p class="empty">Kon de gegevens niet laden. Open de app één keer met internet.</p>';
