@@ -22,7 +22,7 @@ const LISTS = [["all", "Alles"], ["bcn", "Te zien"], ["bar", "Bars"], ["shop", "
 const svg = (cat, size = 18) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[cat] || ICONS.overig}</svg>`;
 
 const pl = {
-  all: null, view: "kaart", list: "all", cat: "", fav: false, q: "", district: "", more: false,
+  all: null, view: "kaart", list: "all", cat: "", fav: false, onlyBike: false, q: "", district: "", more: false,
   sortNear: false, pos: null,
   favs: new Set(store.get("bcnFav", [])), bike: store.get("bcnBike", []),
   map: null, markers: {}, me: null, sel: null
@@ -40,6 +40,7 @@ function placePass(p) {
   if (pl.list !== "all" && p.list !== pl.list) return false;
   if (pl.cat && p.cat !== pl.cat) return false;
   if (pl.fav && !pl.favs.has(p.id)) return false;
+  if (pl.onlyBike && !pl.bike.includes(p.id)) return false;
   if (pl.district && p.district !== pl.district) return false;
   const s = norm(pl.q);
   if (s && !s.split(/\s+/).every(w => p.hay.includes(w))) return false;
@@ -64,6 +65,7 @@ async function viewPlaces() {
       <div class="seg" role="tablist"><button data-v="kaart">Kaart</button><button data-v="lijst">Lijst</button></div>
       <div class="chips" id="lchips">${LISTS.map(l => `<button class="chip" data-l="${l[0]}" aria-pressed="false">${l[1]}</button>`).join("")}
         <button class="chip" data-x="fav" aria-pressed="false">★ Lijstje</button>
+        <button class="chip" data-x="onlyBike" aria-pressed="false">🚲 Route</button>
         </div>
       <div class="chips" id="cchips">${Object.keys(CATS).filter(c => c !== "bar" && c !== "shop").map(c => `<button class="chip cat-${c}" data-c="${c}" aria-pressed="false">${CATS[c][0]}</button>`).join("")}</div>
       <div class="lonly" id="lonly">
@@ -90,7 +92,7 @@ function buildMap() {
   for (const p of pl.all) {
     const m = L.marker([p.lat, p.lng], {
       icon: L.divIcon({className: "pinwrap", iconSize: [38, 38], iconAnchor: [19, 19],
-        html: `<div class="pin" style="background:${CATS[p.cat][1]}">${svg(p.cat)}<i class="pinstar">★</i><i class="pinbike">🚲</i></div>`}),
+        html: `<div class="pin" style="background:${CATS[p.cat][1]}">${svg(p.cat)}<i class="pinstar">★</i><i class="pinbike"></i></div>`}),
       keyboard: false, title: p.name
     });
     m.on("click", () => openSheet(p.id));
@@ -156,7 +158,7 @@ function refreshPlaces(fit) {
     if (on && !pl.map.hasLayer(m)) m.addTo(pl.map);
     if (!on && pl.map.hasLayer(m)) m.remove();
     const el = m.getElement && m.getElement();
-    if (el) { el.classList.toggle("isfav", pl.favs.has(p.id)); el.classList.toggle("isbike", pl.bike.includes(p.id)); }
+    if (el) { el.classList.toggle("isfav", pl.favs.has(p.id)); const bi = pl.bike.indexOf(p.id); el.classList.toggle("isbike", bi >= 0); const bn = el.querySelector(".pinbike"); if (bn) bn.textContent = bi >= 0 ? bi + 1 : ""; }
   }
   if (pl.view === "kaart") {
     setTimeout(() => pl.map.invalidateSize(), 30);
@@ -168,7 +170,7 @@ function refreshPlaces(fit) {
     $("pcount").textContent = `${r.length} van ${pl.all.length} plaatsen`;
     $("pul").innerHTML = r.map(p => `<li><div class="item prow${pl.favs.has(p.id) ? " fav" : ""}">
       <button class="pmain" data-id="${p.id}"><span class="dot" style="background:${CATS[p.cat][1]}">${svg(p.cat, 16)}</span>
-        <span class="ptxt"><b>${esc(p.name)}</b><small>${esc(CATS[p.cat][0])}${p.district ? " · " + esc(p.district) : ""}${pl.sortNear && pl.pos ? " · " + fmtDist(p._d) : ""}</small></span></button>
+        <span class="ptxt"><b>${esc(p.name)}</b><small>${pl.bike.includes(p.id) ? "🚲 stop " + (pl.bike.indexOf(p.id) + 1) + " · " : ""}${esc(CATS[p.cat][0])}${p.district ? " · " + esc(p.district) : ""}${pl.sortNear && pl.pos ? " · " + fmtDist(p._d) : ""}</small></span></button>
       <button class="pstar" data-star="${p.id}" aria-label="${pl.favs.has(p.id) ? "Van lijstje halen" : "Op lijstje zetten"}">★</button></div></li>`).join("");
   }
   if (pl.sel) renderSheet();

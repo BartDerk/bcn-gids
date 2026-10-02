@@ -206,3 +206,8 @@ body.full{padding:0;overflow:hidden}
 .bname{flex:1;min-width:0}
 .bstops button{flex:none;width:40px;height:40px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--fg);font-size:.9rem;cursor:pointer}
 .bstops button:disabled{opacity:.3}
+
+/* te bezoeken: plaatsen op de fietsroute duidelijk herkenbaar */
+.isbike .pin{border-color:#1d4ed8;box-shadow:0 0 0 3px #fff,0 0 0 6px #1d4ed8,0 2px 6px rgba(0,0,0,.5);opacity:1}
+.pinbike{left:-10px;top:-10px;width:22px;height:22px;font-size:.78rem;font-weight:800;color:#fff;border-width:2px}
+.prow:has(.pmain small){}
