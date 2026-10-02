@@ -90,8 +90,11 @@ function refreshBike(fit) {
   $("blist").textContent = `☰ Stops (${n})`;
   document.querySelectorAll(".bbar [data-s]").forEach(b => b.setAttribute("aria-pressed", bk.show[b.dataset.s]));
   const urls = n >= 2 ? gmUrls(stops) : [];
-  $("bgm").innerHTML = urls.length === 0 ? `<span class="bhint">Kies minstens 2 stops om in Google Maps te openen.</span>`
-    : urls.map(u => `<a class="btn primary" href="${u.url}" target="_blank" rel="noopener">${urls.length === 1 ? "Open in Google Maps" : `Deel ${urls.indexOf(u) + 1} (stops ${u.from}–${u.to})`}</a>`).join("");
+  const pending = [...pl.cand].filter(id => !pl.bike.includes(id));
+  $("bgm").innerHTML = (urls.length === 0 ? `<span class="bhint">Kies minstens 2 stops om in Google Maps te openen.</span>`
+    : urls.map(u => `<a class="btn primary" href="${u.url}" target="_blank" rel="noopener">${urls.length === 1 ? "Open in Google Maps" : `Deel ${urls.indexOf(u) + 1} (stops ${u.from}–${u.to})`}</a>`).join(""))
+    + (pending.length ? `<button class="btn" id="badall" type="button">＋ ${pending.length} blauwe in route</button>` : "");
+  if ($("badall")) $("badall").onclick = () => { pending.forEach(id => pl.bike.push(id)); savePl(); refreshBike(true); };
   if (fit && n) bk.map.fitBounds(L.latLngBounds(line).pad(0.25));
   setTimeout(() => { if (bk.map) bk.map.invalidateSize(); }, 40);
   renderBSheet();
@@ -113,13 +116,15 @@ function renderBSheet() {
       ${p.desc ? `<p class="sdesc bdesc">${esc(p.desc)}</p>` : ""}
       <div class="sbtn">${i < 0
         ? `<button class="btn primary" id="badd" type="button">+ Stop ${nextN}</button>
-           <button class="btn${pl.cand.has(p.id) ? " on" : ""}" id="bcand" type="button">${pl.cand.has(p.id) ? "ðŸš² Gemarkeerd âœ“" : "ðŸš² Markeren"}</button>`
-        : `<button class="btn" id="brem" type="button">Verwijder stop ${i + 1}</button>`}
+           <button class="btn${pl.cand.has(p.id) ? " on" : ""}" id="bcand" type="button">${pl.cand.has(p.id) ? "🚲 Gemarkeerd ✓" : "🚲 Markeren"}</button>`
+        : `<button class="btn" id="brem" type="button">Uit route (blijft blauw)</button>
+           ${pl.cand.has(p.id) ? `<button class="btn" id="buncand" type="button">Niet meer markeren</button>` : ""}`}
       </div>`;
     s.hidden = false;
     $("bx").onclick = () => { bk.sel = null; bk.mode = ""; renderBSheet(); };
     if ($("badd")) $("badd").onclick = () => { pl.bike.push(p.id); savePl(); bk.sel = null; bk.mode = ""; refreshBike(); };
-    if ($("bcand")) $("bcand").onclick = () => { toggleCand(p.id); refreshBike(); };
+    if ($("bcand")) $("bcand").onclick = () => { toggleCand(p.id, false); refreshBike(); };
+    if ($("buncand")) $("buncand").onclick = () => { toggleCand(p.id); bk.sel = null; bk.mode = ""; refreshBike(); };
     if ($("brem")) $("brem").onclick = () => { pl.bike.splice(i, 1); savePl(); bk.sel = null; bk.mode = ""; refreshBike(); };
   } else if (bk.mode === "list") {
     const stops = stopsOf();

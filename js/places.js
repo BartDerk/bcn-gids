@@ -138,7 +138,12 @@ function locate(forSort) {
 }
 
 function toggleFav(id) { pl.favs.has(id) ? pl.favs.delete(id) : pl.favs.add(id); savePl(); }
-function toggleCand(id) { pl.cand.has(id) ? pl.cand.delete(id) : pl.cand.add(id); savePl(); }
+// markeren zet de plaats op het fietslijstje (blauwe bol) en, via Te bezoeken, ook achteraan de route; ontmarkeren haalt hem overal weg
+function toggleCand(id, withRoute) {
+  if (pl.cand.has(id)) { pl.cand.delete(id); const i = pl.bike.indexOf(id); if (i >= 0) pl.bike.splice(i, 1); }
+  else { pl.cand.add(id); if (withRoute && !pl.bike.includes(id)) pl.bike.push(id); }
+  savePl();
+}
 
 function refreshPlaces(fit) {
   const rows = pl.all.filter(placePass);
@@ -218,7 +223,7 @@ function renderSheet() {
   $("smore").onclick = () => { pl.more = !pl.more; renderSheet(); };
   if (pl.more) {
     $("sfav").onclick = () => { toggleFav(p.id); refreshPlaces(); };
-    $("sbike").onclick = () => { toggleCand(p.id); refreshPlaces(); };
+    $("sbike").onclick = () => { toggleCand(p.id, true); refreshPlaces(); };
   }
 }
 
