@@ -72,6 +72,7 @@ async function viewPlaces() {
         <button class="chip chip-md" data-x="onlyMd" aria-pressed="false">md</button>
         <button class="chip" id="mdimp" type="button">⬇ Importeer van md</button>
         <button class="chip" id="mdshare" type="button">↗ Deel met md</button>
+        <button class="chip" id="mdclear" type="button" hidden>✕ Wis md</button>
         </div>
       <div class="chips" id="cchips">${Object.keys(CATS).filter(c => c !== "bar" && c !== "shop").map(c => `<button class="chip cat-${c}" data-c="${c}" aria-pressed="false">${CATS[c][0]}</button>`).join("")}</div>
       <div class="lonly" id="lonly">
@@ -123,6 +124,10 @@ function bindPlaces() {
   $("locate").onclick = () => locate(false);
   $("mdimp").onclick = openMdImport;
   $("mdshare").onclick = shareMd;
+  $("mdclear").onclick = () => {
+    if (!confirm(`De ${pl.md.size} keuzes van md wissen? Je eigen ★, fietslijstje en route blijven staan.`)) return;
+    pl.md.clear(); pl.onlyMd = false; savePl(); refreshPlaces();
+  };
   $("pul").onclick = e => {
     const star = e.target.closest("[data-star]");
     if (star) { toggleFav(star.dataset.star); refreshPlaces(); return; }
@@ -160,6 +165,7 @@ function refreshPlaces(fit) {
   document.querySelectorAll("#lchips [data-x]").forEach(b => b.setAttribute("aria-pressed", !!pl[b.dataset.x]));
   document.querySelectorAll("#cchips [data-c]").forEach(b => b.setAttribute("aria-pressed", b.dataset.c === pl.cat));
   $("near").setAttribute("aria-pressed", pl.sortNear);
+  $("mdclear").hidden = !pl.md.size;
   $("cchips").hidden = pl.list !== "bcn";
   $("lonly").hidden = pl.view !== "lijst";
   $("mapwrap").hidden = pl.view !== "kaart";
@@ -263,7 +269,7 @@ function openMdImport() {
     <h2>Importeer van md</h2>
     <p>Plak haar bericht of alleen de code (begint met BCN1-).</p>
     <textarea id="mdtxt" rows="5" placeholder="BCN1-..."></textarea>
-    <label class="mdchk"><input type="checkbox" id="mdbike" checked> Haar fietskeuzes ook op mijn fietslijstje zetten</label>
+    <p>Haar keuzes komen apart te staan (paars). Je fietslijstje verandert niet.</p>
     <p id="mdres" class="mdres"></p>
     <div class="mdact"><button type="button" class="btn" id="mdcancel">Sluiten</button><button type="button" class="btn primary" id="mdgo">Importeren</button></div></div>`;
   document.body.appendChild(d);
@@ -276,12 +282,9 @@ function doMdImport() {
   const r = MDC.decode($("mdtxt").value, pl.all), out = $("mdres");
   if (!r) { out.textContent = "Geen code gevonden. Plak het hele bericht of de code die met BCN1- begint."; return; }
   if (!r.ids.length) { out.textContent = "De code bevat geen plaatsen die ik ken."; return; }
-  const addBike = $("mdbike").checked;
-  pl.md = new Set(r.ids);   // haar laatste keuze vervangt haar vorige import; jouw eigen keuzes blijven onaangeroerd
-  let nBike = 0;
-  if (addBike) for (const id of r.ids) if (!pl.cand.has(id)) { pl.cand.add(id); nBike++; }
+  pl.md = new Set(r.ids);   // haar laatste keuze vervangt haar vorige import; jouw ★, fietslijstje en route blijven onaangeroerd
   savePl();
-  out.textContent = `${r.ids.length} plaatsen van md geladen` + (addBike ? `, ${nBike} nieuw op je fietslijstje` : "") + (r.unknown ? `. ${r.unknown} onbekend (waarschijnlijk een oudere lijst).` : ".");
+  out.textContent = `${r.ids.length} plaatsen van md geladen` + (r.unknown ? `. ${r.unknown} onbekend (waarschijnlijk een oudere lijst).` : ".");
   $("mdgo").hidden = true; $("mdcancel").textContent = "Klaar";
   refreshPlaces();
 }

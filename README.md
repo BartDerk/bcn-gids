@@ -87,7 +87,7 @@ Lichte losse pagina (geen service worker, niet offline, wel `noindex`) voor md. 
 
 - **Stuur naar Bart** opent WhatsApp (`wa.me/?text=`) met een leesbaar bericht plus een code (`BCN1-...`); **Kopieer** doet hetzelfde naar het klembord.
 - De code (`js/mdcode.js`) bestaat uit per plaats 4 tekens (hash van het `id`), dus hij klopt ook als `places.json` later verandert. Onbekende plaatsen worden bij het importeren geteld en overgeslagen.
-- In de hoofdapp, tab *Te bezoeken*: **Importeer van md** (plak bericht of code, optioneel meteen op je fietslijstje `bcnCand`). Haar keuzes staan apart in `bcnMd`, met paarse rand en "md" op de kaart, een paarse streep in de lijst en een filter **md**. Een nieuwe import vervangt haar vorige keuzes; jouw ★, fietslijstje en route blijven staan.
+- In de hoofdapp, tab *Te bezoeken*: **Importeer van md** (plak bericht of code). Haar keuzes staan apart in `bcnMd`, met paarse rand en "md" op de kaart, een paarse streep in de lijst en een filter **md**. Ze komen niet automatisch op je fietslijstje (`bcnCand`): bekijk ze samen en zet per plaats zelf 🚲 *Voor fietsroute*. Een nieuwe import vervangt haar vorige keuzes; jouw ★, fietslijstje en route blijven staan. **✕ Wis md** (zichtbaar zodra er md-keuzes zijn) wist alleen haar keuzes.
 - **Deel met md** opent het deelmenu van de gsm met de link naar `kiezen.html` (of kopieert hem).
 - De kaart op `kiezen.html` heeft internet nodig voor de kaarttegels.
 
