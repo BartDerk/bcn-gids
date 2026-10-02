@@ -159,3 +159,23 @@ body.full{padding:0;overflow:hidden}
 .sbtn{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .btn{min-height:38px;padding:6px 12px;border-width:1.5px;border-radius:10px;font-size:.85rem}
 @media (min-width:700px){.sphoto{height:260px}}
+
+/* kaartje v2: ingeklapt = foto + naam; "Meer" klapt uitleg en knoppen open */
+.sheet{overflow-y:auto}
+.sphotowrap{position:relative}
+.sphoto{height:clamp(200px,36vh,340px)}
+.sheet.more .sphoto{height:clamp(130px,20vh,190px)}
+.sover{position:absolute;left:0;right:0;bottom:0;padding:34px 96px 12px 14px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff}
+.sover h2{color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.sover small{color:#e5e7eb}
+.sh{display:flex;align-items:center;gap:10px}
+.shname{min-width:0}
+.sheadplain{padding:14px 100px 14px 14px}
+.sx{position:absolute;right:8px;top:8px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;z-index:2}
+.sheet:not(.hasphoto) .sx{background:transparent;color:var(--muted)}
+.smore{position:absolute;right:10px;top:52px;z-index:2;font:inherit;font-weight:700;font-size:.85rem;border:0;border-radius:999px;padding:8px 14px;background:var(--surface);color:var(--fg);box-shadow:0 1px 5px rgba(0,0,0,.4);cursor:pointer}
+.sheet:not(.hasphoto) .smore{top:50px}
+.sbody{padding:12px 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.sheet.hasphoto:not(.more){overflow:hidden}
+.pinbike{display:none;position:absolute;left:-7px;top:-7px;width:18px;height:18px;border-radius:50%;background:#1d4ed8;border:1.5px solid #fff;font-style:normal;font-size:.6rem;align-items:center;justify-content:center}
+.isbike .pinbike{display:flex}

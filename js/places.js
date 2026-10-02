@@ -22,12 +22,12 @@ const LISTS = [["all", "Alles"], ["bcn", "Te zien"], ["bar", "Bars"], ["shop", "
 const svg = (cat, size = 18) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[cat] || ICONS.overig}</svg>`;
 
 const pl = {
-  all: null, view: "kaart", list: "all", cat: "", fav: false, todo: false, q: "", district: "",
+  all: null, view: "kaart", list: "all", cat: "", fav: false, q: "", district: "", more: false,
   sortNear: false, pos: null,
-  favs: new Set(store.get("bcnFav", [])), seen: new Set(store.get("bcnSeen", [])),
+  favs: new Set(store.get("bcnFav", [])), bike: store.get("bcnBike", []),
   map: null, markers: {}, me: null, sel: null
 };
-const savePl = () => { store.set("bcnFav", [...pl.favs]); store.set("bcnSeen", [...pl.seen]); };
+const savePl = () => { store.set("bcnFav", [...pl.favs]); store.set("bcnBike", pl.bike); };
 const dirUrl = (p, mode) => `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}&travelmode=${mode}`;
 function distKm(a, b) {
   const R = 6371, rad = x => x * Math.PI / 180, dLat = rad(b.lat - a.lat), dLng = rad(b.lng - a.lng);
@@ -40,7 +40,6 @@ function placePass(p) {
   if (pl.list !== "all" && p.list !== pl.list) return false;
   if (pl.cat && p.cat !== pl.cat) return false;
   if (pl.fav && !pl.favs.has(p.id)) return false;
-  if (pl.todo && pl.seen.has(p.id)) return false;
   if (pl.district && p.district !== pl.district) return false;
   const s = norm(pl.q);
   if (s && !s.split(/\s+/).every(w => p.hay.includes(w))) return false;
@@ -59,7 +58,7 @@ async function viewPlaces() {
       <div class="seg" role="tablist"><button data-v="kaart">Kaart</button><button data-v="lijst">Lijst</button></div>
       <div class="chips" id="lchips">${LISTS.map(l => `<button class="chip" data-l="${l[0]}" aria-pressed="false">${l[1]}</button>`).join("")}
         <button class="chip" data-x="fav" aria-pressed="false">★ Lijstje</button>
-        <button class="chip" data-x="todo" aria-pressed="false">Nog te doen</button></div>
+        </div>
       <div class="chips" id="cchips">${Object.keys(CATS).filter(c => c !== "bar" && c !== "shop").map(c => `<button class="chip cat-${c}" data-c="${c}" aria-pressed="false">${CATS[c][0]}</button>`).join("")}</div>
       <div class="lonly" id="lonly">
         <label class="search" for="pq"><span aria-hidden="true">⌕</span>
@@ -85,7 +84,7 @@ function buildMap() {
   for (const p of pl.all) {
     const m = L.marker([p.lat, p.lng], {
       icon: L.divIcon({className: "pinwrap", iconSize: [38, 38], iconAnchor: [19, 19],
-        html: `<div class="pin" style="background:${CATS[p.cat][1]}">${svg(p.cat)}<i class="pinstar">★</i><i class="pinseen">✓</i></div>`}),
+        html: `<div class="pin" style="background:${CATS[p.cat][1]}">${svg(p.cat)}<i class="pinstar">★</i><i class="pinbike">🚲</i></div>`}),
       keyboard: false, title: p.name
     });
     m.on("click", () => openSheet(p.id));
@@ -130,7 +129,7 @@ function locate(forSort) {
 }
 
 function toggleFav(id) { pl.favs.has(id) ? pl.favs.delete(id) : pl.favs.add(id); savePl(); }
-function toggleSeen(id) { pl.seen.has(id) ? pl.seen.delete(id) : pl.seen.add(id); savePl(); }
+function toggleBike(id) { const i = pl.bike.indexOf(id); i < 0 ? pl.bike.push(id) : pl.bike.splice(i, 1); savePl(); }
 
 function refreshPlaces(fit) {
   const rows = pl.all.filter(placePass);
@@ -151,7 +150,7 @@ function refreshPlaces(fit) {
     if (on && !pl.map.hasLayer(m)) m.addTo(pl.map);
     if (!on && pl.map.hasLayer(m)) m.remove();
     const el = m.getElement && m.getElement();
-    if (el) { el.classList.toggle("isfav", pl.favs.has(p.id)); el.classList.toggle("isseen", pl.seen.has(p.id)); }
+    if (el) { el.classList.toggle("isfav", pl.favs.has(p.id)); el.classList.toggle("isbike", pl.bike.includes(p.id)); }
   }
   if (pl.view === "kaart") {
     setTimeout(() => pl.map.invalidateSize(), 30);
@@ -161,7 +160,7 @@ function refreshPlaces(fit) {
     if (pl.sortNear && pl.pos) { r.forEach(p => p._d = distKm(pl.pos, p)); r.sort((a, b) => a._d - b._d); }
     else r.sort((a, b) => a.name.localeCompare(b.name, "nl"));
     $("pcount").textContent = `${r.length} van ${pl.all.length} plaatsen`;
-    $("pul").innerHTML = r.map(p => `<li><div class="item prow${pl.favs.has(p.id) ? " fav" : ""}${pl.seen.has(p.id) ? " seen" : ""}">
+    $("pul").innerHTML = r.map(p => `<li><div class="item prow${pl.favs.has(p.id) ? " fav" : ""}">
       <button class="pmain" data-id="${p.id}"><span class="dot" style="background:${CATS[p.cat][1]}">${svg(p.cat, 16)}</span>
         <span class="ptxt"><b>${esc(p.name)}</b><small>${esc(CATS[p.cat][0])}${p.district ? " · " + esc(p.district) : ""}${pl.sortNear && pl.pos ? " · " + fmtDist(p._d) : ""}</small></span></button>
       <button class="pstar" data-star="${p.id}" aria-label="${pl.favs.has(p.id) ? "Van lijstje halen" : "Op lijstje zetten"}">★</button></div></li>`).join("");
@@ -169,8 +168,9 @@ function refreshPlaces(fit) {
   if (pl.sel) renderSheet();
 }
 
-/* kaartje onderaan */
+/* kaartje onderaan: ingeklapt alleen foto + naam, "Meer" toont uitleg en knoppen */
 function openSheet(id) {
+  if (pl.sel !== id) pl.more = false;
   pl.sel = id; renderSheet();
   const p = pl.all.find(x => x.id === id);
   if (pl.view === "kaart" && pl.map) {
@@ -179,17 +179,19 @@ function openSheet(id) {
     pl.map.panTo(pl.map.unproject(pl.map.project([p.lat, p.lng], z).add([0, h]), z), {animate: true});
   }
 }
-function closeSheet() { pl.sel = null; const s = $("sheet"); if (s) s.hidden = true; }
+function closeSheet() { pl.sel = null; pl.more = false; const s = $("sheet"); if (s) s.hidden = true; }
 function renderSheet() {
   const p = pl.all.find(x => x.id === pl.sel); const s = $("sheet");
   if (!p || !s) return;
-  const fav = pl.favs.has(p.id), seen = pl.seen.has(p.id);
+  const fav = pl.favs.has(p.id), bike = pl.bike.includes(p.id);
+  const head = `<span class="dot" style="background:${CATS[p.cat][1]}">${svg(p.cat, 18)}</span>
+        <div class="shname"><h2>${esc(p.name)}</h2><small>${esc(CATS[p.cat][0])}${p.district ? " · " + esc(p.district) : ""}</small></div>`;
+  s.className = "sheet" + (pl.more ? " more" : "") + (p.photo ? " hasphoto" : "");
   s.innerHTML = `
-    ${p.photo ? `<img class="sphoto" src="${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy">` : ""}
-    <div class="sbody">
-      <button class="sx" id="sx" type="button" aria-label="Sluiten">×</button>
-      <div class="sh"><span class="dot" style="background:${CATS[p.cat][1]}">${svg(p.cat, 18)}</span>
-        <div><h2>${esc(p.name)}</h2><small>${esc(CATS[p.cat][0])}${p.district ? " · " + esc(p.district) : ""}</small></div></div>
+    ${p.photo ? `<div class="sphotowrap"><img class="sphoto" src="${esc(p.photo)}" alt="${esc(p.name)}"><div class="sover sh">${head}</div></div>` : `<div class="sh sheadplain">${head}</div>`}
+    <button class="sx" id="sx" type="button" aria-label="Sluiten">×</button>
+    <button class="smore" id="smore" type="button" aria-expanded="${pl.more}">${pl.more ? "Minder ▴" : "Meer ▾"}</button>
+    ${pl.more ? `<div class="sbody">
       ${p.desc ? `<p class="sdesc">${esc(p.desc)}</p>` : ""}
       ${p.address ? `<p class="saddr">📍 ${esc(p.address)}</p>` : ""}
       <div class="sbtn">
@@ -198,14 +200,17 @@ function renderSheet() {
         <a class="btn" href="${dirUrl(p, "bicycling")}" target="_blank" rel="noopener">Fiets</a>
         <a class="btn" href="${esc(p.maps)}" target="_blank" rel="noopener">Open in Maps</a>
         <button class="btn${fav ? " on" : ""}" id="sfav" type="button">${fav ? "★ Op lijstje" : "☆ Op lijstje"}</button>
-        <button class="btn${seen ? " on" : ""}" id="sseen" type="button">${seen ? "✓ Bezocht" : "Bezocht?"}</button>
+        <button class="btn${bike ? " on" : ""}" id="sbike" type="button">${bike ? "🚲 In fietsroute" : "🚲 Fietsroute"}</button>
       </div>
       ${p.credit ? `<p class="scredit">Foto: ${esc(p.credit)}</p>` : ""}
-    </div>`;
+    </div>` : ""}`;
   s.hidden = false;
   $("sx").onclick = closeSheet;
-  $("sfav").onclick = () => { toggleFav(p.id); refreshPlaces(); };
-  $("sseen").onclick = () => { toggleSeen(p.id); refreshPlaces(); };
+  $("smore").onclick = () => { pl.more = !pl.more; renderSheet(); };
+  if (pl.more) {
+    $("sfav").onclick = () => { toggleFav(p.id); refreshPlaces(); };
+    $("sbike").onclick = () => { toggleBike(p.id); refreshPlaces(); };
+  }
 }
 
 /* opruimen bij het verlaten van de pagina */
