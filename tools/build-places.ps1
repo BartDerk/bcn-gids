@@ -41,11 +41,14 @@ foreach ($file in $lists.Keys) {
     while ($ids.ContainsKey($id)) { $id = "$base-$n"; $n++ }
     $ids[$id] = $true
     $ph = $photos[$name]
+    $photo = $null; $credit = $null
+    if ($ph) { $photo = $ph.file; $credit = $ph.credit }
+    elseif (Test-Path (Join-Path $root "photos\$id.jpg")) { $photo = "photos/$id.jpg" }   # zelf toegevoegde foto (bestandsnaam = id)
     $places += [pscustomobject][ordered]@{
       id = $id; name = $name; list = $list; cat = $cat
       lat = $c.lat; lng = $c.lng; address = $c.address; district = $c.district
       desc = $desc; maps = $row.'URL'
-      photo = $(if ($ph) { $ph.file } else { $null }); credit = $(if ($ph) { $ph.credit } else { $null })
+      photo = $photo; credit = $credit
     }
   }
 }

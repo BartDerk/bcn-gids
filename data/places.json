@@ -52,7 +52,7 @@
         "district":  "Ciutat Vella",
         "desc":  "Museum gewijd aan street art en urban art, in het oude centrum vlak bij de Rambla.",
         "maps":  "https://www.google.com/maps/place/Street+Art+Museum+-+BAS+MUSEUM/data=!4m2!3m1!1s0x12a4a367715f1b75:0xa952a5ff5bf146c6",
-        "photo":  null,
+        "photo":  "photos/street-art-museum-bas-museum.jpg",
         "credit":  null
     },
     {
@@ -94,7 +94,7 @@
         "district":  "Sarrià-Sant Gervasi",
         "desc":  "Rustige, groene heuveltuin in Sarrià-Sant Gervasi waar weinig toeristen komen.",
         "maps":  "https://www.google.com/maps/place/Jardins+de+ca+n\u0027Altimira/data=!4m2!3m1!1s0x12a49813a8123d39:0x905d9bb4bd512e89",
-        "photo":  null,
+        "photo":  "photos/jardins-de-ca-n-altimira.jpg",
         "credit":  null
     },
     {
@@ -122,7 +122,7 @@
         "district":  "Sant Martí",
         "desc":  "Avonturenpark met klimparcours in de bomen, in het Parc del Fòrum.",
         "maps":  "https://www.google.com/maps/place/Barcelona+Bosc+Urb%C3%A0/data=!4m2!3m1!1s0x12a4a3579d95f05d:0x2d0931646482cbcc",
-        "photo":  null,
+        "photo":  "photos/barcelona-bosc-urba.jpg",
         "credit":  null
     },
     {
@@ -150,7 +150,7 @@
         "district":  "Ciutat Vella",
         "desc":  "Kleine, rustige tuin naast de romaanse kerk Sant Pau del Camp in de Raval.",
         "maps":  "https://www.google.com/maps/place/Jardins+de+Sant+Pau+del+Camp/data=!4m2!3m1!1s0x12a4a3a6672913b9:0xaa9bebccb4744db5",
-        "photo":  null,
+        "photo":  "photos/jardins-de-sant-pau-del-camp.jpg",
         "credit":  null
     },
     {
@@ -220,7 +220,7 @@
         "district":  "Eixample",
         "desc":  "Voormalige stierenvechtarena die is omgebouwd tot winkelcentrum. Op het dak loopt een rondgaand terras met uitzicht over Plaça d\u0027Espanya.",
         "maps":  "https://www.google.com/maps/place/Arenas+de+Barcelona/data=!4m2!3m1!1s0x12a4a27946551971:0x24058a502af145dd",
-        "photo":  null,
+        "photo":  "photos/arenas-de-barcelona.jpg",
         "credit":  null
     },
     {
@@ -262,7 +262,7 @@
         "district":  "Gràcia",
         "desc":  "Elegante winkelstraat in Gràcia met modernistische gebouwen, tussen de Diagonal en de rest van de wijk.",
         "maps":  "https://www.google.com/maps/place/Carrer+Gran+de+Gr%C3%A0cia/data=!4m2!3m1!1s0x12a4a2a2bae24933:0x282b214c590e4067",
-        "photo":  null,
+        "photo":  "photos/carrer-gran-de-gracia.jpg",
         "credit":  null
     },
     {
@@ -304,7 +304,7 @@
         "district":  "Eixample",
         "desc":  "Modernistisch huis van Domènech i Montaner uit 1895 met een bakstenen gevel. Er zit nu een meubelwinkel in.",
         "maps":  "https://www.google.com/maps/place/Casa+Thomas/data=!4m2!3m1!1s0x12a4a3007b12b3f7:0x15cfc0263afcf70b",
-        "photo":  null,
+        "photo":  "photos/casa-thomas.jpg",
         "credit":  null
     },
     {
@@ -318,7 +318,7 @@
         "district":  "Sarrià-Sant Gervasi",
         "desc":  "Rustige tuin rond een herenhuis in Sarrià-Sant Gervasi, waar weinig toeristen komen.",
         "maps":  "https://www.google.com/maps/place/Mu%C3%B1oz+Ramonet+Gardens/data=!4m2!3m1!1s0x12a4a29dd8009787:0x5c50a8200f64a48f",
-        "photo":  null,
+        "photo":  "photos/munoz-ramonet-gardens.jpg",
         "credit":  null
     },
     {
@@ -346,7 +346,7 @@
         "district":  "Ciutat Vella",
         "desc":  "Galerie vlak bij Teatre Arnau in het Paral·lel-gebied (check vooraf).",
         "maps":  "https://www.google.com/maps/place/Arnau+Gallery/data=!4m2!3m1!1s0x12a4a3fa82b6258d:0x1bb14975a182011f",
-        "photo":  null,
+        "photo":  "photos/arnau-gallery.jpg",
         "credit":  null
     },
     {
@@ -458,7 +458,7 @@
         "district":  "Sant Martí",
         "desc":  "Fotografiecentrum bij de Port Olímpic met wisselende tentoonstellingen.",
         "maps":  "https://www.google.com/maps/place/KBr+Fundaci%C3%B3n+MAPFRE+-+Barcelona+Photo+Center/data=!4m2!3m1!1s0x12a4a2f2d063b319:0x8a0f4eb578ded72c",
-        "photo":  null,
+        "photo":  "photos/kbr-fundacion-mapfre-barcelona-photo-center.jpg",
         "credit":  null
     },
     {
@@ -766,7 +766,7 @@
         "district":  "Ciutat Vella",
         "desc":  "Roeibootjes huren op het meertje in het Parc de la Ciutadella, naast de grote waterval.",
         "maps":  "https://www.google.com/maps/place/Barques+del+Parc+de+la+Ciutadella/data=!4m2!3m1!1s0x12a4a31ec1441fcd:0xd16f123f83070558",
-        "photo":  null,
+        "photo":  "photos/barques-del-parc-de-la-ciutadella.jpg",
         "credit":  null
     },
     {
@@ -780,7 +780,7 @@
         "district":  "Sant Martí",
         "desc":  "Moderne speeltuin op het vernieuwde Plaça de les Glòries, vlak bij Torre Glòries.",
         "maps":  "https://www.google.com/maps/place/Gl%C3%B2ries+playground/data=!4m2!3m1!1s0x12a4a3fd01f8001b:0xc16351a92c4d2f7e",
-        "photo":  null,
+        "photo":  "photos/glories-playground.jpg",
         "credit":  null
     },
     {
