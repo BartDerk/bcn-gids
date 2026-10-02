@@ -1,0 +1,5 @@
+tools/*.log
+tools/*.err
+tools/cand/
+tools/contact*.jpg
+.claude/

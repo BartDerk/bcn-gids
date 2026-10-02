@@ -1,0 +1,476 @@
+{
+    "Fanals d\u0027Antoni Gaudí":  {
+                                       "lat":  41.3801885,
+                                       "lng":  2.1751577,
+                                       "address":  "Pl. Reial, Ciutat Vella",
+                                       "district":  "Ciutat Vella"
+                                   },
+    "Recinte Modernista de Sant Pau":  {
+                                           "lat":  41.4117072,
+                                           "lng":  2.1743395,
+                                           "address":  "Carrer de Sant Antoni Maria Claret 167, Horta-Guinardó",
+                                           "district":  "Horta-Guinardó"
+                                       },
+    "Parc de l\u0027España Industrial":  {
+                                             "lat":  41.3776555,
+                                             "lng":  2.1408583,
+                                             "address":  "Carrer de Muntadas 1, Sants-Montjuïc",
+                                             "district":  "Sants-Montjuïc"
+                                         },
+    "Street Art Museum - BAS MUSEUM":  {
+                                           "lat":  41.3798397,
+                                           "lng":  2.1789969,
+                                           "address":  "Carrer de la Carabassa 10, Ciutat Vella",
+                                           "district":  "Ciutat Vella"
+                                       },
+    "MEAM Museum":  {
+                        "lat":  41.3850107,
+                        "lng":  2.1802788,
+                        "address":  "Carrer de la Barra de Ferro 5, Ciutat Vella",
+                        "district":  "Ciutat Vella"
+                    },
+    "Museu Picasso":  {
+                          "lat":  41.3852706,
+                          "lng":  2.1809472,
+                          "address":  "Carrer de Montcada 15-23, Ciutat Vella",
+                          "district":  "Ciutat Vella"
+                      },
+    "Jardins de ca n\u0027Altimira":  {
+                                          "lat":  41.4041223,
+                                          "lng":  2.1322121,
+                                          "address":  "Carrer de Maó 13, Sarrià-Sant Gervasi",
+                                          "district":  "Sarrià-Sant Gervasi"
+                                      },
+    "Parc Diagonal Mar":  {
+                              "lat":  41.4083523,
+                              "lng":  2.2133864,
+                              "address":  "Carrer de Llull 350, Sant Martí",
+                              "district":  "Sant Martí"
+                          },
+    "Barcelona Bosc Urbà":  {
+                                "lat":  41.4109426,
+                                "lng":  2.2238512,
+                                "address":  "Parc del Fòrum, Sant Martí",
+                                "district":  "Sant Martí"
+                            },
+    "La Galena":  {
+                      "lat":  41.3725377,
+                      "lng":  2.1626337,
+                      "address":  "",
+                      "district":  "Sants-Montjuïc"
+                  },
+    "Museu de Ciències Naturals de Barcelona":  {
+                                                    "lat":  41.4111948,
+                                                    "lng":  2.2211093,
+                                                    "address":  "Plaza Leonardo Da Vinci 4-5, Sant Martí",
+                                                    "district":  "Sant Martí"
+                                                },
+    "Jardins de Sant Pau del Camp":  {
+                                         "lat":  41.3763753,
+                                         "lng":  2.1703708,
+                                         "address":  "Carrer de Sant Pau 93, Ciutat Vella",
+                                         "district":  "Ciutat Vella"
+                                     },
+    "Sant Pau del Camp":  {
+                              "lat":  41.3763529,
+                              "lng":  2.169459,
+                              "address":  "Carrer de Sant Pau 99, Ciutat Vella",
+                              "district":  "Ciutat Vella"
+                          },
+    "Casa Burés":  {
+                       "lat":  41.3915292,
+                       "lng":  2.1760456,
+                       "address":  "Carrer d\u0027Ausiàs Marc 30, Eixample",
+                       "district":  "Eixample"
+                   },
+    "Jardí Botànic de Barcelona":  {
+                                       "lat":  41.3621881,
+                                       "lng":  2.1574698,
+                                       "address":  "Carrer Doctor Font i Quer 2, Sants-Montjuïc",
+                                       "district":  "Sants-Montjuïc"
+                                   },
+    "CaixaForum Barcelona":  {
+                                 "lat":  41.371308,
+                                 "lng":  2.149575,
+                                 "address":  "Av. de Francesc Ferrer i Guàrdia 6-8, Sants-Montjuïc",
+                                 "district":  "Sants-Montjuïc"
+                             },
+    "Arenas de Barcelona":  {
+                                "lat":  41.3763031,
+                                "lng":  2.1493855,
+                                "address":  "Gran Via de les Corts Catalanes 385, Eixample",
+                                "district":  "Eixample"
+                            },
+    "Dipòsit de les Aigües":  {
+                                  "lat":  41.3904468,
+                                  "lng":  2.1889434,
+                                  "address":  "Carrer de Ramon Trias Fargas 25-27, Sant Martí",
+                                  "district":  "Sant Martí"
+                              },
+    "Casa Calvet":  {
+                        "lat":  41.3909109,
+                        "lng":  2.1729643,
+                        "address":  "Carrer de Casp 48, Eixample",
+                        "district":  "Eixample"
+                    },
+    "Carrer Gran de Gràcia":  {
+                                  "lat":  41.4015795,
+                                  "lng":  2.1534483,
+                                  "address":  "Gràcia",
+                                  "district":  "Gràcia"
+                              },
+    "Il·lustre Col·legi de l\u0027Advocacia de Barcelona":  {
+                                                                "lat":  41.3955104,
+                                                                "lng":  2.1646018,
+                                                                "address":  "Carrer de Mallorca 283, Eixample",
+                                                                "district":  "Eixample"
+                                                            },
+    "Palau Ramon Montaner":  {
+                                 "lat":  41.3957002,
+                                 "lng":  2.1652081,
+                                 "address":  "Carrer de Mallorca 278, Eixample",
+                                 "district":  "Eixample"
+                             },
+    "Casa Thomas":  {
+                        "lat":  41.3964375,
+                        "lng":  2.1657389,
+                        "address":  "Carrer de Mallorca 286, Eixample",
+                        "district":  "Eixample"
+                    },
+    "Muñoz Ramonet Gardens":  {
+                                  "lat":  41.3964016,
+                                  "lng":  2.1466947,
+                                  "address":  "Carrer de Muntaner 282, Sarrià-Sant Gervasi",
+                                  "district":  "Sarrià-Sant Gervasi"
+                              },
+    "Camp Nou":  {
+                     "lat":  41.380896,
+                     "lng":  2.1228198,
+                     "address":  "Les Corts",
+                     "district":  "Les Corts"
+                 },
+    "Arnau Gallery":  {
+                          "lat":  41.3752235,
+                          "lng":  2.1700724,
+                          "address":  "Carrer Raquel Meller 108, Ciutat Vella",
+                          "district":  "Ciutat Vella"
+                      },
+    "Rayelly E Cycle":  {
+                            "lat":  41.3754598,
+                            "lng":  2.1659683,
+                            "address":  "Carrer d\u0027Aldana 4, Eixample",
+                            "district":  "Eixample"
+                        },
+    "Fundació Joan Miró":  {
+                               "lat":  41.3686304,
+                               "lng":  2.1598509,
+                               "address":  "Parc de Montjuïc, Sants-Montjuïc",
+                               "district":  "Sants-Montjuïc"
+                           },
+    "Casa Batlló":  {
+                        "lat":  41.3917,
+                        "lng":  2.164918,
+                        "address":  "Passeig de Gràcia 43, Eixample",
+                        "district":  "Eixample"
+                    },
+    "Museum van Decoratieve Kunsten":  {
+                                           "lat":  41.402451,
+                                           "lng":  2.1880918,
+                                           "address":  "Plaça de les Glòries Catalanes 38, Sant Martí",
+                                           "district":  "Sant Martí"
+                                       },
+    "Museu Nacional d\u0027Art de Catalunya":  {
+                                                   "lat":  41.3684399,
+                                                   "lng":  2.15357,
+                                                   "address":  "Palau Nacional, Parc de Montjuïc, Sants-Montjuïc",
+                                                   "district":  "Sants-Montjuïc"
+                                               },
+    "Museu d\u0027Art Contemporani de Barcelona":  {
+                                                       "lat":  41.3831913,
+                                                       "lng":  2.1668668,
+                                                       "address":  "Plaça dels Àngels 1, Ciutat Vella",
+                                                       "district":  "Ciutat Vella"
+                                                   },
+    "Palau de la Música Catalana":  {
+                                        "lat":  41.3875752,
+                                        "lng":  2.1753128,
+                                        "address":  "C/ Palau de la Música 4-6, Ciutat Vella",
+                                        "district":  "Ciutat Vella"
+                                    },
+    "KBr Fundación MAPFRE - Barcelona Photo Center":  {
+                                                          "lat":  41.3881798,
+                                                          "lng":  2.197822,
+                                                          "address":  "Av. del Litoral 30, Sant Martí",
+                                                          "district":  "Sant Martí"
+                                                      },
+    "Barcelona-paviljoen":  {
+                                "lat":  41.3706091,
+                                "lng":  2.1501628,
+                                "address":  "Av. de Francesc Ferrer i Guàrdia 7, Sants-Montjuïc",
+                                "district":  "Sants-Montjuïc"
+                            },
+    "Casa Pia Batlló":  {
+                            "lat":  41.3885639,
+                            "lng":  2.1665554,
+                            "address":  "Rambla de Catalunya 17, Eixample",
+                            "district":  "Eixample"
+                        },
+    "palais du baron de Quadras":  {
+                                       "lat":  41.3967565,
+                                       "lng":  2.1613672,
+                                       "address":  "Av. Diagonal 373, Eixample",
+                                       "district":  "Eixample"
+                                   },
+    "Casa Planells":  {
+                          "lat":  41.40059,
+                          "lng":  2.1745903,
+                          "address":  "Av. Diagonal 332, Eixample",
+                          "district":  "Eixample"
+                      },
+    "Casa Lleó Morera":  {
+                             "lat":  41.3911473,
+                             "lng":  2.165444,
+                             "address":  "Passeig de Gràcia 35, Eixample",
+                             "district":  "Eixample"
+                         },
+    "Casa de les punxes":  {
+                               "lat":  41.3980026,
+                               "lng":  2.1639915,
+                               "address":  "Av. Diagonal 420, Eixample",
+                               "district":  "Eixample"
+                           },
+    "Mercat de Santa Caterina":  {
+                                     "lat":  41.3863611,
+                                     "lng":  2.1781566,
+                                     "address":  "Av. de Francesc Cambó 16, Ciutat Vella",
+                                     "district":  "Ciutat Vella"
+                                 },
+    "Casa Amatller":  {
+                          "lat":  41.3916433,
+                          "lng":  2.1651063,
+                          "address":  "Passeig de Gràcia 41, Eixample",
+                          "district":  "Eixample"
+                      },
+    "Temple d\u0027August":  {
+                                 "lat":  41.3833997,
+                                 "lng":  2.1771849,
+                                 "address":  "Carrer del Paradís 10, Ciutat Vella",
+                                 "district":  "Ciutat Vella"
+                             },
+    "Mercat de la Boqueria":  {
+                                  "lat":  41.3817399,
+                                  "lng":  2.1715853,
+                                  "address":  "La Rambla 91, Ciutat Vella",
+                                  "district":  "Ciutat Vella"
+                              },
+    "Plaça de Catalunya":  {
+                               "lat":  41.3870154,
+                               "lng":  2.1700471,
+                               "address":  "Plaça de Catalunya, Eixample",
+                               "district":  "Eixample"
+                           },
+    "Mercat de Sant Antoni":  {
+                                  "lat":  41.3786358,
+                                  "lng":  2.1620492,
+                                  "address":  "Carrer del Comte d\u0027Urgell 1, Eixample",
+                                  "district":  "Eixample"
+                              },
+    "Mercat de la Barceloneta":  {
+                                     "lat":  41.3803674,
+                                     "lng":  2.1892217,
+                                     "address":  "Pl. del Poeta Boscà 1-2, Ciutat Vella",
+                                     "district":  "Ciutat Vella"
+                                 },
+    "Jardins de Mossèn Costa i Llobera":  {
+                                              "lat":  41.3673412,
+                                              "lng":  2.1715049,
+                                              "address":  "Ctra. de Miramar 38, Sants-Montjuïc",
+                                              "district":  "Sants-Montjuïc"
+                                          },
+    "Fundació Antoni Tàpies":  {
+                                   "lat":  41.3915474,
+                                   "lng":  2.1637697,
+                                   "address":  "Carrer d\u0027Aragó 255, Eixample",
+                                   "district":  "Eixample"
+                               },
+    "Bunkers del Carmel":  {
+                               "lat":  41.419236,
+                               "lng":  2.161779,
+                               "address":  "Carrer de la Gran Vista 96, Horta-Guinardó",
+                               "district":  "Horta-Guinardó"
+                           },
+    "Park Güell":  {
+                       "lat":  41.4144948,
+                       "lng":  2.1526945,
+                       "address":  "Gràcia",
+                       "district":  "Gràcia"
+                   },
+    "Bellesguard":  {
+                        "lat":  41.4095654,
+                        "lng":  2.1267654,
+                        "address":  "Carrer de Bellesguard 20, Sarrià-Sant Gervasi",
+                        "district":  "Sarrià-Sant Gervasi"
+                    },
+    "Casa Vicens":  {
+                        "lat":  41.4034978,
+                        "lng":  2.1506455,
+                        "address":  "Carrer de les Carolines 20-26, Gràcia",
+                        "district":  "Gràcia"
+                    },
+    "Palau Güell":  {
+                        "lat":  41.3788851,
+                        "lng":  2.1742398,
+                        "address":  "Carrer Nou de la Rambla 3-5, Ciutat Vella",
+                        "district":  "Ciutat Vella"
+                    },
+    "Font Màgica":  {
+                        "lat":  41.3711603,
+                        "lng":  2.1517402,
+                        "address":  "Pl. de Carles Buïgas 1, Sants-Montjuïc",
+                        "district":  "Sants-Montjuïc"
+                    },
+    "Barques del Parc de la Ciutadella":  {
+                                              "lat":  41.3883819,
+                                              "lng":  2.1863899,
+                                              "address":  "Parc de la Ciutadella, Passeig de Picasso 21",
+                                              "district":  "Ciutat Vella"
+                                          },
+    "Glòries playground":  {
+                               "lat":  41.4034278,
+                               "lng":  2.1851105,
+                               "address":  "Plaça de les Glòries Catalanes 8I, Sant Martí",
+                               "district":  "Sant Martí"
+                           },
+    "Sagrada Família":  {
+                            "lat":  41.4036299,
+                            "lng":  2.1743558,
+                            "address":  "Carrer de Mallorca 401, Eixample",
+                            "district":  "Eixample"
+                        },
+    "Casa Milà":  {
+                      "lat":  41.3952155,
+                      "lng":  2.1619024,
+                      "address":  "Passeig de Gràcia 92, Eixample",
+                      "district":  "Eixample"
+                  },
+    "Casa Comalat":  {
+                         "lat":  41.3971126,
+                         "lng":  2.1606889,
+                         "address":  "Av. Diagonal 442, Eixample",
+                         "district":  "Eixample"
+                     },
+    "Café Schallert Barcelona":  {
+                                     "lat":  41.3716913,
+                                     "lng":  2.1663998,
+                                     "address":  "Carrer Nou de la Rambla 174, Sants-Montjuïc",
+                                     "district":  "Sants-Montjuïc"
+                                 },
+    "Azimuth Rooftop Bar":  {
+                                "lat":  41.3906516,
+                                "lng":  2.1693881,
+                                "address":  "Gran Via de les Corts Catalanes 619-621",
+                                "district":  "Eixample"
+                            },
+    "Eleven BCN":  {
+                       "lat":  41.3894654,
+                       "lng":  2.1662651,
+                       "address":  "Rambla de Catalunya 26, Eixample",
+                       "district":  "Eixample"
+                   },
+    "Harlem Jazz Club":  {
+                             "lat":  41.3811302,
+                             "lng":  2.1783946,
+                             "address":  "Carrer de la Comtessa de Sobradiel 8, Ciutat Vella",
+                             "district":  "Ciutat Vella"
+                         },
+    "Jamboree":  {
+                     "lat":  41.3796814,
+                     "lng":  2.1752178,
+                     "address":  "Pl. Reial 17, Ciutat Vella",
+                     "district":  "Ciutat Vella"
+                 },
+    "Els Quatre Gats":  {
+                            "lat":  41.3857621,
+                            "lng":  2.1736964,
+                            "address":  "Carrer de Montsió 3, Ciutat Vella",
+                            "district":  "Ciutat Vella"
+                        },
+    "Bar Calders":  {
+                        "lat":  41.376477,
+                        "lng":  2.1623586,
+                        "address":  "Carrer del Parlament 25, Eixample",
+                        "district":  "Eixample"
+                    },
+    "Bar Marsella":  {
+                         "lat":  41.3782442,
+                         "lng":  2.1711996,
+                         "address":  "Carrer de Sant Pau 65, Ciutat Vella",
+                         "district":  "Ciutat Vella"
+                     },
+    "Antic Teatre":  {
+                         "lat":  41.3871958,
+                         "lng":  2.1759573,
+                         "address":  "Carrer de Verdaguer i Callís 12, Ciutat Vella",
+                         "district":  "Ciutat Vella"
+                     },
+    "Suites Avenue Barcelona":  {
+                                    "lat":  41.3941485,
+                                    "lng":  2.1616401,
+                                    "address":  "Passeig de Gràcia 83, Eixample",
+                                    "district":  "Eixample"
+                                },
+    "Terrassa 360º":  {
+                          "lat":  41.3790381,
+                          "lng":  2.1695983,
+                          "address":  "Rambla del Raval 17-21, Ciutat Vella",
+                          "district":  "Ciutat Vella"
+                      },
+    "Bar Central Raval":  {
+                              "lat":  41.3836095,
+                              "lng":  2.1688718,
+                              "address":  "Carrer d\u0027Elisabets 6, Ciutat Vella",
+                              "district":  "Ciutat Vella"
+                          },
+    "DesignPlace":  {
+                        "lat":  41.3835904,
+                        "lng":  2.1739268,
+                        "address":  "Carrer del Pi 11, Ciutat Vella",
+                        "district":  "Ciutat Vella"
+                    },
+    "Typographia":  {
+                        "lat":  41.3835171,
+                        "lng":  2.1689716,
+                        "address":  "Carrer d\u0027Elisabets 5, Ciutat Vella",
+                        "district":  "Ciutat Vella"
+                    },
+    "Handcrafted In Barcelona":  {
+                                     "lat":  41.383179,
+                                     "lng":  2.1752583,
+                                     "address":  "Carrer de Sant Felip Neri 1, Ciutat Vella",
+                                     "district":  "Ciutat Vella"
+                                 },
+    "The LivingRoom Barcelona":  {
+                                     "lat":  41.4003562,
+                                     "lng":  2.1584546,
+                                     "address":  "Carrer del Diluvi 4, Gràcia",
+                                     "district":  "Gràcia"
+                                 },
+    "Miscelanea":  {
+                       "lat":  41.3830991,
+                       "lng":  2.1683882,
+                       "address":  "Carrer del Doctor Dou 16, Ciutat Vella",
+                       "district":  "Ciutat Vella"
+                   },
+    "Guanteria i Complements Alonso":  {
+                                           "lat":  41.3856508,
+                                           "lng":  2.1718336,
+                                           "address":  "Carrer de Santa Anna 27, Ciutat Vella",
+                                           "district":  "Ciutat Vella"
+                                       },
+    "Raima":  {
+                  "lat":  41.3867253,
+                  "lng":  2.1738617,
+                  "address":  "Carrer Comtal 27, Ciutat Vella",
+                  "district":  "Ciutat Vella"
+              }
+}

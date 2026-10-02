@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tapes de Barcelona</title>
+<style>
+/* Layout: sticky search + filter bar, then a single dense list built for one-handed phone use in a bar */
+:root{
+  --bg:#f6f8fb; --surface:#ffffff; --fg:#14213d; --muted:#5b6782; --line:#dde3ee;
+  --accent:#1d4ed8; --accent-fg:#ffffff; --sun:#f2b705;
+  --fish:#0e7490; --fish-bg:#dff3f7;
+  --meat:#b42318; --meat-bg:#fde7e4;
+  --cheese:#8a6100; --cheese-bg:#fdf2cc;
+  --fried:#c2410c; --fried-bg:#ffedd5;
+  --veg:#15803d; --veg-bg:#dcfce7;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d1424; --surface:#151f35; --fg:#e8edf7; --muted:#9aa7c2; --line:#26324d;
+  --accent:#7aa2ff; --accent-fg:#0d1424; --sun:#f2b705;
+  --fish:#67d3e6; --fish-bg:#10343d; --meat:#ff9c8f; --meat-bg:#3d1714;
+  --cheese:#f5cf55; --cheese-bg:#3a2e08; --fried:#ffad73; --fried-bg:#3d220d;
+  --veg:#7ee2a0; --veg-bg:#0f3320; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1424; --surface:#151f35; --fg:#e8edf7; --muted:#9aa7c2; --line:#26324d;
+  --accent:#7aa2ff; --accent-fg:#0d1424; --sun:#f2b705;
+  --fish:#67d3e6; --fish-bg:#10343d; --meat:#ff9c8f; --meat-bg:#3d1714;
+  --cheese:#f5cf55; --cheese-bg:#3a2e08; --fried:#ffad73; --fried-bg:#3d220d;
+  --veg:#7ee2a0; --veg-bg:#0f3320; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.4;padding:0 16px 48px}
+.wrap{max-width:720px;margin:0 auto}
+header{padding-block:20px 8px}
+h1{font-family:var(--display);font-weight:800;font-size:2rem;line-height:1.05;margin:0;letter-spacing:-.01em;text-wrap:balance}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);margin:6px 0 0;font-size:.95rem}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid var(--line)}
+.search{display:flex;align-items:center;gap:8px;background:var(--surface);border:2px solid var(--line);border-radius:12px;padding:0 12px}
+.search:focus-within{border-color:var(--accent)}
+.search input{flex:1;min-width:0;border:0;background:transparent;color:var(--fg);font:inherit;font-size:1.05rem;padding:12px 0;outline:none}
+.search button{border:0;background:transparent;color:var(--muted);font-size:1.3rem;cursor:pointer;padding:4px}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;font:inherit;font-size:.88rem;font-weight:700;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:7px 12px;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.chip:focus-visible,.item:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.count{font-size:.85rem;color:var(--muted);padding-top:10px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:.82rem;color:var(--muted);padding-top:8px}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+ul{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.item{display:grid;grid-template-columns:1fr auto;gap:4px 10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;width:100%;text-align:left;font:inherit;color:inherit}
+.cat{font-family:var(--display);font-weight:600;font-size:1.15rem;line-height:1.2;min-width:0}
+.es{font-size:.92rem;color:var(--muted);font-style:italic;grid-column:1;min-width:0}
+.nl{font-size:.95rem;grid-column:1/-1;min-width:0}
+.tags{display:flex;gap:4px;align-items:flex-start;justify-content:flex-end;grid-row:1/3;grid-column:2;flex-wrap:wrap;max-width:110px}
+.t{font-size:.78rem;font-weight:700;border-radius:6px;padding:2px 6px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.t.soms{background:transparent!important;border:1.5px dashed currentColor}
+.f{background:var(--fish-bg);color:var(--fish)} .m{background:var(--meat-bg);color:var(--meat)}
+.c{background:var(--cheese-bg);color:var(--cheese)} .x{background:var(--fried-bg);color:var(--fried)}
+.v{background:var(--veg-bg);color:var(--veg)}
+.star{font-size:1.1rem;color:var(--line);line-height:1}
+.item.fav .star{color:var(--sun)}
+.empty{text-align:center;color:var(--muted);padding:40px 0}
+.note{color:var(--muted);font-size:.85rem;margin-top:20px;max-width:65ch}
+/* show-the-waiter overlay */
+.show{position:fixed;inset:0;z-index:20;background:var(--bg);display:flex;flex-direction:column;justify-content:center;gap:16px;padding:calc(24px + env(safe-area-inset-top,0px)) 24px calc(24px + env(safe-area-inset-bottom,0px))}
+.show .big{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,11vw,4.5rem);line-height:1.02;text-wrap:balance;overflow-wrap:anywhere}
+.show .es2{font-size:1.4rem;font-style:italic;color:var(--muted)}
+.show .nl2{font-size:1.1rem}
+.show .row{display:flex;gap:8px;flex-wrap:wrap}
+.show .t{font-size:1rem;padding:4px 10px}
+.show .act{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.show button{font:inherit;font-weight:700;border-radius:12px;padding:12px 18px;cursor:pointer;border:2px solid var(--line);background:var(--surface);color:var(--fg)}
+.show button.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.hint{font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.show{animation:fade .15s ease-out}@keyframes fade{from{opacity:.4}to{opacity:1}}}
+</style></head><body>
+
+<div class="wrap">
+  <header>
+    <h1>Tapes de <span>Barcelona</span></h1>
+    <p class="sub">Zoek in het Catalaans, Spaans of Nederlands. Tik op een tapa om ze groot aan de ober te tonen.</p>
+  </header>
+
+  <div class="bar">
+    <label class="search" for="q">
+      <span aria-hidden="true">⌕</span>
+      <input id="q" type="search" placeholder="bv. pop, gambas, kroket…" autocomplete="off" enterkeyhint="search">
+      <button id="clear" type="button" aria-label="Zoekveld leegmaken" hidden>×</button>
+    </label>
+    <div class="chips" role="group" aria-label="Filters">
+      <button class="chip" data-f="noFish" aria-pressed="false">Geen vis</button>
+      <button class="chip" data-f="noMeat" aria-pressed="false">Geen vlees</button>
+      <button class="chip" data-f="veg" aria-pressed="false">Vegetarisch</button>
+      <button class="chip" data-f="noFried" aria-pressed="false">Niet gefrituurd</button>
+      <button class="chip" data-f="noCheese" aria-pressed="false">Geen kaas</button>
+      <button class="chip" data-f="onlyFish" aria-pressed="false">Alleen vis</button>
+      <button class="chip" data-f="onlyMeat" aria-pressed="false">Alleen vlees</button>
+      <button class="chip" data-f="fav" aria-pressed="false">★ Mijn lijstje</button>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><b class="t f">−</b> vis / waterdieren</span>
+    <span><b class="t m">+</b> vlees</span>
+    <span><b class="t c">*</b> kaas</span>
+    <span><b class="t x">++</b> gefrituurd</span>
+    <span><b class="t f soms">−</b> soms</span>
+  </div>
+  <div class="count" id="count"></div>
+  <ul id="list"></ul>
+  <p class="empty" id="empty" hidden>Niets gevonden. Probeer een ander woord of zet een filter uit.</p>
+  <p class="note">Gestippelde labels betekenen "soms": het hangt van de bar af. Vraag bij twijfel: <i>Porta peix / carn / formatge?</i> (Catalaans) of <i>¿Lleva pescado / carne / queso?</i> (Spaans). Slakken staan bij vis/waterdieren. Je ★-lijstje wordt alleen op dit toestel bewaard.</p>
+</div>
+
+<div class="show" id="show" hidden role="dialog" aria-modal="true" aria-labelledby="sBig">
+  <div class="hint">Toon dit aan de ober</div>
+  <div class="big" id="sBig"></div>
+  <div class="es2" id="sEs"></div>
+  <div class="nl2" id="sNl"></div>
+  <div class="row" id="sTags"></div>
+  <div class="act">
+    <button class="primary" id="sClose" type="button">Sluiten</button>
+    <button id="sFav" type="button">☆ Op mijn lijstje</button>
+  </div>
+</div>
+
+<script>
+// tags: f=vis, m=vlees, c=kaas, x=gefrituurd; suffix ? = soms
+const D=[
+["Albergínia fregida amb mel","Berenjena frita con miel","Gefrituurde aubergine met (riet)honing","x"],
+["Ales de pollastre","Alitas de pollo","Kippenvleugeltjes","m x"],
+["Amanida russa","Ensaladilla rusa","Aardappelsalade met tonijn en mayonaise","f"],
+["Anxoves de l'Escala","Anchoas de L'Escala","Gezouten ansjovis in olie","f"],
+["Bikini","Bikini (mixto)","Tosti met ham en kaas","m c"],
+["Bombes","Bombas","Aardappelbal gevuld met gehakt, met allioli en pikante saus (Barceloneta)","m x"],
+["Botifarra amb mongetes","Butifarra con judías","Catalaanse braadworst met witte bonen","m"],
+["Botifarra negra","Butifarra negra / morcilla","Bloedworst","m"],
+["Bunyols de bacallà","Buñuelos de bacalao","Beignets van gezouten kabeljauw","f x"],
+["Calamars a la romana","Calamares a la romana","Gefrituurde inktvisringen","f x"],
+["Canelons","Canelones","Catalaanse cannelloni met vlees, bechamel en kaas uit de oven","m c"],
+["Cap i pota","Cabeza y pata","Stoofpot van kalfskop en kalfspoot","m"],
+["Cargols a la llauna","Caracoles a la lata","Slakken uit de oven, met allioli","f"],
+["Carxofes fregides","Alcachofas fritas","Gefrituurde artisjokken","x"],
+["Cloïsses a la marinera","Almejas a la marinera","Venusschelpen in saus van wijn en tomaat","f"],
+["Coca de recapte","Coca de recapte","Platbrood met escalivada, soms met ansjovis of worst","f? m?"],
+["Croquetes de bacallà","Croquetas de bacalao","Kroketjes van kabeljauw","f x"],
+["Croquetes de ceps","Croquetas de setas","Kroketjes van paddenstoelen","x"],
+["Croquetes de pernil","Croquetas de jamón","Hamkroketjes","m x"],
+["Embotits variats","Embutidos variados","Assortiment vleeswaren","m"],
+["Empanadilles","Empanadillas","Gevulde deeghapjes, meestal met tonijn","f x"],
+["Escalivada","Escalivada","Geroosterde paprika, aubergine en ui","f?"],
+["Escopinyes","Berberechos","Kokkels","f"],
+["Espinacs a la catalana","Espinacas a la catalana","Spinazie met rozijnen en pijnboompitten",""],
+["Esqueixada","Esqueixada","Salade van rauwe gezouten kabeljauw met tomaat en olijven","f"],
+["Formatge de cabra amb mel","Queso de cabra con miel","Geitenkaas met honing","c"],
+["Formatge manxec","Queso manchego","Manchego, harde schapenkaas","c"],
+["Fricandó","Fricandó","Kalfsstoofpotje met paddenstoelen","m"],
+["Fuet","Fuet","Dunne gedroogde Catalaanse worst","m"],
+["Galtes de porc","Carrilleras de cerdo","Gestoofde varkenswangetjes","m"],
+["Gambes a l'all","Gambas al ajillo","Garnalen in hete knoflookolie","f"],
+["Gambes a la planxa","Gambas a la plancha","Gegrilde garnalen","f"],
+["Gaspatxo","Gazpacho","Koude tomatensoep",""],
+["Mandonguilles","Albóndigas","Gehaktballetjes in tomatensaus","m"],
+["Mandonguilles amb sípia","Albóndigas con sepia","Gehaktballetjes met zeekat","m f"],
+["Montadets","Montaditos","Kleine broodjes met wisselend beleg","f? m? c?"],
+["Musclos a la marinera","Mejillones a la marinera","Mosselen in saus van wijn en tomaat","f"],
+["Musclos tigre","Mejillones tigre","Gepaneerde mosselen gevuld met mosselbechamel","f x"],
+["Navalles a la planxa","Navajas a la plancha","Gegrilde scheermessen","f"],
+["Olives","Aceitunas","Olijven, soms gevuld met ansjovis","f?"],
+["Ous estrellats","Huevos rotos","Gebakken eieren op frietjes, vaak met ham","m x"],
+["Ous farcits","Huevos rellenos","Gevulde eieren met tonijn","f"],
+["Pa amb tomàquet","Pan con tomate","Brood ingewreven met tomaat, olijfolie en zout",""],
+["Patates braves","Patatas bravas","Gebakken aardappelblokjes met pikante saus en allioli","x"],
+["Pebrots de Padró","Pimientos de Padrón","Gebakken groene pepertjes met grof zout (soms eentje pikant)","x"],
+["Pebrots del piquillo farcits","Pimientos del piquillo rellenos","Gevulde zoete rode paprika's, met kabeljauw of gehakt","f? m?"],
+["Pernil ibèric","Jamón ibérico","Iberische ham","m"],
+["Pinxo morú","Pincho moruno","Gekruide spiesjes van varkensvlees","m"],
+["Pop a la gallega","Pulpo a la gallega","Octopus met paprikapoeder en olijfolie, op aardappel","f"],
+["Sardines a la planxa","Sardinas a la plancha","Gegrilde sardientjes","f"],
+["Seitons en vinagre","Boquerones en vinagre","Ansjovis gemarineerd in azijn en knoflook","f"],
+["Seitons fregits","Boquerones fritos","Gefrituurde verse ansjovis","f x"],
+["Sípia a la planxa","Sepia a la plancha","Gegrilde zeekat","f"],
+["Tellerines","Tellinas","Kleine zaagjes (schelpjes) in knoflook en peterselie","f"],
+["Truita de patates","Tortilla de patatas","Spaanse omelet met aardappel",""],
+["Xampinyons a l'all","Champiñones al ajillo","Champignons met knoflook",""],
+["Xipirons","Chipirones fritos","Gefrituurde baby-inktvisjes","f x"],
+["Xistorra","Chistorra","Dunne pittige worst, gebakken","m"],
+["Xoriço al vi","Chorizo al vino","Chorizo gestoofd in rode wijn","m"]
+].map((r,i)=>{
+  const tags=r[3].split(/\s+/).filter(Boolean).map(t=>({k:t[0],soms:t.endsWith("?")}));
+  const has=k=>tags.some(t=>t.k===k);
+  const norm=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/·/g,"").toLowerCase();
+  return {id:i,ca:r[0],es:r[1],nl:r[2],tags,has,hay:norm(r[0]+" "+r[1]+" "+r[2])};
+});
+const SYM={f:"−",m:"+",c:"*",x:"++"}, ORDER="fmcx";
+const norm=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().trim();
+
+let favs=new Set();
+try{favs=new Set(JSON.parse(localStorage.getItem("tapesFav")||"[]"))}catch(e){}
+const saveFavs=()=>{try{localStorage.setItem("tapesFav",JSON.stringify([...favs]))}catch(e){}};
+
+const active=new Set();
+const $=id=>document.getElementById(id);
+const q=$("q"), list=$("list");
+
+function tagHTML(d){
+  const t=[...d.tags].sort((a,b)=>ORDER.indexOf(a.k)-ORDER.indexOf(b.k));
+  if(!t.length) return '<b class="t v" title="Zonder vis, vlees, kaas">veg</b>';
+  return t.map(x=>`<b class="t ${x.k}${x.soms?" soms":""}" title="${x.soms?"soms ":""}${{f:"vis",m:"vlees",c:"kaas",x:"gefrituurd"}[x.k]}">${SYM[x.k]}</b>`).join("");
+}
+function pass(d){
+  const s=norm(q.value);
+  if(s && !s.split(/\s+/).every(w=>d.hay.includes(w))) return false;
+  if(active.has("noFish")&&d.has("f"))return false;
+  if(active.has("noMeat")&&d.has("m"))return false;
+  if(active.has("noCheese")&&d.has("c"))return false;
+  if(active.has("noFried")&&d.has("x"))return false;
+  if(active.has("veg")&&(d.has("f")||d.has("m")))return false;
+  if(active.has("onlyFish")&&!d.has("f"))return false;
+  if(active.has("onlyMeat")&&!d.has("m"))return false;
+  if(active.has("fav")&&!favs.has(d.ca))return false;
+  return true;
+}
+function render(){
+  const rows=D.filter(pass);
+  list.innerHTML=rows.map(d=>`<li><button class="item${favs.has(d.ca)?" fav":""}" data-id="${d.id}">
+    <span class="cat">${d.ca}</span>
+    <span class="tags">${tagHTML(d)}<span class="star" aria-label="${favs.has(d.ca)?"op mijn lijstje":""}">★</span></span>
+    <span class="es">${d.es}</span>
+    <span class="nl">${d.nl}</span></button></li>`).join("");
+  $("count").textContent=`${rows.length} van ${D.length} tapes`;
+  $("empty").hidden=rows.length>0;
+  $("clear").hidden=!q.value;
+}
+q.addEventListener("input",render);
+$("clear").addEventListener("click",()=>{q.value="";render();q.focus()});
+document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
+  const f=c.dataset.f, on=!active.has(f);
+  // mutually exclusive pairs
+  const clash={onlyFish:["noFish","onlyMeat","veg"],onlyMeat:["noMeat","onlyFish","veg"],noFish:["onlyFish"],noMeat:["onlyMeat"],veg:["onlyFish","onlyMeat"]};
+  if(on)(clash[f]||[]).forEach(o=>active.delete(o));
+  on?active.add(f):active.delete(f);
+  document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",active.has(x.dataset.f)));
+  render();
+}));
+
+let cur=null;
+function updFavBtn(){$("sFav").textContent=favs.has(cur.ca)?"★ Van mijn lijstje halen":"☆ Op mijn lijstje";}
+list.addEventListener("click",e=>{
+  const b=e.target.closest(".item"); if(!b)return;
+  cur=D[+b.dataset.id];
+  $("sBig").textContent=cur.ca; $("sEs").textContent=cur.es; $("sNl").textContent=cur.nl;
+  $("sTags").innerHTML=tagHTML(cur); updFavBtn();
+  $("show").hidden=false; $("sClose").focus();
+});
+function closeShow(){$("show").hidden=true;cur=null;render();}
+$("sClose").addEventListener("click",closeShow);
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("show").hidden)closeShow()});
+$("sFav").addEventListener("click",()=>{favs.has(cur.ca)?favs.delete(cur.ca):favs.add(cur.ca);saveFavs();updFavBtn();});
+render();
+</script>
+
+</body></html>

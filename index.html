@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="nl"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Barcelona reisgids</title>
+<meta name="theme-color" content="#1d4ed8">
+<meta name="robots" content="noindex,nofollow">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="lib/leaflet/leaflet.css">
+<link rel="stylesheet" href="css/app.css">
+</head><body>
+<div class="wrap" id="app"></div>
+
+<nav class="tabs" id="tabs" aria-label="Hoofdmenu"></nav>
+
+<div class="update" id="update" hidden>
+  <span>Nieuwe versie beschikbaar</span>
+  <button id="reload" type="button">Herladen</button>
+</div>
+
+<div class="show" id="show" hidden role="dialog" aria-modal="true" aria-labelledby="sBig">
+  <div class="hint" id="sHint">Toon dit aan de ober</div>
+  <div class="big" id="sBig"></div>
+  <div class="es2" id="sEs"></div>
+  <div class="nl2" id="sNl"></div>
+  <div class="row" id="sTags"></div>
+  <div class="act">
+    <button class="primary" id="sClose" type="button">Sluiten</button>
+    <button id="sFav" type="button" hidden>☆ Op mijn lijstje</button>
+  </div>
+</div>
+
+<script src="lib/leaflet/leaflet.js"></script>
+<script src="js/app.js"></script>
+<script src="js/places.js"></script>
+</body></html>

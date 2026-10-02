@@ -1,0 +1,356 @@
+[
+    {
+        "ca":  "Albergínia fregida amb mel",
+        "es":  "Berenjena frita con miel",
+        "nl":  "Gefrituurde aubergine met (riet)honing",
+        "tags":  "x"
+    },
+    {
+        "ca":  "Ales de pollastre",
+        "es":  "Alitas de pollo",
+        "nl":  "Kippenvleugeltjes",
+        "tags":  "m x"
+    },
+    {
+        "ca":  "Amanida russa",
+        "es":  "Ensaladilla rusa",
+        "nl":  "Aardappelsalade met tonijn en mayonaise",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Anxoves de l\u0027Escala",
+        "es":  "Anchoas de L\u0027Escala",
+        "nl":  "Gezouten ansjovis in olie",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Bikini",
+        "es":  "Bikini (mixto)",
+        "nl":  "Tosti met ham en kaas",
+        "tags":  "m c"
+    },
+    {
+        "ca":  "Bombes",
+        "es":  "Bombas",
+        "nl":  "Aardappelbal gevuld met gehakt, met allioli en pikante saus (Barceloneta)",
+        "tags":  "m x"
+    },
+    {
+        "ca":  "Botifarra amb mongetes",
+        "es":  "Butifarra con judías",
+        "nl":  "Catalaanse braadworst met witte bonen",
+        "tags":  "m"
+    },
+    {
+        "ca":  "Botifarra negra",
+        "es":  "Butifarra negra / morcilla",
+        "nl":  "Bloedworst",
+        "tags":  "m"
+    },
+    {
+        "ca":  "Bunyols de bacallà",
+        "es":  "Buñuelos de bacalao",
+        "nl":  "Beignets van gezouten kabeljauw",
+        "tags":  "f x"
+    },
+    {
+        "ca":  "Calamars a la romana",
+        "es":  "Calamares a la romana",
+        "nl":  "Gefrituurde inktvisringen",
+        "tags":  "f x"
+    },
+    {
+        "ca":  "Canelons",
+        "es":  "Canelones",
+        "nl":  "Catalaanse cannelloni met vlees, bechamel en kaas uit de oven",
+        "tags":  "m c"
+    },
+    {
+        "ca":  "Cap i pota",
+        "es":  "Cabeza y pata",
+        "nl":  "Stoofpot van kalfskop en kalfspoot",
+        "tags":  "m"
+    },
+    {
+        "ca":  "Cargols a la llauna",
+        "es":  "Caracoles a la lata",
+        "nl":  "Slakken uit de oven, met allioli",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Carxofes fregides",
+        "es":  "Alcachofas fritas",
+        "nl":  "Gefrituurde artisjokken",
+        "tags":  "x"
+    },
+    {
+        "ca":  "Cloïsses a la marinera",
+        "es":  "Almejas a la marinera",
+        "nl":  "Venusschelpen in saus van wijn en tomaat",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Coca de recapte",
+        "es":  "Coca de recapte",
+        "nl":  "Platbrood met escalivada, soms met ansjovis of worst",
+        "tags":  "f? m?"
+    },
+    {
+        "ca":  "Croquetes de bacallà",
+        "es":  "Croquetas de bacalao",
+        "nl":  "Kroketjes van kabeljauw",
+        "tags":  "f x"
+    },
+    {
+        "ca":  "Croquetes de ceps",
+        "es":  "Croquetas de setas",
+        "nl":  "Kroketjes van paddenstoelen",
+        "tags":  "x"
+    },
+    {
+        "ca":  "Croquetes de pernil",
+        "es":  "Croquetas de jamón",
+        "nl":  "Hamkroketjes",
+        "tags":  "m x"
+    },
+    {
+        "ca":  "Embotits variats",
+        "es":  "Embutidos variados",
+        "nl":  "Assortiment vleeswaren",
+        "tags":  "m"
+    },
+    {
+        "ca":  "Empanadilles",
+        "es":  "Empanadillas",
+        "nl":  "Gevulde deeghapjes, meestal met tonijn",
+        "tags":  "f x"
+    },
+    {
+        "ca":  "Escalivada",
+        "es":  "Escalivada",
+        "nl":  "Geroosterde paprika, aubergine en ui",
+        "tags":  "f?"
+    },
+    {
+        "ca":  "Escopinyes",
+        "es":  "Berberechos",
+        "nl":  "Kokkels",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Espinacs a la catalana",
+        "es":  "Espinacas a la catalana",
+        "nl":  "Spinazie met rozijnen en pijnboompitten",
+        "tags":  ""
+    },
+    {
+        "ca":  "Esqueixada",
+        "es":  "Esqueixada",
+        "nl":  "Salade van rauwe gezouten kabeljauw met tomaat en olijven",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Formatge de cabra amb mel",
+        "es":  "Queso de cabra con miel",
+        "nl":  "Geitenkaas met honing",
+        "tags":  "c"
+    },
+    {
+        "ca":  "Formatge manxec",
+        "es":  "Queso manchego",
+        "nl":  "Manchego, harde schapenkaas",
+        "tags":  "c"
+    },
+    {
+        "ca":  "Fricandó",
+        "es":  "Fricandó",
+        "nl":  "Kalfsstoofpotje met paddenstoelen",
+        "tags":  "m"
+    },
+    {
+        "ca":  "Fuet",
+        "es":  "Fuet",
+        "nl":  "Dunne gedroogde Catalaanse worst",
+        "tags":  "m"
+    },
+    {
+        "ca":  "Galtes de porc",
+        "es":  "Carrilleras de cerdo",
+        "nl":  "Gestoofde varkenswangetjes",
+        "tags":  "m"
+    },
+    {
+        "ca":  "Gambes a l\u0027all",
+        "es":  "Gambas al ajillo",
+        "nl":  "Garnalen in hete knoflookolie",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Gambes a la planxa",
+        "es":  "Gambas a la plancha",
+        "nl":  "Gegrilde garnalen",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Gaspatxo",
+        "es":  "Gazpacho",
+        "nl":  "Koude tomatensoep",
+        "tags":  ""
+    },
+    {
+        "ca":  "Mandonguilles",
+        "es":  "Albóndigas",
+        "nl":  "Gehaktballetjes in tomatensaus",
+        "tags":  "m"
+    },
+    {
+        "ca":  "Mandonguilles amb sípia",
+        "es":  "Albóndigas con sepia",
+        "nl":  "Gehaktballetjes met zeekat",
+        "tags":  "m f"
+    },
+    {
+        "ca":  "Montadets",
+        "es":  "Montaditos",
+        "nl":  "Kleine broodjes met wisselend beleg",
+        "tags":  "f? m? c?"
+    },
+    {
+        "ca":  "Musclos a la marinera",
+        "es":  "Mejillones a la marinera",
+        "nl":  "Mosselen in saus van wijn en tomaat",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Musclos tigre",
+        "es":  "Mejillones tigre",
+        "nl":  "Gepaneerde mosselen gevuld met mosselbechamel",
+        "tags":  "f x"
+    },
+    {
+        "ca":  "Navalles a la planxa",
+        "es":  "Navajas a la plancha",
+        "nl":  "Gegrilde scheermessen",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Olives",
+        "es":  "Aceitunas",
+        "nl":  "Olijven, soms gevuld met ansjovis",
+        "tags":  "f?"
+    },
+    {
+        "ca":  "Ous estrellats",
+        "es":  "Huevos rotos",
+        "nl":  "Gebakken eieren op frietjes, vaak met ham",
+        "tags":  "m x"
+    },
+    {
+        "ca":  "Ous farcits",
+        "es":  "Huevos rellenos",
+        "nl":  "Gevulde eieren met tonijn",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Pa amb tomàquet",
+        "es":  "Pan con tomate",
+        "nl":  "Brood ingewreven met tomaat, olijfolie en zout",
+        "tags":  ""
+    },
+    {
+        "ca":  "Patates braves",
+        "es":  "Patatas bravas",
+        "nl":  "Gebakken aardappelblokjes met pikante saus en allioli",
+        "tags":  "x"
+    },
+    {
+        "ca":  "Pebrots de Padró",
+        "es":  "Pimientos de Padrón",
+        "nl":  "Gebakken groene pepertjes met grof zout (soms eentje pikant)",
+        "tags":  "x"
+    },
+    {
+        "ca":  "Pebrots del piquillo farcits",
+        "es":  "Pimientos del piquillo rellenos",
+        "nl":  "Gevulde zoete rode paprika\u0027s, met kabeljauw of gehakt",
+        "tags":  "f? m?"
+    },
+    {
+        "ca":  "Pernil ibèric",
+        "es":  "Jamón ibérico",
+        "nl":  "Iberische ham",
+        "tags":  "m"
+    },
+    {
+        "ca":  "Pinxo morú",
+        "es":  "Pincho moruno",
+        "nl":  "Gekruide spiesjes van varkensvlees",
+        "tags":  "m"
+    },
+    {
+        "ca":  "Pop a la gallega",
+        "es":  "Pulpo a la gallega",
+        "nl":  "Octopus met paprikapoeder en olijfolie, op aardappel",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Sardines a la planxa",
+        "es":  "Sardinas a la plancha",
+        "nl":  "Gegrilde sardientjes",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Seitons en vinagre",
+        "es":  "Boquerones en vinagre",
+        "nl":  "Ansjovis gemarineerd in azijn en knoflook",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Seitons fregits",
+        "es":  "Boquerones fritos",
+        "nl":  "Gefrituurde verse ansjovis",
+        "tags":  "f x"
+    },
+    {
+        "ca":  "Sípia a la planxa",
+        "es":  "Sepia a la plancha",
+        "nl":  "Gegrilde zeekat",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Tellerines",
+        "es":  "Tellinas",
+        "nl":  "Kleine zaagjes (schelpjes) in knoflook en peterselie",
+        "tags":  "f"
+    },
+    {
+        "ca":  "Truita de patates",
+        "es":  "Tortilla de patatas",
+        "nl":  "Spaanse omelet met aardappel",
+        "tags":  ""
+    },
+    {
+        "ca":  "Xampinyons a l\u0027all",
+        "es":  "Champiñones al ajillo",
+        "nl":  "Champignons met knoflook",
+        "tags":  ""
+    },
+    {
+        "ca":  "Xipirons",
+        "es":  "Chipirones fritos",
+        "nl":  "Gefrituurde baby-inktvisjes",
+        "tags":  "f x"
+    },
+    {
+        "ca":  "Xistorra",
+        "es":  "Chistorra",
+        "nl":  "Dunne pittige worst, gebakken",
+        "tags":  "m"
+    },
+    {
+        "ca":  "Xoriço al vi",
+        "es":  "Chorizo al vino",
+        "nl":  "Chorizo gestoofd in rode wijn",
+        "tags":  "m"
+    }
+]

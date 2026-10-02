@@ -1,0 +1,79 @@
+BCN|Fanals d'Antoni Gaudí|41.3801885|2.1751577|Pl. Reial, Ciutat Vella
+BCN|Recinte Modernista de Sant Pau|41.4117072|2.1743395|Carrer de Sant Antoni Maria Claret 167, Horta-Guinardó
+BCN|Parc de l'España Industrial|41.3776555|2.1408583|Carrer de Muntadas 1, Sants-Montjuïc
+BCN|Street Art Museum - BAS MUSEUM|41.3798397|2.1789969|Carrer de la Carabassa 10, Ciutat Vella
+BCN|MEAM Museum|41.3850107|2.1802788|Carrer de la Barra de Ferro 5, Ciutat Vella
+BCN|Museu Picasso|41.3852706|2.1809472|Carrer de Montcada 15-23, Ciutat Vella
+BCN|Jardins de ca n'Altimira|41.4041223|2.1322121|Carrer de Maó 13, Sarrià-Sant Gervasi
+BCN|Parc Diagonal Mar|41.4083523|2.2133864|Carrer de Llull 350, Sant Martí
+BCN|Barcelona Bosc Urbà|41.4109426|2.2238512|Parc del Fòrum, Sant Martí
+BAR|La Galena|41.3725377|2.1626337|
+BCN|Museu de Ciències Naturals de Barcelona|41.4111948|2.2211093|Plaza Leonardo Da Vinci 4-5, Sant Martí
+BCN|Jardins de Sant Pau del Camp|41.3763753|2.1703708|Carrer de Sant Pau 93, Ciutat Vella
+BCN|Sant Pau del Camp|41.3763529|2.169459|Carrer de Sant Pau 99, Ciutat Vella
+BCN|Casa Burés|41.3915292|2.1760456|Carrer d'Ausiàs Marc 30, Eixample
+BCN|Jardí Botànic de Barcelona|41.3621881|2.1574698|Carrer Doctor Font i Quer 2, Sants-Montjuïc
+BCN|CaixaForum Barcelona|41.371308|2.149575|Av. de Francesc Ferrer i Guàrdia 6-8, Sants-Montjuïc
+BCN|Arenas de Barcelona|41.3763031|2.1493855|Gran Via de les Corts Catalanes 385, Eixample
+BCN|Dipòsit de les Aigües|41.3904468|2.1889434|Carrer de Ramon Trias Fargas 25-27, Sant Martí
+BCN|Casa Calvet|41.3909109|2.1729643|Carrer de Casp 48, Eixample
+BCN|Carrer Gran de Gràcia|41.4015795|2.1534483|Gràcia
+BCN|Il·lustre Col·legi de l'Advocacia de Barcelona|41.3955104|2.1646018|Carrer de Mallorca 283, Eixample
+BCN|Palau Ramon Montaner|41.3957002|2.1652081|Carrer de Mallorca 278, Eixample
+BCN|Casa Thomas|41.3964375|2.1657389|Carrer de Mallorca 286, Eixample
+BCN|Muñoz Ramonet Gardens|41.3964016|2.1466947|Carrer de Muntaner 282, Sarrià-Sant Gervasi
+BCN|Camp Nou|41.380896|2.1228198|Les Corts
+BCN|Arnau Gallery|41.3752235|2.1700724|Carrer Raquel Meller 108, Ciutat Vella
+BCN|Rayelly E Cycle|41.3754598|2.1659683|Carrer d'Aldana 4, Eixample
+BCN|Fundació Joan Miró|41.3686304|2.1598509|Parc de Montjuïc, Sants-Montjuïc
+BCN|Casa Batlló|41.3917|2.164918|Passeig de Gràcia 43, Eixample
+BCN|Museum van Decoratieve Kunsten|41.402451|2.1880918|Plaça de les Glòries Catalanes 38, Sant Martí
+BCN|Museu Nacional d'Art de Catalunya|41.3684399|2.15357|Palau Nacional, Parc de Montjuïc, Sants-Montjuïc
+BCN|Museu d'Art Contemporani de Barcelona|41.3831913|2.1668668|Plaça dels Àngels 1, Ciutat Vella
+BCN|Palau de la Música Catalana|41.3875752|2.1753128|C/ Palau de la Música 4-6, Ciutat Vella
+BCN|KBr Fundación MAPFRE - Barcelona Photo Center|41.3881798|2.197822|Av. del Litoral 30, Sant Martí
+BCN|Barcelona-paviljoen|41.3706091|2.1501628|Av. de Francesc Ferrer i Guàrdia 7, Sants-Montjuïc
+BCN|Casa Pia Batlló|41.3885639|2.1665554|Rambla de Catalunya 17, Eixample
+BCN|palais du baron de Quadras|41.3967565|2.1613672|Av. Diagonal 373, Eixample
+BCN|Casa Planells|41.40059|2.1745903|Av. Diagonal 332, Eixample
+BCN|Casa Lleó Morera|41.3911473|2.165444|Passeig de Gràcia 35, Eixample
+BCN|Casa de les punxes|41.3980026|2.1639915|Av. Diagonal 420, Eixample
+BCN|Mercat de Santa Caterina|41.3863611|2.1781566|Av. de Francesc Cambó 16, Ciutat Vella
+BCN|Casa Amatller|41.3916433|2.1651063|Passeig de Gràcia 41, Eixample
+BCN|Temple d'August|41.3833997|2.1771849|Carrer del Paradís 10, Ciutat Vella
+BCN|Mercat de la Boqueria|41.3817399|2.1715853|La Rambla 91, Ciutat Vella
+BCN|Plaça de Catalunya|41.3870154|2.1700471|Plaça de Catalunya, Eixample
+BCN|Mercat de Sant Antoni|41.3786358|2.1620492|Carrer del Comte d'Urgell 1, Eixample
+BCN|Mercat de la Barceloneta|41.3803674|2.1892217|Pl. del Poeta Boscà 1-2, Ciutat Vella
+BCN|Jardins de Mossèn Costa i Llobera|41.3673412|2.1715049|Ctra. de Miramar 38, Sants-Montjuïc
+BCN|Fundació Antoni Tàpies|41.3915474|2.1637697|Carrer d'Aragó 255, Eixample
+BCN|Bunkers del Carmel|41.419236|2.161779|Carrer de la Gran Vista 96, Horta-Guinardó
+BCN|Park Güell|41.4144948|2.1526945|Gràcia
+BCN|Bellesguard|41.4095654|2.1267654|Carrer de Bellesguard 20, Sarrià-Sant Gervasi
+BCN|Casa Vicens|41.4034978|2.1506455|Carrer de les Carolines 20-26, Gràcia
+BCN|Palau Güell|41.3788851|2.1742398|Carrer Nou de la Rambla 3-5, Ciutat Vella
+BCN|Font Màgica|41.3711603|2.1517402|Pl. de Carles Buïgas 1, Sants-Montjuïc
+BCN|Barques del Parc de la Ciutadella|41.3883819|2.1863899|Parc de la Ciutadella, Passeig de Picasso 21
+BCN|Glòries playground|41.4034278|2.1851105|Plaça de les Glòries Catalanes 8I, Sant Martí
+BCN|Sagrada Família|41.4036299|2.1743558|Carrer de Mallorca 401, Eixample
+BCN|Casa Milà|41.3952155|2.1619024|Passeig de Gràcia 92, Eixample
+BCN|Casa Comalat|41.3971126|2.1606889|Av. Diagonal 442, Eixample
+BAR|Café Schallert Barcelona|41.3716913|2.1663998|Carrer Nou de la Rambla 174, Sants-Montjuïc
+BAR|Azimuth Rooftop Bar|41.3906516|2.1693881|Gran Via de les Corts Catalanes 619-621
+BAR|Eleven BCN|41.3894654|2.1662651|Rambla de Catalunya 26, Eixample
+BAR|Harlem Jazz Club|41.3811302|2.1783946|Carrer de la Comtessa de Sobradiel 8, Ciutat Vella
+BAR|Jamboree|41.3796814|2.1752178|Pl. Reial 17, Ciutat Vella
+BAR|Els Quatre Gats|41.3857621|2.1736964|Carrer de Montsió 3, Ciutat Vella
+BAR|Bar Calders|41.376477|2.1623586|Carrer del Parlament 25, Eixample
+BAR|Bar Marsella|41.3782442|2.1711996|Carrer de Sant Pau 65, Ciutat Vella
+BAR|Antic Teatre|41.3871958|2.1759573|Carrer de Verdaguer i Callís 12, Ciutat Vella
+BAR|Suites Avenue Barcelona|41.3941485|2.1616401|Passeig de Gràcia 83, Eixample
+BAR|Terrassa 360º|41.3790381|2.1695983|Rambla del Raval 17-21, Ciutat Vella
+BAR|Bar Central Raval|41.3836095|2.1688718|Carrer d'Elisabets 6, Ciutat Vella
+SHOP|DesignPlace|41.3835904|2.1739268|Carrer del Pi 11, Ciutat Vella
+SHOP|Typographia|41.3835171|2.1689716|Carrer d'Elisabets 5, Ciutat Vella
+SHOP|Handcrafted In Barcelona|41.383179|2.1752583|Carrer de Sant Felip Neri 1, Ciutat Vella
+SHOP|The LivingRoom Barcelona|41.4003562|2.1584546|Carrer del Diluvi 4, Gràcia
+SHOP|Miscelanea|41.3830991|2.1683882|Carrer del Doctor Dou 16, Ciutat Vella
+SHOP|Guanteria i Complements Alonso|41.3856508|2.1718336|Carrer de Santa Anna 27, Ciutat Vella
+SHOP|Raima|41.3867253|2.1738617|Carrer Comtal 27, Ciutat Vella
