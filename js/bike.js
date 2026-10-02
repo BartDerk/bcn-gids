@@ -42,13 +42,23 @@ async function viewBike() {
         <button class="chip" data-s="shop" aria-pressed="true">Shops</button>
       </div>
     </div>
-    <div class="mapwrap"><div id="map"></div><div class="bleg"><i class="bdot cand"></i> voor fietsroute gemarkeerd</div></div>
+    <div class="mapwrap"><div id="map"></div><div class="bleg"><i class="bdot cand"></i> voor fietsroute gemarkeerd</div>
+      <button class="fab" id="locate" type="button" aria-label="Mijn locatie">&#x2316;</button></div>
     <div class="sheet bsheet" id="bsheet" hidden></div>`;
   const map = bk.map = L.map("map", {zoomControl: false}).setView([41.3935, 2.1686], 13);
   L.control.zoom({position: "topright"}).addTo(map);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 19, attribution: "© OpenStreetMap"}).addTo(map);
   bk.layer = L.layerGroup().addTo(map);
   map.on("click", () => { bk.sel = null; bk.mode = ""; renderBSheet(); });
+  $("locate").onclick = () => {
+    if (!navigator.geolocation) return;
+    navigator.geolocation.getCurrentPosition(pos => {
+      const ll = [pos.coords.latitude, pos.coords.longitude];
+      if (bk.me) bk.me.remove();
+      bk.me = L.circleMarker(ll, {radius: 9, color: "#fff", weight: 3, fillColor: "#111827", fillOpacity: 1}).addTo(bk.map);
+      bk.map.setView(ll, Math.max(bk.map.getZoom(), 15));
+    }, () => { alert("Locatie niet beschikbaar. Zet de locatie van je gsm aan en geef toestemming."); }, {enableHighAccuracy: true, timeout: 10000});
+  };
   const zc = () => $("map").classList.toggle("zsmall", map.getZoom() <= 13);
   map.on("zoomend", zc); zc();
 
@@ -151,5 +161,6 @@ function renderBSheet() {
 
 function leaveBike() {
   if (bk.map) { bk.map.remove(); bk.map = null; }
+  bk.me = null;
   bk.sel = null; bk.mode = "";
 }

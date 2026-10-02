@@ -129,7 +129,7 @@ function locate(forSort) {
     pl.pos = {lat: pos.coords.latitude, lng: pos.coords.longitude};
     if (pl.me) pl.me.remove();
     if (pl.map) {
-      pl.me = L.circleMarker([pl.pos.lat, pl.pos.lng], {radius: 8, color: "#fff", weight: 3, fillColor: "#1d4ed8", fillOpacity: 1}).addTo(pl.map);
+      pl.me = L.circleMarker([pl.pos.lat, pl.pos.lng], {radius: 9, color: "#fff", weight: 3, fillColor: "#111827", fillOpacity: 1}).addTo(pl.map);
       if (!forSort) pl.map.setView([pl.pos.lat, pl.pos.lng], Math.max(pl.map.getZoom(), 15));
     }
     if (forSort) pl.sortNear = true;
