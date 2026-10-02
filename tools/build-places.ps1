@@ -1,5 +1,5 @@
 # Bouwt data\places.json uit de Google Maps-exports in \ToVisit.
-#   ToVisit\BCN.csv       -> lijst "bcn"  (bezienswaardigheden, ook voor md)
+#   ToVisit\BCN.csv       -> lijst "bcn"  (bezienswaardigheden, ook voor gast)
 #   ToVisit\BCN Bar.csv   -> lijst "bar"
 #   ToVisit\BCN shop.csv  -> lijst "shop"
 # Per plaats komen er gegevens uit:

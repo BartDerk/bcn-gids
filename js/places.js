@@ -22,12 +22,12 @@ const LISTS = [["all", "Alles"], ["bcn", "Te zien"], ["bar", "Bars"], ["shop", "
 const svg = (cat, size = 18) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[cat] || ICONS.overig}</svg>`;
 
 const pl = {
-  all: null, view: "kaart", list: "all", cat: "", fav: false, onlyBike: false, onlyMd: false, q: "", district: "", more: false,
+  all: null, view: "kaart", list: "all", cat: "", fav: false, onlyBike: false, onlyGast: false, q: "", district: "", more: false,
   sortNear: false, pos: null,
-  favs: new Set(store.get("bcnFav", [])), md: new Set(store.get("bcnMd", [])), bike: store.get("bcnBike", []), cand: new Set(store.get("bcnCand", store.get("bcnBike", []))),
+  favs: new Set(store.get("bcnFav", [])), gast: new Set(store.get("bcnGast", store.get("bcnMd", []))), bike: store.get("bcnBike", []), cand: new Set(store.get("bcnCand", store.get("bcnBike", []))),
   map: null, markers: {}, me: null, sel: null
 };
-const savePl = () => { store.set("bcnFav", [...pl.favs]); store.set("bcnBike", pl.bike); store.set("bcnCand", [...pl.cand]); store.set("bcnMd", [...pl.md]); };
+const savePl = () => { store.set("bcnFav", [...pl.favs]); store.set("bcnBike", pl.bike); store.set("bcnCand", [...pl.cand]); store.set("bcnGast", [...pl.gast]); };
 const dirUrl = (p, mode) => `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}&travelmode=${mode}`;
 function distKm(a, b) {
   const R = 6371, rad = x => x * Math.PI / 180, dLat = rad(b.lat - a.lat), dLng = rad(b.lng - a.lng);
@@ -41,7 +41,7 @@ function placePass(p) {
   if (pl.cat && p.cat !== pl.cat) return false;
   if (pl.fav && !pl.favs.has(p.id)) return false;
   if (pl.onlyBike && !pl.cand.has(p.id)) return false;
-  if (pl.onlyMd && !pl.md.has(p.id)) return false;
+  if (pl.onlyGast && !pl.gast.has(p.id)) return false;
   if (pl.district && p.district !== pl.district) return false;
   const s = norm(pl.q);
   if (s && !s.split(/\s+/).every(w => p.hay.includes(w))) return false;
@@ -54,7 +54,7 @@ async function ensurePlaces() {
     pl.byId = Object.fromEntries(pl.all.map(p => [p.id, p]));
     pl.bike = pl.bike.filter(id => pl.byId[id]);   // plaatsen die uit de lijst verdwenen zijn
     pl.cand = new Set([...pl.cand].filter(id => pl.byId[id]));
-    pl.md = new Set([...pl.md].filter(id => pl.byId[id]));
+    pl.gast = new Set([...pl.gast].filter(id => pl.byId[id]));
   }
 }
 
@@ -69,10 +69,11 @@ async function viewPlaces() {
       <div class="chips" id="lchips">${LISTS.map(l => `<button class="chip" data-l="${l[0]}" aria-pressed="false">${l[1]}</button>`).join("")}
         <button class="chip" data-x="fav" aria-pressed="false">★ Lijstje</button>
         <button class="chip" data-x="onlyBike" aria-pressed="false">🚲 Fietslijst</button>
-        <button class="chip chip-md" data-x="onlyMd" aria-pressed="false">md</button>
-        <button class="chip" id="mdimp" type="button">⬇ Importeer van md</button>
-        <button class="chip" id="mdshare" type="button">↗ Deel met md</button>
-        <button class="chip" id="mdclear" type="button" hidden>✕ Wis md</button>
+        <button class="chip chip-gast" data-x="onlyGast" aria-pressed="false">gast</button>
+        <button class="chip" id="gastimp" type="button">⬇ Importeer van gast</button>
+        <button class="chip" id="gastshare" type="button">↗ Deel met gast</button>
+        <button class="chip" id="gastclear" type="button" hidden>✕ Wis gast</button>
+        <button class="chip" id="candclear" type="button" hidden>✕ Wis fietslijst</button>
         </div>
       <div class="chips" id="cchips">${Object.keys(CATS).filter(c => c !== "bar" && c !== "shop").map(c => `<button class="chip cat-${c}" data-c="${c}" aria-pressed="false">${CATS[c][0]}</button>`).join("")}</div>
       <div class="lonly" id="lonly">
@@ -99,7 +100,7 @@ function buildMap() {
   for (const p of pl.all) {
     const m = L.marker([p.lat, p.lng], {
       icon: L.divIcon({className: "pinwrap", iconSize: [38, 38], iconAnchor: [19, 19],
-        html: `<div class="pin" style="background:${CATS[p.cat][1]}">${svg(p.cat)}<i class="pinstar">★</i><i class="pinbike"></i><i class="pinmd">md</i></div>`}),
+        html: `<div class="pin" style="background:${CATS[p.cat][1]}">${svg(p.cat)}<i class="pinstar">★</i><i class="pinbike"></i><i class="pingast">G</i></div>`}),
       keyboard: false, title: p.name
     });
     m.on("click", () => openSheet(p.id));
@@ -122,11 +123,15 @@ function bindPlaces() {
   $("dist").value = pl.district; $("dist").onchange = e => { pl.district = e.target.value; refreshPlaces(); };
   $("near").onclick = () => { if (pl.sortNear) { pl.sortNear = false; refreshPlaces(); } else locate(true); };
   $("locate").onclick = () => locate(false);
-  $("mdimp").onclick = openMdImport;
-  $("mdshare").onclick = shareMd;
-  $("mdclear").onclick = () => {
-    if (!confirm(`De ${pl.md.size} keuzes van md wissen? Je eigen ★, fietslijstje en route blijven staan.`)) return;
-    pl.md.clear(); pl.onlyMd = false; savePl(); refreshPlaces();
+  $("gastimp").onclick = openMdImport;
+  $("gastshare").onclick = shareMd;
+  $("candclear").onclick = () => {
+    if (!confirm(`Je fietslijstje (${pl.cand.size} blauwe bollen) en je route wissen? Je ★ en de keuzes van gast blijven staan.`)) return;
+    pl.cand.clear(); pl.bike = []; pl.onlyBike = false; savePl(); refreshPlaces();
+  };
+  $("gastclear").onclick = () => {
+    if (!confirm(`De ${pl.gast.size} keuzes van gast wissen? Je eigen ★, fietslijstje en route blijven staan.`)) return;
+    pl.gast.clear(); pl.onlyGast = false; savePl(); refreshPlaces();
   };
   $("pul").onclick = e => {
     const star = e.target.closest("[data-star]");
@@ -165,7 +170,8 @@ function refreshPlaces(fit) {
   document.querySelectorAll("#lchips [data-x]").forEach(b => b.setAttribute("aria-pressed", !!pl[b.dataset.x]));
   document.querySelectorAll("#cchips [data-c]").forEach(b => b.setAttribute("aria-pressed", b.dataset.c === pl.cat));
   $("near").setAttribute("aria-pressed", pl.sortNear);
-  $("mdclear").hidden = !pl.md.size;
+  $("gastclear").hidden = !pl.gast.size;
+  $("candclear").hidden = !pl.cand.size && !pl.bike.length;
   $("cchips").hidden = pl.list !== "bcn";
   $("lonly").hidden = pl.view !== "lijst";
   $("mapwrap").hidden = pl.view !== "kaart";
@@ -177,7 +183,7 @@ function refreshPlaces(fit) {
     if (on && !pl.map.hasLayer(m)) m.addTo(pl.map);
     if (!on && pl.map.hasLayer(m)) m.remove();
     const el = m.getElement && m.getElement();
-    if (el) { el.classList.toggle("isfav", pl.favs.has(p.id)); el.classList.toggle("ismd", pl.md.has(p.id)); const bi = pl.bike.indexOf(p.id), ic = pl.cand.has(p.id); el.classList.toggle("isbike", ic || bi >= 0); const bn = el.querySelector(".pinbike"); if (bn) bn.textContent = bi >= 0 ? bi + 1 : "🚲"; }
+    if (el) { el.classList.toggle("isfav", pl.favs.has(p.id)); el.classList.toggle("isgast", pl.gast.has(p.id)); const bi = pl.bike.indexOf(p.id), ic = pl.cand.has(p.id); el.classList.toggle("isbike", ic || bi >= 0); const bn = el.querySelector(".pinbike"); if (bn) bn.textContent = bi >= 0 ? bi + 1 : "🚲"; }
   }
   if (pl.view === "kaart") {
     setTimeout(() => pl.map.invalidateSize(), 30);
@@ -187,9 +193,9 @@ function refreshPlaces(fit) {
     if (pl.sortNear && pl.pos) { r.forEach(p => p._d = distKm(pl.pos, p)); r.sort((a, b) => a._d - b._d); }
     else r.sort((a, b) => a.name.localeCompare(b.name, "nl"));
     $("pcount").textContent = `${r.length} van ${pl.all.length} plaatsen`;
-    $("pul").innerHTML = r.map(p => `<li><div class="item prow${pl.favs.has(p.id) ? " fav" : ""}${pl.md.has(p.id) ? " md" : ""}">
+    $("pul").innerHTML = r.map(p => `<li><div class="item prow${pl.favs.has(p.id) ? " fav" : ""}${pl.gast.has(p.id) ? " gast" : ""}">
       <button class="pmain" data-id="${p.id}"><span class="dot" style="background:${CATS[p.cat][1]}">${svg(p.cat, 16)}</span>
-        <span class="ptxt"><b>${esc(p.name)}</b><small>${pl.md.has(p.id) ? '<em class="mdtag">md</em> · ' : ""}${pl.bike.includes(p.id) ? "🚲 stop " + (pl.bike.indexOf(p.id) + 1) + " · " : pl.cand.has(p.id) ? "🚲 voor fietsroute · " : ""}${esc(CATS[p.cat][0])}${p.district ? " · " + esc(p.district) : ""}${pl.sortNear && pl.pos ? " · " + fmtDist(p._d) : ""}</small></span></button>
+        <span class="ptxt"><b>${esc(p.name)}</b><small>${pl.gast.has(p.id) ? '<em class="gasttag">gast</em> · ' : ""}${pl.bike.includes(p.id) ? "🚲 stop " + (pl.bike.indexOf(p.id) + 1) + " · " : pl.cand.has(p.id) ? "🚲 voor fietsroute · " : ""}${esc(CATS[p.cat][0])}${p.district ? " · " + esc(p.district) : ""}${pl.sortNear && pl.pos ? " · " + fmtDist(p._d) : ""}</small></span></button>
       <button class="pstar" data-star="${p.id}" aria-label="${pl.favs.has(p.id) ? "Van lijstje halen" : "Op lijstje zetten"}">★</button></div></li>`).join("");
   }
   if (pl.sel) renderSheet();
@@ -212,7 +218,7 @@ function renderSheet() {
   if (!p || !s) return;
   const fav = pl.favs.has(p.id), bike = pl.cand.has(p.id);
   const head = `<span class="dot" style="background:${CATS[p.cat][1]}">${svg(p.cat, 18)}</span>
-        <div class="shname"><h2>${esc(p.name)}</h2><small>${pl.md.has(p.id) ? '<em class="mdtag">md wil hier langs</em> · ' : ""}${esc(CATS[p.cat][0])}${p.district ? " · " + esc(p.district) : ""}</small></div>`;
+        <div class="shname"><h2>${esc(p.name)}</h2><small>${pl.gast.has(p.id) ? '<em class="gasttag">gast wil hier langs</em> · ' : ""}${esc(CATS[p.cat][0])}${p.district ? " · " + esc(p.district) : ""}</small></div>`;
   s.className = "sheet" + (pl.more ? " more" : "") + (p.photo ? " hasphoto" : "");
   s.innerHTML = `
     ${p.photo ? `<div class="sphotowrap"><img class="sphoto" src="${esc(p.photo)}" alt="${esc(p.name)}"><div class="sover sh">${head}</div></div>` : `<div class="sh sheadplain">${head}</div>`}
@@ -248,10 +254,10 @@ function leavePlaces() {
   pl.me = null; pl.sel = null;
 }
 
-/* ---------- keuzes van md: delen en importeren ---------- */
-const mdUrl = () => new URL("kiezen.html", location.href).href;
+/* ---------- keuzes van gast: delen en importeren ---------- */
+const gastUrl = () => new URL("kiezen.html", location.href).href;
 async function shareMd() {
-  const url = mdUrl();
+  const url = gastUrl();
   if (navigator.share) {
     try { await navigator.share({title: "Barcelona: wat wil jij?", text: "Kies wat je in Barcelona langs wilt fietsen:", url}); return; }
     catch (e) { if (e && e.name === "AbortError") return; }
@@ -264,27 +270,27 @@ async function shareMd() {
 function openMdImport() {
   closeMdImport();
   const d = document.createElement("div");
-  d.className = "mdov"; d.id = "mdov";
-  d.innerHTML = `<div class="mdbox" role="dialog" aria-modal="true" aria-label="Importeer van md">
-    <h2>Importeer van md</h2>
+  d.className = "gastov"; d.id = "gastov";
+  d.innerHTML = `<div class="gastbox" role="dialog" aria-modal="true" aria-label="Importeer van gast">
+    <h2>Importeer van gast</h2>
     <p>Plak haar bericht of alleen de code (begint met BCN1-).</p>
-    <textarea id="mdtxt" rows="5" placeholder="BCN1-..."></textarea>
+    <textarea id="gasttxt" rows="5" placeholder="BCN1-..."></textarea>
     <p>Haar keuzes komen apart te staan (paars). Je fietslijstje verandert niet.</p>
-    <p id="mdres" class="mdres"></p>
-    <div class="mdact"><button type="button" class="btn" id="mdcancel">Sluiten</button><button type="button" class="btn primary" id="mdgo">Importeren</button></div></div>`;
+    <p id="gastres" class="gastres"></p>
+    <div class="gastact"><button type="button" class="btn" id="gastcancel">Sluiten</button><button type="button" class="btn primary" id="gastgo">Importeren</button></div></div>`;
   document.body.appendChild(d);
-  $("mdcancel").onclick = closeMdImport;
-  $("mdgo").onclick = doMdImport;
-  $("mdtxt").focus();
+  $("gastcancel").onclick = closeMdImport;
+  $("gastgo").onclick = doMdImport;
+  $("gasttxt").focus();
 }
-function closeMdImport() { const d = $("mdov"); if (d) d.remove(); }
+function closeMdImport() { const d = $("gastov"); if (d) d.remove(); }
 function doMdImport() {
-  const r = MDC.decode($("mdtxt").value, pl.all), out = $("mdres");
+  const r = GASTC.decode($("gasttxt").value, pl.all), out = $("gastres");
   if (!r) { out.textContent = "Geen code gevonden. Plak het hele bericht of de code die met BCN1- begint."; return; }
   if (!r.ids.length) { out.textContent = "De code bevat geen plaatsen die ik ken."; return; }
-  pl.md = new Set(r.ids);   // haar laatste keuze vervangt haar vorige import; jouw ★, fietslijstje en route blijven onaangeroerd
+  pl.gast = new Set(r.ids);   // haar laatste keuze vervangt haar vorige import; jouw ★, fietslijstje en route blijven onaangeroerd
   savePl();
-  out.textContent = `${r.ids.length} plaatsen van md geladen` + (r.unknown ? `. ${r.unknown} onbekend (waarschijnlijk een oudere lijst).` : ".");
-  $("mdgo").hidden = true; $("mdcancel").textContent = "Klaar";
+  out.textContent = `${r.ids.length} plaatsen van gast geladen` + (r.unknown ? `. ${r.unknown} onbekend (waarschijnlijk een oudere lijst).` : ".");
+  $("gastgo").hidden = true; $("gastcancel").textContent = "Klaar";
   refreshPlaces();
 }

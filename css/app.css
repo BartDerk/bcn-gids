@@ -218,18 +218,18 @@ body.full{padding:0;overflow:hidden}
 .bleg{position:absolute;left:8px;bottom:22px;z-index:500;display:flex;align-items:center;gap:6px;padding:4px 10px 4px 4px;border-radius:999px;background:var(--surface);font-size:.78rem;color:var(--fg);box-shadow:0 1px 4px rgba(0,0,0,.35)}
 .bleg .bdot{margin:0;width:14px;height:14px;border-width:2px;box-shadow:0 0 0 2px #1d4ed8;display:inline-block}
 
-/* keuzes van md */
-.pinmd{display:none;position:absolute;right:-12px;bottom:-8px;min-width:22px;height:16px;padding:0 3px;border-radius:8px;background:#c026d3;border:1.5px solid #fff;color:#fff;font-style:normal;font-size:.58rem;font-weight:800;align-items:center;justify-content:center}
-.ismd .pinmd{display:flex}
-.ismd .pin{border-color:#c026d3;box-shadow:0 0 0 3px #fff,0 0 0 6px #c026d3,0 2px 6px rgba(0,0,0,.5)}
-.ismd.isbike .pin{box-shadow:0 0 0 3px #fff,0 0 0 6px #c026d3,0 0 0 9px #1d4ed8,0 2px 6px rgba(0,0,0,.5)}
-.prow.md{border-left:5px solid #c026d3}
-.mdtag{font-style:normal;font-weight:800;color:#c026d3}
-.chip-md[aria-pressed="true"]{background:#c026d3;border-color:#c026d3;color:#fff}
-.mdov{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.55);display:flex;align-items:flex-end;justify-content:center}
-.mdbox{width:100%;max-width:520px;background:var(--surface);color:var(--fg);border-radius:16px 16px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px}
-.mdbox h2{margin:0;font-size:1.2rem}.mdbox p{margin:0;color:var(--muted);font-size:.9rem}
-.mdbox textarea{width:100%;font:inherit;font-size:16px;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--fg);padding:10px}
-.mdchk{display:flex;gap:10px;align-items:center;font-size:.95rem;min-height:44px}.mdchk input{width:22px;height:22px}
-.mdbox .mdres{color:var(--fg);font-weight:700}
-.mdact{display:flex;gap:8px;justify-content:flex-end}
+/* keuzes van gast */
+.pingast{display:none;position:absolute;right:-12px;bottom:-8px;min-width:22px;height:16px;padding:0 3px;border-radius:8px;background:#c026d3;border:1.5px solid #fff;color:#fff;font-style:normal;font-size:.58rem;font-weight:800;align-items:center;justify-content:center}
+.isgast .pingast{display:flex}
+.isgast .pin{border-color:#c026d3;box-shadow:0 0 0 3px #fff,0 0 0 6px #c026d3,0 2px 6px rgba(0,0,0,.5)}
+.isgast.isbike .pin{box-shadow:0 0 0 3px #fff,0 0 0 6px #c026d3,0 0 0 9px #1d4ed8,0 2px 6px rgba(0,0,0,.5)}
+.prow.gast{border-left:5px solid #c026d3}
+.gasttag{font-style:normal;font-weight:800;color:#c026d3}
+.chip-gast[aria-pressed="true"]{background:#c026d3;border-color:#c026d3;color:#fff}
+.gastov{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.55);display:flex;align-items:flex-end;justify-content:center}
+.gastbox{width:100%;max-width:520px;background:var(--surface);color:var(--fg);border-radius:16px 16px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px}
+.gastbox h2{margin:0;font-size:1.2rem}.gastbox p{margin:0;color:var(--muted);font-size:.9rem}
+.gastbox textarea{width:100%;font:inherit;font-size:16px;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--fg);padding:10px}
+.gastchk{display:flex;gap:10px;align-items:center;font-size:.95rem;min-height:44px}.gastchk input{width:22px;height:22px}
+.gastbox .gastres{color:var(--fg);font-weight:700}
+.gastact{display:flex;gap:8px;justify-content:flex-end}

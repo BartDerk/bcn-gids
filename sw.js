@@ -1,12 +1,12 @@
 // Verhoog VERSION bij elke nieuwe release: dan verschijnt "Nieuwe versie beschikbaar".
-const VERSION = "v14";
+const VERSION = "v15";
 const CACHE = "bcn-" + VERSION;
 const TILES = "bcn-tiles";
 const MAX_TILES = 2000;
 
 const SHELL = [
   "./", "index.html", "manifest.webmanifest",
-  "css/app.css", "js/app.js", "js/places.js", "js/bike.js", "js/mdcode.js",
+  "css/app.css", "js/app.js", "js/places.js", "js/bike.js", "js/gastcode.js",
   "lib/leaflet/leaflet.js", "lib/leaflet/leaflet.css", "lib/leaflet/images/marker-icon.png", "lib/leaflet/images/layers.png",
   "data/tapas.json", "data/phrases.json", "data/places.json",
   "icons/icon-192.png", "icons/icon-512.png", "icons/maskable-512.png"

@@ -1,5 +1,5 @@
 "use strict";
-/* Kiespagina voor md: lijst + kaart, keuzes in localStorage, bericht naar Bart via WhatsApp. */
+/* Kiespagina voor gast: lijst + kaart, keuzes in localStorage, bericht naar Bart via WhatsApp. */
 const $ = id => document.getElementById(id);
 const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
@@ -15,7 +15,7 @@ const CATS = {
 const catName = c => (CATS[c] || CATS.overig)[0];
 const catColor = c => (CATS[c] || CATS.overig)[1];
 
-const st = {places: [], byId: {}, sel: new Set(store.get("mdKies", [])), q: "", cat: "", district: "", only: false, view: "lijst",
+const st = {places: [], byId: {}, sel: new Set(store.get("gastKies", store.get("mdKies", []))), q: "", cat: "", district: "", only: false, view: "lijst",
   map: null, markers: {}, open: null};
 
 const BTN_ON = "✓ Wil ik langs fietsen", BTN_OFF = "Wil ik langs fietsen";
@@ -24,7 +24,7 @@ const rows = () => {
   return st.places.filter(p => (!st.cat || p.cat === st.cat) && (!st.district || p.district === st.district) &&
     (!st.only || st.sel.has(p.id)) && (!s || s.split(/\s+/).every(w => p.hay.includes(w))));
 };
-const save = () => store.set("mdKies", [...st.sel]);
+const save = () => store.set("gastKies", [...st.sel]);
 const chosen = () => st.places.filter(p => st.sel.has(p.id));
 
 function toast(t) {
@@ -36,7 +36,7 @@ function buildMessage() {
   const c = chosen();
   const head = c.length ? `Hoi Bart! Dit wil ik langs fietsen (${c.length}):` : "Hoi Bart! Ik heb (nog) niets gekozen.";
   const lines = c.map(p => "- " + p.name).join("\n");
-  return head + (lines ? "\n" + lines : "") + "\n\nCode (plak die in je app bij Importeer van md):\n" + MDC.encode(c.map(p => p.id));
+  return head + (lines ? "\n" + lines : "") + "\n\nCode (plak die in je app bij Importeer van gast):\n" + GASTC.encode(c.map(p => p.id));
 }
 
 function updateFoot() {

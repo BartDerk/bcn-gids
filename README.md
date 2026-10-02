@@ -29,7 +29,7 @@ Open daarna <http://localhost:8080>. (`localhost` mag een service worker gebruik
 
 De app leest de drie exports uit Google Maps:
 
-- `BCN.csv` → "Te zien" (bezienswaardigheden; ook de lijst voor md)
+- `BCN.csv` → "Te zien" (bezienswaardigheden; ook de lijst voor gast)
 - `BCN Bar.csv` → bars
 - `BCN shop.csv` → shops
 
@@ -81,14 +81,14 @@ Open de app vóór vertrek één keer met internet, bekijk de kaart (zodat de ka
 - De repo is publiek maar bevat geen adres van de logeerplek en geen persoonlijke gegevens. De pagina heeft `noindex`.
 - Foto's: Wikimedia Commons, met bronvermelding in de app.
 
-## Kiespagina voor md (`kiezen.html`)
+## Kiespagina voor gast (`kiezen.html`)
 
-Lichte losse pagina (geen service worker, niet offline, wel `noindex`) voor md. Ze opent de link in Safari, ziet alleen de BCN-lijst (`list="bcn"`) met foto (tik = groter), naam, wijk en uitleg, en een kaart om te zien wat bij elkaar ligt. Per plaats is er één knop: **Wil ik langs fietsen**. Ze kan zoeken (zonder accenten) en filteren op soort en wijk. Haar keuzes staan alleen in haar browser (`localStorage`, sleutel `mdKies`).
+Lichte losse pagina (geen service worker, niet offline, wel `noindex`) voor gast. Ze opent de link in Safari, ziet alleen de BCN-lijst (`list="bcn"`) met foto (tik = groter), naam, wijk en uitleg, en een kaart om te zien wat bij elkaar ligt. Per plaats is er één knop: **Wil ik langs fietsen**. Ze kan zoeken (zonder accenten) en filteren op soort en wijk. Haar keuzes staan alleen in haar browser (`localStorage`, sleutel `gastKies`).
 
 - **Stuur naar Bart** opent WhatsApp (`wa.me/?text=`) met een leesbaar bericht plus een code (`BCN1-...`); **Kopieer** doet hetzelfde naar het klembord.
-- De code (`js/mdcode.js`) bestaat uit per plaats 4 tekens (hash van het `id`), dus hij klopt ook als `places.json` later verandert. Onbekende plaatsen worden bij het importeren geteld en overgeslagen.
-- In de hoofdapp, tab *Te bezoeken*: **Importeer van md** (plak bericht of code). Haar keuzes staan apart in `bcnMd`, met paarse rand en "md" op de kaart, een paarse streep in de lijst en een filter **md**. Ze komen niet automatisch op je fietslijstje (`bcnCand`): bekijk ze samen en zet per plaats zelf 🚲 *Voor fietsroute*. Een nieuwe import vervangt haar vorige keuzes; jouw ★, fietslijstje en route blijven staan. **✕ Wis md** (zichtbaar zodra er md-keuzes zijn) wist alleen haar keuzes.
-- **Deel met md** opent het deelmenu van de gsm met de link naar `kiezen.html` (of kopieert hem).
+- De code (`js/gastcode.js`) bestaat uit per plaats 4 tekens (hash van het `id`), dus hij klopt ook als `places.json` later verandert. Onbekende plaatsen worden bij het importeren geteld en overgeslagen.
+- In de hoofdapp, tab *Te bezoeken*: **Importeer van gast** (plak bericht of code). Haar keuzes staan apart in `bcnGast`, met paarse rand en "G" op de kaart, een paarse streep in de lijst en een filter **gast**. Ze komen niet automatisch op je fietslijstje (`bcnCand`): bekijk ze samen en zet per plaats zelf 🚲 *Voor fietsroute*. Een nieuwe import vervangt haar vorige keuzes; jouw ★, fietslijstje en route blijven staan. **✕ Wis gast** (zichtbaar zodra er gast-keuzes zijn) wist alleen haar keuzes.
+- **Deel met gast** opent het deelmenu van de gsm met de link naar `kiezen.html` (of kopieert hem).
 - De kaart op `kiezen.html` heeft internet nodig voor de kaarttegels.
 
 ## Fietsroute
