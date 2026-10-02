@@ -87,3 +87,5 @@ Tab *Fietsen*: tik op een plaats (kleine stip) en kies **+ Stop n**. De stops kr
 Met **Ongedaan** haal je de laatste stop weg, met **Wissen** de hele route, met **Stops** pas je de volgorde aan, met **Rondrit** keer je terug naar de start.
 **Open in Google Maps** opent de route met `travelmode=bicycling`. Google staat maximaal 9 tussenpunten per route toe: bij meer stops komen er knoppen "Deel 1, Deel 2, …".
 Je route wordt alleen op je eigen toestel bewaard. Ook de knop 🚲 *Fietsroute* in het kaartje van "Te bezoeken" voegt een stop toe.
+
+**Lijstje en route zijn gescheiden:** met 🚲 *Voor fietsroute* in het kaartje van *Te bezoeken* (of **Markeren** op de fietskaart) zet je een plaats op je fietslijstje. Op de fietskaart zijn dat blauwe bollen. Daaruit kies je de stops van de route. **Wissen** wist alleen de route, je blauwe bollen blijven.

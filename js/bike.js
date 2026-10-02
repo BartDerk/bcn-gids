@@ -42,7 +42,7 @@ async function viewBike() {
         <button class="chip" data-s="shop" aria-pressed="true">Shops</button>
       </div>
     </div>
-    <div class="mapwrap"><div id="map"></div></div>
+    <div class="mapwrap"><div id="map"></div><div class="bleg"><i class="bdot cand"></i> voor fietsroute gemarkeerd</div></div>
     <div class="sheet bsheet" id="bsheet" hidden></div>`;
   const map = bk.map = L.map("map", {zoomControl: false}).setView([41.3935, 2.1686], 13);
   L.control.zoom({position: "topright"}).addTo(map);
@@ -54,7 +54,7 @@ async function viewBike() {
 
   $("bundo").onclick = () => { pl.bike.pop(); savePl(); bk.sel = null; refreshBike(); };
   $("bclear").onclick = () => {
-    if (pl.bike.length && confirm("Hele fietsroute wissen? Dit kan niet ongedaan gemaakt worden.")) { pl.bike = []; savePl(); bk.sel = null; bk.mode = ""; refreshBike(); }
+    if (pl.bike.length && confirm("Hele route wissen? Je blauwe bollen (plaatsen die je voor de fietsroute markeerde) blijven staan.")) { pl.bike = []; savePl(); bk.sel = null; bk.mode = ""; refreshBike(); }
   };
   $("blist").onclick = () => { bk.mode = bk.mode === "list" ? "" : "list"; bk.sel = null; renderBSheet(); };
   $("bloop").onclick = () => { bk.loop = !bk.loop; store.set("bcnLoop", bk.loop); refreshBike(); };
@@ -65,14 +65,14 @@ async function viewBike() {
 const numIcon = (n, last) => L.divIcon({className: "pinwrap", iconSize: [34, 34], iconAnchor: [17, 17],
   html: `<div class="bnum${last ? " last" : ""}">${n}</div>`});
 const dotIcon = p => L.divIcon({className: "pinwrap", iconSize: [30, 30], iconAnchor: [15, 15],
-  html: `<div class="bdot" style="background:${CATS[p.cat][1]}"></div>`});
+  html: pl.cand.has(p.id) ? `<div class="bdot cand"></div>` : `<div class="bdot" style="background:${CATS[p.cat][1]}"></div>`});
 
 function refreshBike(fit) {
   const stops = stopsOf(), sel = new Set(pl.bike), L_ = bk.layer;
   L_.clearLayers();
   for (const p of pl.all) {
     if (sel.has(p.id) || !bk.show[p.list]) continue;
-    L.marker([p.lat, p.lng], {icon: dotIcon(p), keyboard: false, title: p.name}).on("click", e => { L.DomEvent.stopPropagation(e); bk.sel = p.id; bk.mode = "cand"; renderBSheet(); }).addTo(L_);
+    L.marker([p.lat, p.lng], {icon: dotIcon(p), keyboard: false, title: p.name, zIndexOffset: pl.cand.has(p.id) ? 500 : 0}).on("click", e => { L.DomEvent.stopPropagation(e); bk.sel = p.id; bk.mode = "cand"; renderBSheet(); }).addTo(L_);
   }
   const line = stops.map(p => [p.lat, p.lng]);
   if (bk.loop && line.length >= 2) line.push(line[0]);
@@ -83,7 +83,7 @@ function refreshBike(fit) {
   });
 
   const n = stops.length, pts = bk.loop && n >= 2 ? stops.concat(stops[0]) : stops;
-  $("bsum").innerHTML = n === 0 ? "Tik op een plaats om je <b>eerste stop</b> te kiezen"
+  $("bsum").innerHTML = n === 0 ? (pl.cand.size ? "Tik op een <b>blauwe bol</b> om je eerste stop te kiezen" : "Tik op een plaats om je <b>eerste stop</b> te kiezen")
     : `<b>${n} stop${n === 1 ? "" : "s"}</b>${n >= 2 ? " · ± " + routeKm(pts).toFixed(1).replace(".", ",") + " km" : " · kies de volgende"}`;
   $("bundo").disabled = $("bclear").disabled = n === 0;
   $("bloop").setAttribute("aria-pressed", bk.loop);
@@ -112,12 +112,14 @@ function renderBSheet() {
       </div>
       ${p.desc ? `<p class="sdesc bdesc">${esc(p.desc)}</p>` : ""}
       <div class="sbtn">${i < 0
-        ? `<button class="btn primary" id="badd" type="button">+ Stop ${nextN}</button>`
+        ? `<button class="btn primary" id="badd" type="button">+ Stop ${nextN}</button>
+           <button class="btn${pl.cand.has(p.id) ? " on" : ""}" id="bcand" type="button">${pl.cand.has(p.id) ? "ðŸš² Gemarkeerd âœ“" : "ðŸš² Markeren"}</button>`
         : `<button class="btn" id="brem" type="button">Verwijder stop ${i + 1}</button>`}
       </div>`;
     s.hidden = false;
     $("bx").onclick = () => { bk.sel = null; bk.mode = ""; renderBSheet(); };
     if ($("badd")) $("badd").onclick = () => { pl.bike.push(p.id); savePl(); bk.sel = null; bk.mode = ""; refreshBike(); };
+    if ($("bcand")) $("bcand").onclick = () => { toggleCand(p.id); refreshBike(); };
     if ($("brem")) $("brem").onclick = () => { pl.bike.splice(i, 1); savePl(); bk.sel = null; bk.mode = ""; refreshBike(); };
   } else if (bk.mode === "list") {
     const stops = stopsOf();
