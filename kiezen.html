@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="nl"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Barcelona: wat wil jij?</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#1d4ed8">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="lib/leaflet/leaflet.css">
+<link rel="stylesheet" href="css/kiezen.css">
+</head><body>
+<header>
+  <h1>Barcelona: wat wil jij?</h1>
+  <p class="intro">Tik bij een plaats op <b>Wil ik langs fietsen</b> als je er langs wilt. Op de kaart zie je wat bij elkaar ligt. Daarna stuur je je keuze naar Bart.</p>
+</header>
+
+<div class="bar">
+  <div class="seg" role="group" aria-label="Weergave"><button type="button" data-v="lijst" aria-pressed="true">Lijst</button><button type="button" data-v="kaart" aria-pressed="false">Kaart</button></div>
+  <label class="search"><span aria-hidden="true">&#8981;</span><input id="q" type="search" placeholder="Zoek een plaats of wijk" autocomplete="off" aria-label="Zoeken"></label>
+  <div class="chips" id="cats"></div>
+  <div class="row2"><select id="dist" aria-label="Wijk"><option value="">Alle wijken</option></select>
+  <button type="button" class="chip" id="onlysel" aria-pressed="false">Mijn keuzes</button></div>
+</div>
+
+<main>
+  <div id="pcount" class="count"></div>
+  <ul id="list"></ul>
+  <div id="mapview" hidden><div id="map"></div><div id="msheet" class="msheet"></div></div>
+  <p class="credit" id="credit">Foto's: Wikimedia Commons, bronvermelding bij elke foto na een tik erop.</p>
+</main>
+
+<div class="foot">
+  <details id="prev"><summary>Bekijk bericht</summary><pre id="msg"></pre></details>
+  <div class="frow"><span id="cnt" class="fcnt"></span>
+    <button type="button" id="copy">Kopieer</button>
+    <button type="button" id="send" class="primary">Stuur naar Bart</button></div>
+</div>
+
+<div id="lb" class="lb" hidden role="dialog" aria-modal="true" aria-label="Foto"><img id="lbimg" alt=""><div id="lbcap"></div><button type="button" id="lbx" aria-label="Sluiten">&times;</button></div>
+<div id="toast" class="toast" hidden></div>
+
+<script src="lib/leaflet/leaflet.js"></script>
+<script src="js/mdcode.js"></script>
+<script src="js/kiezen.js"></script>
+</body></html>
