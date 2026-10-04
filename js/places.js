@@ -23,7 +23,7 @@ const svg = (cat, size = 18) => `<svg width="${size}" height="${size}" viewBox="
 
 const pl = {
   all: null, view: "kaart", list: "all", cat: "", fav: false, onlyBike: false, onlyGast: false, q: "", district: "", more: false,
-  sortNear: false, pos: null,
+  sortNear: false, pos: null, nearby: false,
   favs: new Set(store.get("bcnFav", [])), gast: new Set(store.get("bcnGast", store.get("bcnMd", []))), bike: store.get("bcnBike", []), cand: new Set(store.get("bcnCand", store.get("bcnBike", []))),
   map: null, markers: {}, me: null, sel: null
 };
@@ -34,6 +34,7 @@ function distKm(a, b) {
   const h = Math.sin(dLat / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLng / 2) ** 2;
   return 2 * R * Math.asin(Math.sqrt(h));
 }
+const NEAR_KM = 1;
 const fmtDist = km => km < 1 ? Math.round(km * 10) * 100 + " m" : km.toFixed(1).replace(".", ",") + " km";
 
 function placePass(p) {
@@ -43,6 +44,7 @@ function placePass(p) {
   if (pl.onlyBike && !pl.cand.has(p.id)) return false;
   if (pl.onlyGast && !pl.gast.has(p.id)) return false;
   if (pl.district && p.district !== pl.district) return false;
+  if (pl.nearby && pl.pos && distKm(pl.pos, p) > NEAR_KM) return false;
   const s = norm(pl.q);
   if (s && !s.split(/\s+/).every(w => p.hay.includes(w))) return false;
   return true;
@@ -67,6 +69,7 @@ async function viewPlaces() {
     <div class="pbar">
       <div class="seg" role="tablist"><button data-v="kaart">Kaart</button><button data-v="lijst">Lijst</button></div>
       <div class="chips" id="lchips">${LISTS.map(l => `<button class="chip" data-l="${l[0]}" aria-pressed="false">${l[1]}</button>`).join("")}
+        <button class="chip" id="nearby" type="button" aria-pressed="false">📍 Nu in de buurt</button>
         <button class="chip" data-x="fav" aria-pressed="false">★ Lijstje</button>
         <button class="chip" data-x="onlyBike" aria-pressed="false">🚲 Fietslijst</button>
         <button class="chip chip-gast" data-x="onlyGast" aria-pressed="false">gast</button>
@@ -123,6 +126,7 @@ function bindPlaces() {
   $("dist").value = pl.district; $("dist").onchange = e => { pl.district = e.target.value; refreshPlaces(); };
   $("near").onclick = () => { if (pl.sortNear) { pl.sortNear = false; refreshPlaces(); } else locate(true); };
   $("locate").onclick = () => locate(false);
+  $("nearby").onclick = () => { if (pl.nearby) { pl.nearby = false; refreshPlaces(true); } else { pl.nearby = true; locate(true); } };
   $("gastimp").onclick = openMdImport;
   $("gastshare").onclick = shareMd;
   $("candclear").onclick = () => {
@@ -153,7 +157,8 @@ function locate(forSort) {
     }
     if (forSort) pl.sortNear = true;
     refreshPlaces();
-  }, () => { alert("Locatie niet beschikbaar. Zet de locatie van je gsm aan en geef toestemming."); }, {enableHighAccuracy: true, timeout: 10000});
+    if (pl.nearby && pl.map) pl.map.setView([pl.pos.lat, pl.pos.lng], 15);
+  }, () => { pl.nearby = false; refreshPlaces(); alert("Locatie niet beschikbaar. Zet de locatie van je gsm aan en geef toestemming."); }, {enableHighAccuracy: true, timeout: 10000});
 }
 
 function toggleFav(id) { pl.favs.has(id) ? pl.favs.delete(id) : pl.favs.add(id); savePl(); }
@@ -172,6 +177,7 @@ function refreshPlaces(fit) {
   document.querySelectorAll("#lchips [data-x]").forEach(b => b.setAttribute("aria-pressed", !!pl[b.dataset.x]));
   document.querySelectorAll("#cchips [data-c]").forEach(b => b.setAttribute("aria-pressed", b.dataset.c === pl.cat));
   $("near").setAttribute("aria-pressed", pl.sortNear);
+  $("nearby").setAttribute("aria-pressed", pl.nearby);
   $("gastclear").hidden = !pl.gast.size;
   $("candclear").hidden = !pl.cand.size && !pl.bike.length;
   $("cchips").hidden = pl.list !== "bcn";

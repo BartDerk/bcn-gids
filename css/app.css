@@ -247,3 +247,11 @@ body.full{padding:0;overflow:hidden}
 .pdesc{margin-top:3px;font-size:.85rem;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .item.hasph{grid-template-columns:80px 1fr auto}
 .item.hasph .tthumb{width:80px;height:80px}
+.scanrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-top:6px}
+.scanmsg{font-size:.8rem;color:var(--muted)}
+.scanres{margin-top:8px;padding:10px 12px;border:1.5px solid var(--accent);border-radius:12px;background:var(--surface)}
+.scanres ul{margin:4px 0 0;gap:4px}
+.scanres li{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.scanres li span{flex:1;min-width:0;overflow-wrap:anywhere}
+.scanres a.chip{display:inline-flex;align-items:center;text-decoration:none}
+.scanrest{margin:8px 0 0;color:var(--muted);font-size:.85rem}

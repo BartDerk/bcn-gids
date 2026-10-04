@@ -99,3 +99,9 @@ Met **Ongedaan** haal je de laatste stop weg, met **Wissen** de hele route, met 
 Je route wordt alleen op je eigen toestel bewaard. Ook de knop 🚲 *Fietsroute* in het kaartje van "Te bezoeken" voegt een stop toe.
 
 **Lijstje en route zijn gescheiden:** met 🚲 *Voor fietsroute* in het kaartje van *Te bezoeken* (of **Markeren** op de fietskaart) zet je een plaats op je fietslijstje. Op de fietskaart zijn dat blauwe bollen. Daaruit kies je de stops van de route. **Wissen** wist alleen de route, je blauwe bollen blijven.
+
+## Onderweg
+
+- **📍 Nu in de buurt** (Te bezoeken): vraagt je locatie en toont alleen plaatsen binnen 1 km, dichtstbij eerst (`NEAR_KM` in `js/places.js`).
+- **🔊 Catalaans / 🔊 Español** in het groot-scherm van zinnen en tapas: de stem van de gsm leest voor (offline). Heeft het toestel geen Catalaanse stem, dan leest de Spaanse stem het.
+- **📷 Menu scannen (proef)** bij Tapas: foto van de kaart, tekst wordt herkend met Tesseract.js (wordt van internet geladen, werkt dus niet offline) en de tapa-lijst filtert op de herkende gerechten. Regels die niet in de lijst staan komen onder "Niet in de lijst" met *Toon* en *Vertaal* (Google Vertalen).

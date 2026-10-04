@@ -37,6 +37,8 @@ function openShow(ctx) {
   $("sPhoto").hidden = !ctx.photo; $("sPhoto").src = ctx.photo ? ctx.photo.file : "";
   $("sCredit").hidden = !ctx.photo; $("sCredit").textContent = ctx.photo ? "Foto: " + ctx.photo.credit : "";
   $("sFav").hidden = !ctx.fav;
+  const can = "speechSynthesis" in window && ctx.say !== false;
+  $("sSayCa").hidden = !can; $("sSayEs").hidden = !can;
   updFav();
   $("show").hidden = false;
   $("sClose").focus();
@@ -44,7 +46,20 @@ function openShow(ctx) {
 function updFav() {
   if (showCtx && showCtx.fav) $("sFav").textContent = showCtx.fav.has() ? "★ Van mijn lijstje halen" : "☆ Op mijn lijstje";
 }
+/* uitspraak met de stem van de gsm (werkt offline); geen Catalaanse stem: dan de Spaanse */
+function say(text, lang) {
+  if (!("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text), vs = speechSynthesis.getVoices();
+  const v = vs.find(x => x.lang.replace("_", "-").toLowerCase().startsWith(lang.slice(0, 2)));
+  u.lang = v ? v.lang : "es-ES"; if (v) u.voice = v;
+  u.rate = .85;
+  speechSynthesis.speak(u);
+}
+$("sSayCa").addEventListener("click", () => say($("sBig").textContent, "ca"));
+$("sSayEs").addEventListener("click", () => say($("sEs").textContent, "es"));
 function closeShow() {
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
   $("show").hidden = true;
   const c = showCtx; showCtx = null;
   if (c && c.onClose) c.onClose();
@@ -80,10 +95,39 @@ function viewSoon(id) {
     <div class="soonbox">Dit onderdeel wordt in de volgende stap gebouwd.</div>`;
 }
 
+/* menu scannen: OCR laden en gerechten zoeken */
+let ocrPromise = null;
+function loadOcr() {
+  if (window.Tesseract) return Promise.resolve();
+  return ocrPromise || (ocrPromise = new Promise((ok, no) => {
+    const s = document.createElement("script"); s.src = "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js";
+    s.onload = ok; s.onerror = () => { ocrPromise = null; no(new Error("OCR niet te laden")); }; document.head.appendChild(s);
+  }));
+}
+const STOP = new Set(["amb", "con", "de", "del", "la", "las", "los", "el", "al", "a", "en", "i", "y", "d", "l"]);
+const words = s => norm(s).replace(/[^a-z0-9 ]+/g, " ").split(/\s+/).filter(w => w.length > 2 && !STOP.has(w));
+/* een gerecht telt als gevonden als de hele naam (CA of ES) in een regel staat, of alle kernwoorden van die naam (bij 2+ woorden) in dezelfde regel */
+function matchMenu(text, D) {
+  const lines = text.split(/\n+/).map(l => l.trim()).filter(l => l.length > 2);
+  const ids = new Set(), covered = new Set();
+  lines.forEach((l, i) => {
+    const n = " " + norm(l).replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ") + " ", nw = new Set(words(l));
+    for (const d of D) {
+      for (const name of [d.ca, d.es]) {
+        const full = " " + norm(name).replace(/\(.*?\)/g, "").replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim() + " ";
+        const kw = words(name.replace(/\(.*?\)/g, ""));
+        if (n.includes(full) || (kw.length >= 2 && kw.every(w => nw.has(w)))) { ids.add(d.id); covered.add(i); }
+      }
+    }
+  });
+  const rest = lines.filter((l, i) => !covered.has(i) && /[a-zA-ZÀ-ÿ]{4,}/.test(l) && !/^[\d€.,\s-]+$/.test(l)).slice(0, 25);
+  return {ids, rest};
+}
+
 /* tapas */
 const SYM = {f: "−", m: "+", c: "*", x: "++"}, ORDER = "fmcx";
 const KIND = {f: "vis", m: "vlees", c: "kaas", x: "gefrituurd"};
-const tapasState = {q: "", active: new Set()};
+const tapasState = {q: "", active: new Set(), menu: null, rest: []};
 let favs = new Set(store.get("tapesFav", []));
 const saveFavs = () => store.set("tapesFav", [...favs]);
 
@@ -102,7 +146,7 @@ function tagHTML(d) {
 const CLASH = {onlyFish: ["noFish", "onlyMeat", "veg"], onlyMeat: ["noMeat", "onlyFish", "veg"],
   noFish: ["onlyFish"], noMeat: ["onlyMeat"], veg: ["onlyFish", "onlyMeat"]};
 const FILTERS = [["noFish", "Geen vis"], ["noMeat", "Geen vlees"], ["veg", "Vegetarisch"], ["noFried", "Niet gefrituurd"],
-  ["noCheese", "Geen kaas"], ["onlyFish", "Alleen vis"], ["onlyMeat", "Alleen vlees"], ["fav", "★ Mijn lijstje"]];
+  ["noCheese", "Geen kaas"], ["onlyFish", "Alleen vis"], ["onlyMeat", "Alleen vlees"], ["fav", "★ Mijn lijstje"], ["menu", "📋 Van de kaart"]];
 
 async function viewTapas() {
   const D = prepTapas(await load("tapas"));
@@ -116,9 +160,12 @@ async function viewTapas() {
         <input id="q" type="search" placeholder="bv. pop, gambas, kroket…" autocomplete="off" enterkeyhint="search">
         <button id="clear" type="button" aria-label="Zoekveld leegmaken" hidden>×</button></label>
       <div class="chips" role="group" aria-label="Filters">
-        ${FILTERS.map(f => `<button class="chip" data-f="${f[0]}" aria-pressed="false">${f[1]}</button>`).join("")}
+        ${FILTERS.map(f => `<button class="chip" data-f="${f[0]}" aria-pressed="false"${f[0] === "menu" ? " hidden" : ""}>${f[1]}</button>`).join("")}
       </div>
+      <div class="scanrow"><button class="chip" id="scanbtn" type="button">📷 Menu scannen (proef)</button>
+        <input id="scanfile" type="file" accept="image/*" hidden><span id="scanmsg" class="scanmsg" role="status"></span></div>
     </div>
+    <div id="scanres" class="scanres" hidden></div>
     <div class="legend">
       <span><b class="t f">−</b> vis / waterdieren</span><span><b class="t m">+</b> vlees</span>
       <span><b class="t c">*</b> kaas</span><span><b class="t x">++</b> gefrituurd</span>
@@ -142,6 +189,7 @@ async function viewTapas() {
     if (a.has("onlyFish") && !d.has("f")) return false;
     if (a.has("onlyMeat") && !d.has("m")) return false;
     if (a.has("fav") && !favs.has(d.ca)) return false;
+    if (a.has("menu") && !(st.menu && st.menu.has(d.id))) return false;
     return true;
   }
   function render() {
@@ -154,8 +202,42 @@ async function viewTapas() {
     $("count").textContent = `${rows.length} van ${D.length} tapes`;
     $("empty").hidden = rows.length > 0;
     $("clear").hidden = !q.value;
-    document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", st.active.has(x.dataset.f)));
+    document.querySelectorAll(".chip[data-f]").forEach(x => x.setAttribute("aria-pressed", st.active.has(x.dataset.f)));
+    renderScan();
   }
+  /* menu scannen: tekst uit een foto halen (Tesseract, alleen met internet) en de gerechten uit de lijst terugvinden */
+  function renderScan() {
+    const box = $("scanres"), chip = document.querySelector('.chip[data-f="menu"]');
+    chip.hidden = !st.menu;
+    if (!st.menu) { box.hidden = true; return; }
+    box.hidden = false;
+    box.innerHTML = `<b>${st.menu.size} gerechten van de kaart herkend.</b> <button class="chip" id="scanclear" type="button">✕ Wis kaart</button>` +
+      (st.rest.length ? `<p class="scanrest">Niet in de lijst:</p><ul>${st.rest.map((l, i) => `<li><span>${esc(l)}</span>
+        <button type="button" class="chip" data-rest="${i}">Toon</button>
+        <a class="chip" href="https://translate.google.com/?sl=ca&tl=nl&op=translate&text=${encodeURIComponent(l)}" target="_blank" rel="noopener">Vertaal</a></li>`).join("")}</ul>` : "");
+    $("scanclear").onclick = () => { st.menu = null; st.rest = []; st.active.delete("menu"); render(); };
+  }
+  async function scanMenu(file) {
+    const msg = $("scanmsg");
+    try {
+      msg.textContent = "Bezig met laden…";
+      await loadOcr();
+      const w = await Tesseract.createWorker(["spa", "cat"], 1, {logger: m => { if (m.status === "recognizing text") msg.textContent = "Tekst lezen… " + Math.round(m.progress * 100) + "%"; else msg.textContent = "Taaldata laden…"; }});
+      const res = await w.recognize(file); await w.terminate();
+      const r = matchMenu(res.data.text, D);
+      st.menu = r.ids; st.rest = r.rest;
+      st.active.add("menu"); msg.textContent = "";
+      render();
+    } catch (e) { msg.textContent = "Scannen lukt niet. Heb je internet? (" + (e && e.message || e) + ")"; }
+  }
+  window.__scanMenuTest = text => { const r = matchMenu(text, D); st.menu = r.ids; st.rest = r.rest; st.active.add("menu"); render(); return r; };
+  $("scanbtn").onclick = () => $("scanfile").click();
+  $("scanfile").onchange = e => { const f = e.target.files[0]; if (f) scanMenu(f); e.target.value = ""; };
+  $("scanres").addEventListener("click", e => {
+    const b = e.target.closest("[data-rest]"); if (!b) return;
+    const l = st.rest[+b.dataset.rest];
+    openShow({hint: "Toon dit aan de ober", big: l, es: "", nl: "Gerecht van de kaart (niet in de lijst)", say: false});
+  });
   q.addEventListener("input", render);
   $("clear").addEventListener("click", () => { q.value = ""; render(); q.focus(); });
   document.querySelectorAll(".chip").forEach(c => c.addEventListener("click", () => {
