@@ -175,8 +175,8 @@ async function viewTapas() {
 }
 
 /* vertalingen */
-const GROUPS = [["all", "Alles"], ["groet", "Groeten"], ["bar", "Bar"], ["eten", "Eten"], ["weg", "Stad"],
-  ["museum", "Museum"], ["fiets", "Fiets"], ["feest", "Receptie"], ["nood", "Nood"]];
+const GROUPS = [["all", "Alles"], ["groet", "Groeten"], ["feest", "Receptie"], ["bar", "Bar"], ["eten", "Eten"], ["weg", "Stad"],
+  ["museum", "Museum"], ["fiets", "Fiets"], ["nood", "Nood"]];
 const phraseState = {q: "", g: "all"};
 
 async function viewZinnen() {
