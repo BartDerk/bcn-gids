@@ -196,8 +196,8 @@ function refreshPlaces(fit) {
     else r.sort((a, b) => a.name.localeCompare(b.name, "nl"));
     $("pcount").textContent = `${r.length} van ${pl.all.length} plaatsen`;
     $("pul").innerHTML = r.map(p => `<li><div class="item prow${pl.favs.has(p.id) ? " fav" : ""}${pl.gast.has(p.id) ? " gast" : ""}">
-      <button class="pmain" data-id="${p.id}">${p.list === "bcn" && p.photo ? `<img class="pthumb" src="${esc(p.photo)}" alt="" loading="lazy" width="56" height="56">` : `<span class="dot" style="background:${CATS[p.cat][1]}">${svg(p.cat, 16)}</span>`}
-        <span class="ptxt"><b>${esc(p.name)}</b><small>${pl.gast.has(p.id) ? '<em class="gasttag">gast</em> · ' : ""}${pl.bike.includes(p.id) ? "🚲 stop " + (pl.bike.indexOf(p.id) + 1) + " · " : pl.cand.has(p.id) ? "🚲 voor fietsroute · " : ""}${esc(CATS[p.cat][0])}${p.district ? " · " + esc(p.district) : ""}${pl.sortNear && pl.pos ? " · " + fmtDist(p._d) : ""}</small></span></button>
+      <button class="pmain" data-id="${p.id}">${p.list === "bcn" && p.photo ? `<img class="pthumb" src="${esc(p.photo)}" alt="" loading="lazy" width="88" height="88">` : `<span class="dot" style="background:${CATS[p.cat][1]}">${svg(p.cat, 16)}</span>`}
+        <span class="ptxt"><b>${esc(p.name)}</b><small>${pl.gast.has(p.id) ? '<em class="gasttag">gast</em> · ' : ""}${pl.bike.includes(p.id) ? "🚲 stop " + (pl.bike.indexOf(p.id) + 1) + " · " : pl.cand.has(p.id) ? "🚲 voor fietsroute · " : ""}${esc(CATS[p.cat][0])}${p.district ? " · " + esc(p.district) : ""}${pl.sortNear && pl.pos ? " · " + fmtDist(p._d) : ""}</small>${p.list === "bcn" && p.desc ? `<span class="pdesc">${esc(p.desc)}</span>` : ""}</span></button>
       ${p.list === "bcn" ? `<button class="pbike${pl.cand.has(p.id) ? " on" : ""}" data-bike="${p.id}" aria-pressed="${pl.cand.has(p.id)}" aria-label="${pl.cand.has(p.id) ? "Van fietslijstje halen" : "Wil ik langs fietsen"}">🚲</button>` : ""}
       <button class="pstar" data-star="${p.id}" aria-label="${pl.favs.has(p.id) ? "Van lijstje halen" : "Op lijstje zetten"}">★</button></div></li>`).join("");
   }
