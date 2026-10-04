@@ -104,6 +104,8 @@ function refreshBike(fit) {
   $("bgm").innerHTML = (urls.length === 0 ? `<span class="bhint">Kies minstens 2 stops om in Google Maps te openen.</span>`
     : urls.map(u => `<a class="btn primary" href="${u.url}" target="_blank" rel="noopener">${urls.length === 1 ? "Open in Google Maps" : `Deel ${urls.indexOf(u) + 1} (stops ${u.from}–${u.to})`}</a>`).join(""))
     + (pending.length ? `<button class="btn" id="badall" type="button">＋ ${pending.length} blauwe in route</button>` : "");
+  if (n) $("bgm").insertAdjacentHTML("beforeend", `<button class="btn" id="bfloat" type="button">🪟 Zwevend venster</button>`);
+  if ($("bfloat")) $("bfloat").onclick = startFloat;
   if ($("badall")) $("badall").onclick = () => { pending.forEach(id => pl.bike.push(id)); savePl(); refreshBike(true); };
   if (fit && n) bk.map.fitBounds(L.latLngBounds(line).pad(0.25));
   setTimeout(() => { if (bk.map) bk.map.invalidateSize(); }, 40);
@@ -163,4 +165,78 @@ function leaveBike() {
   if (bk.map) { bk.map.remove(); bk.map = null; }
   bk.me = null;
   bk.sel = null; bk.mode = "";
+}
+
+/* ---------- zwevend venster: de volgende stop (foto + naam) in een beeld-in-beeld-videovenster boven Google Maps ----------
+   De app tekent de stop op een canvas, maakt daar een videostroom van en zet die in Picture-in-Picture.
+   De knoppen "vorige/volgende" van dat venster (mediabediening) schuiven door naar de vorige of volgende stop van je route. */
+const fl = {canvas: null, video: null, idx: 0, imgs: {}, timer: null, on: false};
+const FL_W = 640, FL_H = 360;
+function flStops() { const s = stopsOf(); if (bk.loop && s.length >= 2) return s.concat([Object.assign({}, s[0], {back: true})]); return s; }
+function flImg(p) {
+  if (!p.photo) return null;
+  if (!fl.imgs[p.photo]) { const im = new Image(); im.onload = () => { if (fl.on) flDraw(); }; im.src = p.photo; fl.imgs[p.photo] = im; }
+  const im = fl.imgs[p.photo]; return im.complete && im.naturalWidth ? im : null;
+}
+function flWrap(ctx, text, maxW, maxLines) {
+  const words = text.split(" "), lines = []; let cur = "";
+  for (const w of words) { const t = cur ? cur + " " + w : w; if (ctx.measureText(t).width > maxW && cur) { lines.push(cur); cur = w; } else cur = t; }
+  if (cur) lines.push(cur);
+  if (lines.length > maxLines) { lines.length = maxLines; lines[maxLines - 1] = lines[maxLines - 1].replace(/.{0,2}$/, "…"); }
+  return lines;
+}
+function flDraw() {
+  const stops = flStops(); if (!fl.canvas) return;
+  fl.idx = Math.max(0, Math.min(fl.idx, stops.length - 1));
+  const p = stops[fl.idx], c = fl.canvas.getContext("2d");
+  c.fillStyle = p ? (CATS[p.cat] || CATS.overig)[1] : "#111827"; c.fillRect(0, 0, FL_W, FL_H);
+  if (!p) { c.fillStyle = "#fff"; c.font = "bold 36px sans-serif"; c.fillText("Geen stops", 30, 190); return; }
+  const im = flImg(p);
+  if (im) {   // foto: "cover"
+    const r = Math.max(FL_W / im.naturalWidth, FL_H / im.naturalHeight), w = im.naturalWidth * r, h = im.naturalHeight * r;
+    c.drawImage(im, (FL_W - w) / 2, (FL_H - h) / 2, w, h);
+  }
+  const g = c.createLinearGradient(0, FL_H * .38, 0, FL_H); g.addColorStop(0, "rgba(0,0,0,0)"); g.addColorStop(1, "rgba(0,0,0,.85)");
+  c.fillStyle = g; c.fillRect(0, FL_H * .38, FL_W, FL_H * .62);
+  c.fillStyle = "#1d4ed8"; c.beginPath(); c.arc(54, 54, 40, 0, 7); c.fill();
+  c.fillStyle = "#fff"; c.textAlign = "center"; c.textBaseline = "middle"; c.font = "bold 44px sans-serif";
+  c.fillText(p.back ? "↺" : String(fl.idx + 1), 54, 56);
+  c.textAlign = "left"; c.textBaseline = "alphabetic";
+  c.font = "bold 46px sans-serif"; const lines = flWrap(c, p.name, FL_W - 50, 2);
+  const y0 = FL_H - 56 - (lines.length - 1) * 52;
+  c.shadowColor = "#000"; c.shadowBlur = 6; c.fillStyle = "#fff";
+  lines.forEach((l, i) => c.fillText(l, 24, y0 + i * 52));
+  c.font = "26px sans-serif"; c.fillStyle = "#e5e7eb";
+  c.fillText((p.back ? "Terug naar start · " : "") + `stop ${Math.min(fl.idx + 1, flStops().length)} van ${flStops().length}` + (p.district ? " · " + p.district : ""), 24, FL_H - 16);
+  c.shadowBlur = 0;
+  c.fillStyle = (Date.now() / 1000 | 0) % 2 ? "rgba(255,255,255,.35)" : "rgba(255,255,255,.2)"; c.fillRect(FL_W - 8, FL_H - 8, 4, 4);   // houdt de videostroom levend
+  if ("mediaSession" in navigator) navigator.mediaSession.metadata = new MediaMetadata({title: p.name, artist: `Stop ${fl.idx + 1} van ${flStops().length}`});
+}
+function flStep(d) { fl.idx += d; flDraw(); }
+async function startFloat() {
+  const msg = t => { const el = $("bgm"); const old = el.querySelector(".bhint.fl"); if (old) old.remove(); el.insertAdjacentHTML("beforeend", `<span class="bhint fl">${t}</span>`); };
+  if (!document.pictureInPictureEnabled || !HTMLCanvasElement.prototype.captureStream) { msg("Zwevend venster wordt door deze browser niet ondersteund."); return; }
+  try {
+    if (document.pictureInPictureElement) { await document.exitPictureInPicture(); return; }
+    if (!fl.canvas) { fl.canvas = document.createElement("canvas"); fl.canvas.width = FL_W; fl.canvas.height = FL_H; }
+    if (!fl.video) {
+      const v = fl.video = document.createElement("video");
+      v.muted = true; v.playsInline = true; v.setAttribute("playsinline", ""); v.style.cssText = "position:fixed;left:-9999px;width:2px;height:2px";
+      document.body.appendChild(v);
+      v.addEventListener("leavepictureinpicture", () => { fl.on = false; clearInterval(fl.timer); });
+    }
+    if (fl.idx >= flStops().length) fl.idx = 0;
+    flStops().forEach(flImg);
+    flDraw();
+    fl.video.srcObject = fl.canvas.captureStream(5);
+    await fl.video.play();
+    await fl.video.requestPictureInPicture();
+    fl.on = true; clearInterval(fl.timer); fl.timer = setInterval(flDraw, 1000);
+    if ("mediaSession" in navigator) {
+      const ms = navigator.mediaSession;
+      for (const [a, f] of [["previoustrack", () => flStep(-1)], ["nexttrack", () => flStep(1)], ["play", () => fl.video.play()], ["pause", () => fl.video.play()]]) { try { ms.setActionHandler(a, f); } catch (e) {} }
+      ms.playbackState = "playing";
+    }
+    msg("Zwevend venster staat aan. Ga naar Google Maps; met de knoppen ◀ ▶ in het venster wissel je van stop.");
+  } catch (e) { msg("Zwevend venster lukt niet: " + (e && e.message || e)); }
 }
