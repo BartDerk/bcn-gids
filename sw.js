@@ -1,5 +1,5 @@
 // Verhoog VERSION bij elke nieuwe release: dan verschijnt "Nieuwe versie beschikbaar".
-const VERSION = "v22";
+const VERSION = "v23";
 const CACHE = "bcn-" + VERSION;
 const TILES = "bcn-tiles";
 const MAX_TILES = 2000;
@@ -31,7 +31,29 @@ self.addEventListener("activate", e => {
   ).then(() => self.clients.claim()));
 });
 
-self.addEventListener("message", e => { if (e.data === "SKIP_WAITING") self.skipWaiting(); });
+self.addEventListener("message", e => {
+  if (e.data === "SKIP_WAITING") self.skipWaiting();
+  else if (e.data && e.data.type === "ROUTE_NOTIFY") e.waitUntil(routeNote(e.data.stops, 0, false));
+});
+
+// melding met foto en knoppen Vorige/Volgende voor je fietsroute; de knoppen werken zonder de app te openen
+function routeNote(stops, idx, quiet) {
+  idx = Math.max(0, Math.min(idx, stops.length - 1));
+  const p = stops[idx], last = idx === stops.length - 1, actions = [];
+  if (idx > 0) actions.push({action: "prev", title: "◀ Vorige"});
+  if (!last) actions.push({action: "next", title: "Volgende ▶"});
+  return self.registration.showNotification((p.back ? "↺" : idx + 1) + " · " + p.name, {
+    body: (p.back ? "Terug naar start · " : "") + "stop " + (idx + 1) + " van " + stops.length + (p.district ? " · " + p.district : "") + (last ? " · laatste stop" : ""),
+    image: p.photo || undefined, icon: "icons/icon-192.png", badge: "icons/icon-192.png",
+    tag: "bcn-route", requireInteraction: true, silent: !!quiet, actions, data: {stops, idx}
+  });
+}
+self.addEventListener("notificationclick", e => {
+  const d = e.notification.data || {};
+  if (e.action === "next" || e.action === "prev") { e.waitUntil(routeNote(d.stops, d.idx + (e.action === "next" ? 1 : -1), true)); return; }
+  e.notification.close();
+  e.waitUntil(self.clients.matchAll({type: "window"}).then(cs => cs.length ? cs[0].focus() : self.clients.openWindow("./#/fietsen")));
+});
 
 async function trimTiles(cache) {
   const keys = await cache.keys();

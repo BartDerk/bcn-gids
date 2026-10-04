@@ -105,7 +105,9 @@ function refreshBike(fit) {
     : urls.map(u => `<a class="btn primary" href="${u.url}" target="_blank" rel="noopener">${urls.length === 1 ? "Open in Google Maps" : `Deel ${urls.indexOf(u) + 1} (stops ${u.from}–${u.to})`}</a>`).join(""))
     + (pending.length ? `<button class="btn" id="badall" type="button">＋ ${pending.length} blauwe in route</button>` : "");
   if (n) $("bgm").insertAdjacentHTML("beforeend", `<button class="btn" id="bfloat" type="button">🪟 Zwevend venster</button>`);
+  if (n) $("bgm").insertAdjacentHTML("beforeend", `<button class="btn" id="bnote" type="button">🔔 Melding</button>`);
   if ($("bfloat")) $("bfloat").onclick = startFloat;
+  if ($("bnote")) $("bnote").onclick = startNote;
   if ($("badall")) $("badall").onclick = () => { pending.forEach(id => pl.bike.push(id)); savePl(); refreshBike(true); };
   if (fit && n) bk.map.fitBounds(L.latLngBounds(line).pad(0.25));
   setTimeout(() => { if (bk.map) bk.map.invalidateSize(); }, 40);
@@ -239,4 +241,16 @@ async function startFloat() {
     }
     msg("Zwevend venster staat aan. Ga naar Google Maps; met de knoppen ◀ ▶ in het venster wissel je van stop.");
   } catch (e) { msg("Zwevend venster lukt niet: " + (e && e.message || e)); }
+}
+/* melding met foto en knoppen Vorige/Volgende (de service worker in sw.js toont en wisselt hem) */
+async function startNote() {
+  const msg = t => { const el = $("bgm"); const old = el.querySelector(".bhint.fl"); if (old) old.remove(); el.insertAdjacentHTML("beforeend", `<span class="bhint fl">${t}</span>`); };
+  try {
+    if (!("Notification" in window) || !navigator.serviceWorker) { msg("Meldingen worden door deze browser niet ondersteund."); return; }
+    if (await Notification.requestPermission() !== "granted") { msg("Meldingen staan uit. Zet ze aan bij de site-instellingen van deze app."); return; }
+    const reg = await navigator.serviceWorker.ready;
+    const stops = flStops().map(p => ({name: p.name, district: p.district || "", back: !!p.back, photo: p.photo ? new URL(p.photo, location.href).href : null}));
+    reg.active.postMessage({type: "ROUTE_NOTIFY", stops});
+    msg("Melding staat aan. Trek je scherm omlaag en gebruik Vorige/Volgende.");
+  } catch (e) { msg("Melding lukt niet: " + (e && e.message || e)); }
 }
