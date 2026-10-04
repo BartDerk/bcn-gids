@@ -74,5 +74,14 @@
 {"g":"nood","ca":"Truqui a la policia","es":"Llame a la policía","nl":"Bel de politie"},
 {"g":"nood","ca":"M'han robat","es":"Me han robado","nl":"Ik ben bestolen"},
 {"g":"nood","ca":"He perdut la cartera / el passaport","es":"He perdido la cartera / el pasaporte","nl":"Ik ben mijn portemonnee / paspoort kwijt"},
-{"g":"nood","ca":"Noodnummer: 112","es":"Número de emergencias: 112","nl":"Alarmnummer in heel Spanje: 112"}
+{"g":"nood","ca":"Noodnummer: 112","es":"Número de emergencias: 112","nl":"Alarmnummer in heel Spanje: 112"},
+{"g":"feest","ca":"Molt de gust","es":"Mucho gusto","nl":"Aangenaam (kennismaken)"},
+{"g":"feest","ca":"Felicitats pel doctorat del vostre fill!","es":"¡Felicidades por el doctorado de vuestro hijo!","nl":"Gefeliciteerd met het doctoraat van jullie zoon!"},
+{"g":"feest","ca":"Felicitats pel doctorat de la vostra filla!","es":"¡Felicidades por el doctorado de vuestra hija!","nl":"Gefeliciteerd met het doctoraat van jullie dochter!"},
+{"g":"feest","ca":"Heu de estar molt orgullosos","es":"Debéis de estar muy orgullosos","nl":"Jullie moeten erg trots zijn"},
+{"g":"feest","ca":"Ha fet un treball magnífic","es":"Ha hecho un trabajo magnífico","nl":"Hij/zij heeft schitterend werk geleverd"},
+{"g":"feest","ca":"Soc company de feina del vostre fill","es":"Soy compañero de trabajo de vuestro hijo","nl":"Ik ben collega van jullie zoon"},
+{"g":"feest","ca":"Una recepció molt agradable","es":"Una recepción muy agradable","nl":"Een heel fijne receptie"},
+{"g":"feest","ca":"Salut!","es":"¡Salud!","nl":"Proost!"},
+{"g":"feest","ca":"Moltes gràcies per la invitació","es":"Muchas gracias por la invitación","nl":"Hartelijk dank voor de uitnodiging"}
 ]

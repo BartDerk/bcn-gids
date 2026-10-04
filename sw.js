@@ -1,5 +1,5 @@
 // Verhoog VERSION bij elke nieuwe release: dan verschijnt "Nieuwe versie beschikbaar".
-const VERSION = "v15";
+const VERSION = "v17";
 const CACHE = "bcn-" + VERSION;
 const TILES = "bcn-tiles";
 const MAX_TILES = 2000;
@@ -8,7 +8,7 @@ const SHELL = [
   "./", "index.html", "manifest.webmanifest",
   "css/app.css", "js/app.js", "js/places.js", "js/bike.js", "js/gastcode.js",
   "lib/leaflet/leaflet.js", "lib/leaflet/leaflet.css", "lib/leaflet/images/marker-icon.png", "lib/leaflet/images/layers.png",
-  "data/tapas.json", "data/phrases.json", "data/places.json",
+  "data/tapas.json", "data/tapas-photos.json", "data/phrases.json", "data/places.json",
   "icons/icon-192.png", "icons/icon-512.png", "icons/maskable-512.png"
 ];
 
@@ -19,6 +19,8 @@ self.addEventListener("install", e => {
     try {
       const places = await (await fetch("data/places.json", {cache: "no-store"})).json();
       await Promise.all(places.filter(p => p.photo).map(p => c.add(p.photo).catch(() => {})));
+      const tp = await (await fetch("data/tapas-photos.json", {cache: "no-store"})).json();
+      await Promise.all(Object.values(tp).map(p => c.add(p.file).catch(() => {})));
     } catch (err) {}
   }));
 });

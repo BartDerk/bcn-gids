@@ -34,9 +34,9 @@ foreach ($file in $lists.Keys) {
     if (-not $coords.ContainsKey($name)) { $noCoords += $name; continue }
     $c = $coords[$name]
     $cur = $curated[$name]
-    $cat = $list; $desc = $null
+    $cat = $list; $desc = $null; $isNew = $false
     if ($list -eq 'bcn') { $cat = 'overig' }
-    if ($cur) { if ($cur.cat) { $cat = $cur.cat }; $desc = $cur.desc } elseif ($list -eq 'bcn') { $noCurated += $name }
+    if ($cur) { if ($cur.cat) { $cat = $cur.cat }; $desc = $cur.desc; if ($cur.new) { $isNew = $true } } elseif ($list -eq 'bcn') { $noCurated += $name }
     $id = Slug $name; $n = 2; $base = $id
     while ($ids.ContainsKey($id)) { $id = "$base-$n"; $n++ }
     $ids[$id] = $true
@@ -48,7 +48,7 @@ foreach ($file in $lists.Keys) {
       id = $id; name = $name; list = $list; cat = $cat
       lat = $c.lat; lng = $c.lng; address = $c.address; district = $c.district
       desc = $desc; maps = $row.'URL'
-      photo = $photo; credit = $credit
+      photo = $photo; credit = $credit; new = $isNew
     }
   }
 }

@@ -472,5 +472,23 @@
                   "lng":  2.1738617,
                   "address":  "Carrer Comtal 27, Ciutat Vella",
                   "district":  "Ciutat Vella"
-              }
+              },
+    "Casa Xina (Casa Ferran Guardiola)":  {
+                                              "lat":  41.3836,
+                                              "lng":  2.1553,
+                                              "address":  "Carrer de Muntaner 54, Eixample",
+                                              "district":  "Eixample"
+                                          },
+    "Carrer de Vilamarí, 80":  {
+                                   "lat":  41.3791127,
+                                   "lng":  2.149356,
+                                   "address":  "Carrer de Vilamarí 80, Eixample",
+                                   "district":  "Eixample"
+                               },
+    "Carrer del Consell de Cent":  {
+                                       "lat":  41.389,
+                                       "lng":  2.166,
+                                       "address":  "Carrer del Consell de Cent, Eixample",
+                                       "district":  "Eixample"
+                                   }
 }

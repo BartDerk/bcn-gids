@@ -1,5 +1,50 @@
 [
     {
+        "id":  "casa-xina-casa-ferran-guardiola",
+        "name":  "Casa Xina (Casa Ferran Guardiola)",
+        "list":  "bcn",
+        "cat":  "gebouw",
+        "lat":  41.3836,
+        "lng":  2.1553,
+        "address":  "Carrer de Muntaner 54, Eixample",
+        "district":  "Eixample",
+        "desc":  "Eclectisch pand uit 1929 met Chinese invloeden: pagodedaken, draken en lantaarns. Ook bekend als Casa Xinesa. Vooral de gevel is de moeite.",
+        "maps":  "https://www.google.com/maps/place/Casa+Xina+(Casa+Ferran+Guardiola)/data=!4m2!3m1!1s0x12a4a28c024effe5:0x149a6bb17881438a",
+        "photo":  null,
+        "credit":  null,
+        "new":  true
+    },
+    {
+        "id":  "carrer-de-vilamari-80",
+        "name":  "Carrer de Vilamarí, 80",
+        "list":  "bcn",
+        "cat":  "straat",
+        "lat":  41.3791127,
+        "lng":  2.149356,
+        "address":  "Carrer de Vilamarí 80, Eixample",
+        "district":  "Eixample",
+        "desc":  "Beginpunt voor een wandeling of rit over Consell de Cent, de autoluwe groene straat door de Eixample.",
+        "maps":  "https://www.google.com/maps/place/Carrer+de+Vilamar%C3%AD,+80/data=!4m2!3m1!1s0x12a4a27e7ccd3a0f:0x7545ae93aa379c7b",
+        "photo":  null,
+        "credit":  null,
+        "new":  true
+    },
+    {
+        "id":  "carrer-del-consell-de-cent",
+        "name":  "Carrer del Consell de Cent",
+        "list":  "bcn",
+        "cat":  "straat",
+        "lat":  41.389,
+        "lng":  2.166,
+        "address":  "Carrer del Consell de Cent, Eixample",
+        "district":  "Eixample",
+        "desc":  "De hele straat is een bezoek waard: een van de mooiste straten van de Eixample, door de stad omgevormd tot autoluwe groene as met bomen, banken en speelplekken. Loop of fiets hem van begin tot eind, langs Modernisme-gevels.",
+        "maps":  "https://www.google.com/maps/place/Carrer+del+Consell+de+Cent/data=!4m2!3m1!1s0x12a4a2ed553e430d:0xbb937ecbe3287033",
+        "photo":  "photos/carrer-del-consell-de-cent.jpg",
+        "credit":  "Cataleirxs, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  true
+    },
+    {
         "id":  "fanals-d-antoni-gaudi",
         "name":  "Fanals d\u0027Antoni Gaudí",
         "list":  "bcn",
@@ -11,7 +56,8 @@
         "desc":  "De lantaarnpalen die Gaudí in 1879 ontwierp voor Plaça Reial, zijn eerste opdracht van de stad. Let op de gevleugelde helmen van Mercurius bovenaan.",
         "maps":  "https://www.google.com/maps/place/Fanals+d\u0027Antoni+Gaud%C3%AD/data=!4m2!3m1!1s0x12a4a3003c89838f:0x38082b3ef32e9bfe",
         "photo":  "photos/fanals-d-antoni-gaudi.jpg",
-        "credit":  "Josep Renalias, CC BY-SA 3.0, Wikimedia Commons"
+        "credit":  "Josep Renalias, CC BY-SA 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "recinte-modernista-de-sant-pau",
@@ -25,7 +71,8 @@
         "desc":  "Voormalig ziekenhuiscomplex van Domènech i Montaner met kleurrijke paviljoenen en tuinen. Werelderfgoed en veel rustiger dan de Sagrada Família.",
         "maps":  "https://www.google.com/maps/place/Recinte+Modernista+de+Sant+Pau/data=!4m2!3m1!1s0x12a4a2cfe0014027:0x1fac5228bd2718f",
         "photo":  "photos/recinte-modernista-de-sant-pau.jpg",
-        "credit":  "Thomas Ledl, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Thomas Ledl, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "parc-de-l-espana-industrial",
@@ -39,7 +86,8 @@
         "desc":  "Park uit de jaren 80 op een oud fabrieksterrein, met een groot meer, een draakvormige glijbaan en moderne beelden. Leuk voor een rustpauze.",
         "maps":  "https://www.google.com/maps/place/Parc+de+l\u0027Espa%C3%B1a+Industrial/data=!4m2!3m1!1s0x12a49881375bf51b:0xf00fae11f5142c0",
         "photo":  "photos/parc-de-l-espana-industrial.jpg",
-        "credit":  "Zarateman, CC0, Wikimedia Commons"
+        "credit":  "Zarateman, CC0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "street-art-museum-bas-museum",
@@ -53,7 +101,8 @@
         "desc":  "Museum gewijd aan street art en urban art, in het oude centrum vlak bij de Rambla.",
         "maps":  "https://www.google.com/maps/place/Street+Art+Museum+-+BAS+MUSEUM/data=!4m2!3m1!1s0x12a4a367715f1b75:0xa952a5ff5bf146c6",
         "photo":  "photos/street-art-museum-bas-museum.jpg",
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "meam-museum",
@@ -67,7 +116,8 @@
         "desc":  "Europees museum voor moderne figuratieve kunst, in het Palau Gomis vlak naast het Museu Picasso.",
         "maps":  "https://www.google.com/maps/place/MEAM+Museum/data=!4m2!3m1!1s0x12a4a2febcbbe2bd:0x7f19313bfa2ee889",
         "photo":  "photos/meam-museum.jpg",
-        "credit":  "Kippelboy, CC BY-SA 3.0, Wikimedia Commons"
+        "credit":  "Kippelboy, CC BY-SA 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "museu-picasso",
@@ -81,7 +131,8 @@
         "desc":  "Vijf middeleeuwse paleizen aan Carrer de Montcada met vooral het vroege werk van Picasso. Boek tickets vooraf om de rij te vermijden.",
         "maps":  "https://www.google.com/maps/place/Museu+Picasso/data=!4m2!3m1!1s0x12a4a2fe99bce26b:0x27011e710700cc63",
         "photo":  "photos/museu-picasso.jpg",
-        "credit":  "Pere López, CC BY-SA 3.0, Wikimedia Commons"
+        "credit":  "Pere López, CC BY-SA 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "jardins-de-ca-n-altimira",
@@ -95,7 +146,8 @@
         "desc":  "Rustige, groene heuveltuin in Sarrià-Sant Gervasi waar weinig toeristen komen.",
         "maps":  "https://www.google.com/maps/place/Jardins+de+ca+n\u0027Altimira/data=!4m2!3m1!1s0x12a49813a8123d39:0x905d9bb4bd512e89",
         "photo":  "photos/jardins-de-ca-n-altimira.jpg",
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "parc-diagonal-mar",
@@ -109,7 +161,8 @@
         "desc":  "Modern park uit 2002 ontworpen door Enric Miralles, met vijvers, kunstmatige heuvels en veel schaduw. Ligt dicht bij de zee.",
         "maps":  "https://www.google.com/maps/place/Parc+Diagonal+Mar/data=!4m2!3m1!1s0x12a4a3452f82a9db:0x13a46f6352b11d08",
         "photo":  "photos/parc-diagonal-mar.jpg",
-        "credit":  "Canaan, CC BY-SA 3.0, Wikimedia Commons"
+        "credit":  "Canaan, CC BY-SA 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "barcelona-bosc-urba",
@@ -123,7 +176,8 @@
         "desc":  "Avonturenpark met klimparcours in de bomen, in het Parc del Fòrum.",
         "maps":  "https://www.google.com/maps/place/Barcelona+Bosc+Urb%C3%A0/data=!4m2!3m1!1s0x12a4a3579d95f05d:0x2d0931646482cbcc",
         "photo":  "photos/barcelona-bosc-urba.jpg",
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "museu-de-ciencies-naturals-de-barcelona",
@@ -137,7 +191,8 @@
         "desc":  "Het Museu Blau, het natuurwetenschappelijk museum in het opvallende blauwe Fòrum-gebouw van Herzog \u0026 de Meuron.",
         "maps":  "https://www.google.com/maps/place/Museu+de+Ci%C3%A8ncies+Naturals+de+Barcelona/data=!4m2!3m1!1s0x12a498e74bba2565:0xd117e76c1b509da4",
         "photo":  "photos/museu-de-ciencies-naturals-de-barcelona.jpg",
-        "credit":  "Cristiserra, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Cristiserra, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "jardins-de-sant-pau-del-camp",
@@ -151,7 +206,8 @@
         "desc":  "Kleine, rustige tuin naast de romaanse kerk Sant Pau del Camp in de Raval.",
         "maps":  "https://www.google.com/maps/place/Jardins+de+Sant+Pau+del+Camp/data=!4m2!3m1!1s0x12a4a3a6672913b9:0xaa9bebccb4744db5",
         "photo":  "photos/jardins-de-sant-pau-del-camp.jpg",
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "sant-pau-del-camp",
@@ -165,7 +221,8 @@
         "desc":  "Een van de oudste kerken van de stad, in romaanse stijl, met een klein kloosterhof. Ligt verscholen in de Raval.",
         "maps":  "https://www.google.com/maps/place/Sant+Pau+del+Camp/data=!4m2!3m1!1s0x12a4a25ea687f291:0x9f6be169fc83d2f2",
         "photo":  "photos/sant-pau-del-camp.jpg",
-        "credit":  "PMRMaeyaert, CC BY-SA 3.0 es, Wikimedia Commons"
+        "credit":  "PMRMaeyaert, CC BY-SA 3.0 es, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "casa-bures",
@@ -179,7 +236,8 @@
         "desc":  "Gebouw met sierlijke gevel in de Eixample, vooral van buiten te bekijken.",
         "maps":  "https://www.google.com/maps/place/Casa+Bur%C3%A9s/data=!4m2!3m1!1s0x12a4a35871a87965:0x3aeae30b4d0fd693",
         "photo":  "photos/casa-bures.jpg",
-        "credit":  "Generalitat de Catalunya, Attribution, Wikimedia Commons"
+        "credit":  "Generalitat de Catalunya, Attribution, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "jardi-botanic-de-barcelona",
@@ -193,7 +251,8 @@
         "desc":  "Botanische tuin op Montjuïc met mediterrane planten uit de hele wereld en uitzicht over de stad.",
         "maps":  "https://www.google.com/maps/place/Jard%C3%AD+Bot%C3%A0nic+de+Barcelona/data=!4m2!3m1!1s0x12a4a2134d27f94f:0xa86b0a9e9af4f407",
         "photo":  "photos/jardi-botanic-de-barcelona.jpg",
-        "credit":  "Velela, CC BY 3.0, Wikimedia Commons"
+        "credit":  "Velela, CC BY 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "caixaforum-barcelona",
@@ -207,7 +266,8 @@
         "desc":  "Cultureel centrum in de voormalige textielfabriek Casaramona, een modernistisch gebouw van Puig i Cadafalch. Wisselende tentoonstellingen.",
         "maps":  "https://www.google.com/maps/place/CaixaForum+Barcelona/data=!4m2!3m1!1s0x12a4a277563a5425:0x8d041ff3aaae5e21",
         "photo":  "photos/caixaforum-barcelona.jpg",
-        "credit":  "Victoriano Javier Tornel García from Barcelona, España, CC BY-SA 2.0, Wikimedia Commons"
+        "credit":  "Victoriano Javier Tornel García from Barcelona, España, CC BY-SA 2.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "arenas-de-barcelona",
@@ -221,7 +281,8 @@
         "desc":  "Voormalige stierenvechtarena die is omgebouwd tot winkelcentrum. Op het dak loopt een rondgaand terras met uitzicht over Plaça d\u0027Espanya.",
         "maps":  "https://www.google.com/maps/place/Arenas+de+Barcelona/data=!4m2!3m1!1s0x12a4a27946551971:0x24058a502af145dd",
         "photo":  "photos/arenas-de-barcelona.jpg",
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "diposit-de-les-aigues",
@@ -235,7 +296,8 @@
         "desc":  "Voormalig waterreservoir uit de 19e eeuw dat nu als bibliotheek van de Universitat Pompeu Fabra dient. Mooi van binnen en gratis te bekijken (check vooraf).",
         "maps":  "https://www.google.com/maps/place/Dip%C3%B2sit+de+les+Aig%C3%BCes/data=!4m2!3m1!1s0x12a4a31caae27131:0xf76daf70732ffa74",
         "photo":  "photos/diposit-de-les-aigues.jpg",
-        "credit":  "Teresa Grau Ros from Barcelona, CC BY-SA 2.0, Wikimedia Commons"
+        "credit":  "Teresa Grau Ros from Barcelona, CC BY-SA 2.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "casa-calvet",
@@ -249,7 +311,8 @@
         "desc":  "Gaudí\u0027s vroege, rustigere huis uit 1900 aan Carrer de Casp. In het gebouw zit tegenwoordig een restaurant.",
         "maps":  "https://www.google.com/maps/place/Casa+Calvet/data=!4m2!3m1!1s0x12a4a3001a889b67:0x9761ce9894c7b57",
         "photo":  "photos/casa-calvet.jpg",
-        "credit":  "Puigalder, CC BY-SA 3.0, Wikimedia Commons"
+        "credit":  "Puigalder, CC BY-SA 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "carrer-gran-de-gracia",
@@ -263,7 +326,8 @@
         "desc":  "Elegante winkelstraat in Gràcia met modernistische gebouwen, tussen de Diagonal en de rest van de wijk.",
         "maps":  "https://www.google.com/maps/place/Carrer+Gran+de+Gr%C3%A0cia/data=!4m2!3m1!1s0x12a4a2a2bae24933:0x282b214c590e4067",
         "photo":  "photos/carrer-gran-de-gracia.jpg",
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "il-lustre-col-legi-de-l-advocacia-de-barcelona",
@@ -277,7 +341,8 @@
         "desc":  "Gebouw van de Barcelonese advocatuur in Carrer de Mallorca, in dezelfde straat als Palau Montaner en Casa Thomas.",
         "maps":  "https://www.google.com/maps/place/Il%C2%B7lustre+Col%C2%B7legi+de+l\u0027Advocacia+de+Barcelona/data=!4m2!3m1!1s0x12a4989133a77bf5:0xcb4202db3ac7a5ab",
         "photo":  "photos/il-lustre-col-legi-de-l-advocacia-de-barcelona.jpg",
-        "credit":  "Montserrat Boix, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Montserrat Boix, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "palau-ramon-montaner",
@@ -291,7 +356,8 @@
         "desc":  "Stadspaleis van Domènech i Montaner aan Carrer de Mallorca, nu kantoor van de Spaanse regering in Catalonië.",
         "maps":  "https://www.google.com/maps/place/Palau+Ramon+Montaner/data=!4m2!3m1!1s0x12a4a2ecaec63481:0x99cfb08c55332e99",
         "photo":  "photos/palau-ramon-montaner.jpg",
-        "credit":  "Canaan, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Canaan, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "casa-thomas",
@@ -305,7 +371,8 @@
         "desc":  "Modernistisch huis van Domènech i Montaner uit 1895 met een bakstenen gevel. Er zit nu een meubelwinkel in.",
         "maps":  "https://www.google.com/maps/place/Casa+Thomas/data=!4m2!3m1!1s0x12a4a3007b12b3f7:0x15cfc0263afcf70b",
         "photo":  "photos/casa-thomas.jpg",
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "munoz-ramonet-gardens",
@@ -319,7 +386,8 @@
         "desc":  "Rustige tuin rond een herenhuis in Sarrià-Sant Gervasi, waar weinig toeristen komen.",
         "maps":  "https://www.google.com/maps/place/Mu%C3%B1oz+Ramonet+Gardens/data=!4m2!3m1!1s0x12a4a29dd8009787:0x5c50a8200f64a48f",
         "photo":  "photos/munoz-ramonet-gardens.jpg",
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "camp-nou",
@@ -333,7 +401,8 @@
         "desc":  "Stadion van FC Barcelona (nu Spotify Camp Nou). Rondleidingen en museum, maar check vooraf wat open is: het stadion wordt verbouwd.",
         "maps":  "https://www.google.com/maps/place/Camp+Nou/data=!4m2!3m1!1s0x12a498f576297baf:0x44f65330fe1b04b9",
         "photo":  "photos/camp-nou.jpg",
-        "credit":  "Oh-Barcelona.com from Barcelona, Spain, CC BY 2.0, Wikimedia Commons"
+        "credit":  "Oh-Barcelona.com from Barcelona, Spain, CC BY 2.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "arnau-gallery",
@@ -347,7 +416,8 @@
         "desc":  "Galerie vlak bij Teatre Arnau in het Paral·lel-gebied (check vooraf).",
         "maps":  "https://www.google.com/maps/place/Arnau+Gallery/data=!4m2!3m1!1s0x12a4a3fa82b6258d:0x1bb14975a182011f",
         "photo":  "photos/arnau-gallery.jpg",
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "rayelly-e-cycle",
@@ -361,7 +431,8 @@
         "desc":  "Winkel en verhuur van elektrische fietsen in de Eixample. Handig om je fietstocht te starten.",
         "maps":  "https://www.google.com/maps/place/Rayelly+E+Cycle/data=!4m2!3m1!1s0x12a4a300325ece47:0x5f0937afaa526235",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "fundacio-joan-miro",
@@ -375,7 +446,8 @@
         "desc":  "Museum met werk van Miró op Montjuïc, in een licht gebouw van Josep Lluís Sert. Er is ook een dakterras met beelden.",
         "maps":  "https://www.google.com/maps/place/Fundaci%C3%B3+Joan+Mir%C3%B3/data=!4m2!3m1!1s0x12a4a2692ea5c72d:0x96ca1fc1ad4969aa",
         "photo":  "photos/fundacio-joan-miro.jpg",
-        "credit":  "Kippelboy, CC0, Wikimedia Commons"
+        "credit":  "Kippelboy, CC0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "casa-batllo",
@@ -389,7 +461,8 @@
         "desc":  "Gaudí\u0027s fantasierijkste huis, met een gevel als een draak en een golvende binnenplaats. Boek een tijdslot vooraf.",
         "maps":  "https://www.google.com/maps/place/Casa+Batll%C3%B3/data=!4m2!3m1!1s0x12a4a2ed494b4161:0x40d2782f9e2e4e0f",
         "photo":  "photos/casa-batllo.jpg",
-        "credit":  "ChristianSchd, CC BY-SA 3.0, Wikimedia Commons"
+        "credit":  "ChristianSchd, CC BY-SA 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "museum-van-decoratieve-kunsten",
@@ -403,7 +476,8 @@
         "desc":  "Decoratieve kunst en design, ondergebracht in het Museu del Disseny aan Plaça de les Glòries.",
         "maps":  "https://www.google.com/maps/place/Museum+van+Decoratieve+Kunsten/data=!4m2!3m1!1s0x12a49859667767d7:0x917424b910d7d04a",
         "photo":  "photos/museum-van-decoratieve-kunsten.jpg",
-        "credit":  "Thomas Ledl, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Thomas Ledl, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "museu-nacional-d-art-de-catalunya",
@@ -417,7 +491,8 @@
         "desc":  "Museu voor Catalaanse kunst in het Palau Nacional op Montjuïc, beroemd om de romaanse fresco\u0027s. Het terras heeft uitzicht over de stad.",
         "maps":  "https://www.google.com/maps/place/Museu+Nacional+d\u0027Art+de+Catalunya/data=!4m2!3m1!1s0x12a4a271c47d4e31:0x860116057225dc91",
         "photo":  "photos/museu-nacional-d-art-de-catalunya.jpg",
-        "credit":  "Jvhertum, CC BY-SA 3.0, Wikimedia Commons"
+        "credit":  "Jvhertum, CC BY-SA 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "museu-d-art-contemporani-de-barcelona",
@@ -431,7 +506,8 @@
         "desc":  "MACBA: hedendaagse kunst in een wit gebouw van Richard Meier. Het plein ervoor is een plek voor skaters.",
         "maps":  "https://www.google.com/maps/place/Museu+d\u0027Art+Contemporani+de+Barcelona/data=!4m2!3m1!1s0x12a4a2f5ac8c5ed1:0x8efd28fd5e2c7b2a",
         "photo":  "photos/museu-d-art-contemporani-de-barcelona.jpg",
-        "credit":  "Zarateman, CC0, Wikimedia Commons"
+        "credit":  "Zarateman, CC0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "palau-de-la-musica-catalana",
@@ -445,7 +521,8 @@
         "desc":  "Modernistische concertzaal van Domènech i Montaner met een glas-in-loodplafond. Werelderfgoed: bezoek het met een rondleiding of een concert.",
         "maps":  "https://www.google.com/maps/place/Palau+de+la+M%C3%BAsica+Catalana/data=!4m2!3m1!1s0x12a4a2fa77ab0441:0x7faa64b56a736c43",
         "photo":  "photos/palau-de-la-musica-catalana.jpg",
-        "credit":  "Alvesgaspar, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Alvesgaspar, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "kbr-fundacion-mapfre-barcelona-photo-center",
@@ -459,7 +536,8 @@
         "desc":  "Fotografiecentrum bij de Port Olímpic met wisselende tentoonstellingen.",
         "maps":  "https://www.google.com/maps/place/KBr+Fundaci%C3%B3n+MAPFRE+-+Barcelona+Photo+Center/data=!4m2!3m1!1s0x12a4a2f2d063b319:0x8a0f4eb578ded72c",
         "photo":  "photos/kbr-fundacion-mapfre-barcelona-photo-center.jpg",
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "barcelona-paviljoen",
@@ -473,7 +551,8 @@
         "desc":  "Het paviljoen van Mies van der Rohe uit 1929, een icoon van de moderne architectuur. Gebouwd voor de wereldtentoonstelling en later herbouwd.",
         "maps":  "https://www.google.com/maps/place/Barcelona-paviljoen/data=!4m2!3m1!1s0x12a4a2776a5b6227:0xf0ed2dd599d15368",
         "photo":  "photos/barcelona-paviljoen.jpg",
-        "credit":  "Ashley Pomeroy at English Wikipedia, CC BY 3.0, Wikimedia Commons"
+        "credit":  "Ashley Pomeroy at English Wikipedia, CC BY 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "casa-pia-batllo",
@@ -487,7 +566,8 @@
         "desc":  "Modernistisch gebouw aan Rambla de Catalunya, vooral van buiten te bekijken.",
         "maps":  "https://www.google.com/maps/place/Casa+Pia+Batll%C3%B3/data=!4m2!3m1!1s0x12a4a3c1ca518e25:0xc93d5160f8d1ee04",
         "photo":  "photos/casa-pia-batllo.jpg",
-        "credit":  "Jordiferrer, CC BY-SA 3.0, Wikimedia Commons"
+        "credit":  "Jordiferrer, CC BY-SA 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "palais-du-baron-de-quadras",
@@ -501,7 +581,8 @@
         "desc":  "Paleis van Puig i Cadafalch uit het begin van de 20e eeuw met een rijk versierde gevel, nu Casa Asia.",
         "maps":  "https://www.google.com/maps/place/palais+du+baron+de+Quadras/data=!4m2!3m1!1s0x12a4a2946e7a2355:0x2ed624c939e97b1d",
         "photo":  "photos/palais-du-baron-de-quadras.jpg",
-        "credit":  "Kent Wang from Barcelona, Spain, CC BY-SA 2.0, Wikimedia Commons"
+        "credit":  "Kent Wang from Barcelona, Spain, CC BY-SA 2.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "casa-planells",
@@ -515,7 +596,8 @@
         "desc":  "Gebouw van Josep Maria Jujol uit de jaren 20 met een golvende gevel op de hoek van de Diagonal.",
         "maps":  "https://www.google.com/maps/place/Casa+Planells/data=!4m2!3m1!1s0x12a4a2dd5f12ab1d:0x48bacf96fcd34a96",
         "photo":  "photos/casa-planells.jpg",
-        "credit":  "Amadalvarez, CC BY-SA 3.0, Wikimedia Commons"
+        "credit":  "Amadalvarez, CC BY-SA 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "casa-lleo-morera",
@@ -529,7 +611,8 @@
         "desc":  "Domènech i Montaner\u0027s gebouw op Passeig de Gràcia, onderdeel van de Illa de la Discòrdia.",
         "maps":  "https://www.google.com/maps/place/Casa+Lle%C3%B3+Morera/data=!4m2!3m1!1s0x12a4a336491fadd7:0x559f134c7e915266",
         "photo":  "photos/casa-lleo-morera.jpg",
-        "credit":  "Kwong Yee Cheng, CC BY-SA 2.0, Wikimedia Commons"
+        "credit":  "Kwong Yee Cheng, CC BY-SA 2.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "casa-de-les-punxes",
@@ -543,7 +626,8 @@
         "desc":  "Casa Terrades: een kasteelachtig huis van Puig i Cadafalch met puntige torentjes. Het dakterras is te bezoeken.",
         "maps":  "https://www.google.com/maps/place/Casa+de+les+punxes/data=!4m2!3m1!1s0x12a4a294dae03357:0xae747d3d1080c597",
         "photo":  "photos/casa-de-les-punxes.jpg",
-        "credit":  "Mutari, Public domain, Wikimedia Commons"
+        "credit":  "Mutari, Public domain, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "mercat-de-santa-caterina",
@@ -557,7 +641,8 @@
         "desc":  "Markt met een kleurrijk golvend dak van keramische tegels, minder toeristisch dan de Boqueria.",
         "maps":  "https://www.google.com/maps/place/Mercat+de+Santa+Caterina/data=!4m2!3m1!1s0x12a4a2fbc2fc3cc9:0xcf4dd50cc18b657e",
         "photo":  "photos/mercat-de-santa-caterina.jpg",
-        "credit":  "Pere López Brosa, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Pere López Brosa, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "casa-amatller",
@@ -571,7 +656,8 @@
         "desc":  "Puig i Cadafalch\u0027s huis met een trapgevel en keramiek, op Passeig de Gràcia naast Casa Batlló.",
         "maps":  "https://www.google.com/maps/place/Casa+Amatller/data=!4m2!3m1!1s0x12a4a2ed4f763c75:0x297ef3aac106cf40",
         "photo":  "photos/casa-amatller.jpg",
-        "credit":  "Elisa.rolle, CC BY-SA 3.0 es, Wikimedia Commons"
+        "credit":  "Elisa.rolle, CC BY-SA 3.0 es, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "temple-d-august",
@@ -585,7 +671,8 @@
         "desc":  "Vier Romeinse zuilen van een tempel, verscholen in een binnenplaats aan Carrer del Paradís. Gratis te bekijken (check vooraf).",
         "maps":  "https://www.google.com/maps/place/Temple+d\u0027August/data=!4m2!3m1!1s0x12a4a2f901114edb:0xa11dd86e9db96882",
         "photo":  "photos/temple-d-august.jpg",
-        "credit":  "Jesús Arpón, CC BY-SA 3.0, Wikimedia Commons"
+        "credit":  "Jesús Arpón, CC BY-SA 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "mercat-de-la-boqueria",
@@ -599,7 +686,8 @@
         "desc":  "De beroemdste markt van de stad, aan de Rambla, met fruit, vis en kleine tapasbars. Het is er \u0027s ochtends rustiger.",
         "maps":  "https://www.google.com/maps/place/Mercat+de+la+Boqueria/data=!4m2!3m1!1s0x12a4a2f7b51e5a01:0x860ac654dc73add5",
         "photo":  "photos/mercat-de-la-boqueria.jpg",
-        "credit":  "Didier Descouens, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Didier Descouens, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "placa-de-catalunya",
@@ -613,7 +701,8 @@
         "desc":  "Het centrale plein tussen de Rambla, Passeig de Gràcia en de oude stad. Een goed oriëntatiepunt, ook voor het OV.",
         "maps":  "https://www.google.com/maps/place/Pla%C3%A7a+de+Catalunya/data=!4m2!3m1!1s0x12a4a2f1602b4819:0x1eecc2af1c60d64b",
         "photo":  "photos/placa-de-catalunya.jpg",
-        "credit":  "Tango7174, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Tango7174, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "mercat-de-sant-antoni",
@@ -627,7 +716,8 @@
         "desc":  "Gerenoveerde markt uit 2018 met een ijzeren hal. Op zondag is er een boekenmarkt rond het gebouw.",
         "maps":  "https://www.google.com/maps/place/Mercat+de+Sant+Antoni/data=!4m2!3m1!1s0x12a4a26039434d55:0x99d13d9995070f48",
         "photo":  "photos/mercat-de-sant-antoni.jpg",
-        "credit":  "Julian Lupyan, CC0, Wikimedia Commons"
+        "credit":  "Julian Lupyan, CC0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "mercat-de-la-barceloneta",
@@ -641,7 +731,8 @@
         "desc":  "Wijkmarkt in La Barceloneta met vis en lokale producten, geschikt voor een kijkje voor of na het strand.",
         "maps":  "https://www.google.com/maps/place/Mercat+de+la+Barceloneta/data=!4m2!3m1!1s0x12a4a3aa001aa501:0x4881179af4ba175d",
         "photo":  "photos/mercat-de-la-barceloneta.jpg",
-        "credit":  "jordi domènech, CC BY-SA 3.0, Wikimedia Commons"
+        "credit":  "jordi domènech, CC BY-SA 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "jardins-de-mossen-costa-i-llobera",
@@ -655,7 +746,8 @@
         "desc":  "Terrastuin op Montjuïc met een grote verzameling cactussen en uitzicht over de haven.",
         "maps":  "https://www.google.com/maps/place/Jardins+de+Moss%C3%A8n+Costa+i+Llobera/data=!4m2!3m1!1s0x12a4a244fdb47617:0xf6c930a07924b39b",
         "photo":  "photos/jardins-de-mossen-costa-i-llobera.jpg",
-        "credit":  "Pep marfran, CC0, Wikimedia Commons"
+        "credit":  "Pep marfran, CC0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "fundacio-antoni-tapies",
@@ -669,7 +761,8 @@
         "desc":  "Museum met werk van Antoni Tàpies in een oud modernistisch uitgeversgebouw, met een opvallende sculptuur op het dak.",
         "maps":  "https://www.google.com/maps/place/Fundaci%C3%B3+Antoni+T%C3%A0pies/data=!4m2!3m1!1s0x12a4a292a4f37be5:0x3ab5e876659230ad",
         "photo":  "photos/fundacio-antoni-tapies.jpg",
-        "credit":  "Equip Fundació Antoni Tàpies, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Equip Fundació Antoni Tàpies, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "bunkers-del-carmel",
@@ -683,7 +776,8 @@
         "desc":  "Uitzichtpunt met 360 graden zicht over de stad, populair bij zonsondergang. Neem water mee en pas op bij de rand, er is geen reling.",
         "maps":  "https://www.google.com/maps/place/Bunkers+del+Carmel/data=!4m2!3m1!1s0x12a4a34ce3cd2c89:0x78eec059f995ffe3",
         "photo":  "photos/bunkers-del-carmel.jpg",
-        "credit":  "Thingstodoinbarcelona, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Thingstodoinbarcelona, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "park-guell",
@@ -697,7 +791,8 @@
         "desc":  "Gaudí\u0027s park met kleurrijke mozaïeken, de salamander en de lange golvende bank. Het monumentale deel vraagt een ticket: boek vooraf.",
         "maps":  "https://www.google.com/maps/place/Park+G%C3%BCell/data=!4m2!3m1!1s0x12a4a2ae52d441ab:0x899a0ba01aaace58",
         "photo":  "photos/park-guell.jpg",
-        "credit":  "essetefano, CC BY 3.0, Wikimedia Commons"
+        "credit":  "essetefano, CC BY 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "bellesguard",
@@ -711,7 +806,8 @@
         "desc":  "Gaudí\u0027s neogotische kasteeltje op de heuvel, met een tuin en uitzicht, veel rustiger dan de bekendere werken.",
         "maps":  "https://www.google.com/maps/place/Bellesguard/data=!4m2!3m1!1s0x12a498163513a245:0x9491e492191a9252",
         "photo":  "photos/bellesguard.jpg",
-        "credit":  "GerthMichael, CC BY-SA 3.0, Wikimedia Commons"
+        "credit":  "GerthMichael, CC BY-SA 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "casa-vicens",
@@ -725,7 +821,8 @@
         "desc":  "Gaudí\u0027s eerste grote huis uit de jaren 1880 in Gràcia, bekleed met kleurrijke tegels. Werelderfgoed.",
         "maps":  "https://www.google.com/maps/place/Casa+Vicens/data=!4m2!3m1!1s0x12a4a2a2323480a1:0xcef2071fd9460247",
         "photo":  "photos/casa-vicens.jpg",
-        "credit":  "Canaan, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Canaan, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "palau-guell",
@@ -739,7 +836,8 @@
         "desc":  "Gaudí\u0027s stadspaleis voor Eusebi Güell, vlak achter de Rambla. Het dakterras met de schoorstenen is bekend.",
         "maps":  "https://www.google.com/maps/place/Palau+G%C3%BCell/data=!4m2!3m1!1s0x12a4a25820d3f1dd:0x96a03ff19fc2a5a4",
         "photo":  "photos/palau-guell.jpg",
-        "credit":  "Thomas Ledl, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Thomas Ledl, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "font-magica",
@@ -753,7 +851,8 @@
         "desc":  "Fontein met licht-, kleur- en muziekshows aan de voet van het MNAC. Check vooraf de showtijden, die per seizoen verschillen.",
         "maps":  "https://www.google.com/maps/place/Font+M%C3%A0gica/data=!4m2!3m1!1s0x12a4a27086559937:0x1ec6375cbadc316a",
         "photo":  "photos/font-magica.jpg",
-        "credit":  "Avda, CC BY-SA 3.0, Wikimedia Commons"
+        "credit":  "Avda, CC BY-SA 3.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "barques-del-parc-de-la-ciutadella",
@@ -767,7 +866,8 @@
         "desc":  "Roeibootjes huren op het meertje in het Parc de la Ciutadella, naast de grote waterval.",
         "maps":  "https://www.google.com/maps/place/Barques+del+Parc+de+la+Ciutadella/data=!4m2!3m1!1s0x12a4a31ec1441fcd:0xd16f123f83070558",
         "photo":  "photos/barques-del-parc-de-la-ciutadella.jpg",
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "glories-playground",
@@ -781,7 +881,8 @@
         "desc":  "Moderne speeltuin op het vernieuwde Plaça de les Glòries, vlak bij Torre Glòries.",
         "maps":  "https://www.google.com/maps/place/Gl%C3%B2ries+playground/data=!4m2!3m1!1s0x12a4a3fd01f8001b:0xc16351a92c4d2f7e",
         "photo":  "photos/glories-playground.jpg",
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "sagrada-familia",
@@ -795,7 +896,8 @@
         "desc":  "Gaudí\u0027s basiliek, sinds 1882 in aanbouw. Boek tickets vooraf en ga bij voorkeur \u0027s ochtends of late namiddag voor het licht door het glas-in-lood.",
         "maps":  "https://www.google.com/maps/place/Sagrada+Fam%C3%ADlia/data=!4m2!3m1!1s0x12a4a2dcd83dfb93:0x9bd8aac21bc3c950",
         "photo":  "photos/sagrada-familia.jpg",
-        "credit":  "Canaan, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Canaan, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "casa-mila",
@@ -809,7 +911,8 @@
         "desc":  "La Pedrera: Gaudí\u0027s golvende huis met dakterras en schoorstenen. Boek vooraf, vooral voor de avondopeningen.",
         "maps":  "https://www.google.com/maps/place/Casa+Mil%C3%A0/data=!4m2!3m1!1s0x12a4a293998ae1d5:0xc49fa3624f371e6a",
         "photo":  "photos/casa-mila.jpg",
-        "credit":  "Thomas Ledl, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Thomas Ledl, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "casa-comalat",
@@ -823,7 +926,8 @@
         "desc":  "Modernistisch gebouw uit 1911 aan de Diagonal, bekend om de speelse achtergevel in Carrer de Còrsega.",
         "maps":  "https://www.google.com/maps/place/Casa+Comalat/data=!4m2!3m1!1s0x12a4a293f836993b:0xc16a64958fecf0c5",
         "photo":  "photos/casa-comalat.jpg",
-        "credit":  "Stefanrevollo, CC BY-SA 4.0, Wikimedia Commons"
+        "credit":  "Stefanrevollo, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  false
     },
     {
         "id":  "cafe-schallert-barcelona",
@@ -837,7 +941,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Caf%C3%A9+Schallert+Barcelona/data=!4m2!3m1!1s0x12a4a3cc0a5bae45:0x5b5d01a6350efa53",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "la-galena",
@@ -851,7 +956,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/La+Galena/data=!4m2!3m1!1s0x12a4a3eeeee091e7:0x78a34a3e554a833a",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "azimuth-rooftop-bar",
@@ -865,7 +971,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Azimuth+Rooftop+Bar/data=!4m2!3m1!1s0x12a4a2f200459afb:0x3e1204930a8fccc0",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "eleven-bcn",
@@ -879,7 +986,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Eleven+BCN/data=!4m2!3m1!1s0x12a4a3be07d3e659:0x400c7a5bcd5db891",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "harlem-jazz-club",
@@ -893,7 +1001,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Harlem+Jazz+Club/data=!4m2!3m1!1s0x12a4a2f8a306fd53:0xc8a4db1b2b64d00a",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "jamboree",
@@ -907,7 +1016,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Jamboree/data=!4m2!3m1!1s0x12a4a257ee73e08d:0x605c70bac6512da",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "els-quatre-gats",
@@ -921,7 +1031,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Els+Quatre+Gats/data=!4m2!3m1!1s0x12a4a2f0b32ce7e1:0xcf84390e6a7f04cc",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "bar-calders",
@@ -935,7 +1046,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Bar+Calders/data=!4m2!3m1!1s0x12a4a260d707ebf9:0x8866a7039c3dd51d",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "bar-marsella",
@@ -949,7 +1061,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Bar+Marsella/data=!4m2!3m1!1s0x12a4a258e20eb2cd:0x27d07f76cd679661",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "antic-teatre",
@@ -963,7 +1076,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Antic+Teatre/data=!4m2!3m1!1s0x12a4a2fa41e95863:0x5be2b2bc96391fa2",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "suites-avenue-barcelona",
@@ -977,7 +1091,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Suites+Avenue+Barcelona/data=!4m2!3m1!1s0x12a4a293a45eb5c3:0x3743569c8dbf6f99",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "terrassa-360",
@@ -991,7 +1106,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Terrassa+360%C2%BA/data=!4m2!3m1!1s0x12a4a30031ac761f:0xa492db62c1c631a4",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "bar-central-raval",
@@ -1005,7 +1121,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Bar+Central+Raval/data=!4m2!3m1!1s0x12a4a32c3bdcba5d:0x49a98c2a7e8e719",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "designplace",
@@ -1019,7 +1136,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/DesignPlace/data=!4m2!3m1!1s0x12a4a2f77a10099d:0xfbc2ca9b4b2331e8",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "typographia",
@@ -1033,7 +1151,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Typographia/data=!4m2!3m1!1s0x12a4a2f43274294f:0x6b961446f4ce9ab0",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "handcrafted-in-barcelona",
@@ -1047,7 +1166,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Handcrafted+In+Barcelona/data=!4m2!3m1!1s0x12a4a2f832d7a1a5:0x29b2a3e3d3417b4",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "the-livingroom-barcelona",
@@ -1061,7 +1181,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/The+LivingRoom+Barcelona/data=!4m2!3m1!1s0x12a4a2963ce276a9:0x7ec8641e42b1badd",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "miscelanea",
@@ -1075,7 +1196,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Miscelanea/data=!4m2!3m1!1s0x12a4a259ce27b489:0x7a6f099148a2749c",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "guanteria-i-complements-alonso",
@@ -1089,7 +1211,8 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Guanteria+i+Complements+Alonso/data=!4m2!3m1!1s0x12a4a2f6d4697ab1:0x39ce006ec2301a24",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     },
     {
         "id":  "raima",
@@ -1103,6 +1226,7 @@
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Raima/data=!4m2!3m1!1s0x12a4a2f0bcade3cf:0xd6ead5d5daf2e7a6",
         "photo":  null,
-        "credit":  null
+        "credit":  null,
+        "new":  false
     }
 ]

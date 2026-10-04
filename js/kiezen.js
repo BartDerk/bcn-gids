@@ -15,14 +15,15 @@ const CATS = {
 const catName = c => (CATS[c] || CATS.overig)[0];
 const catColor = c => (CATS[c] || CATS.overig)[1];
 
-const st = {places: [], byId: {}, sel: new Set(store.get("gastKies", store.get("mdKies", []))), q: "", cat: "", district: "", only: false, view: "lijst",
+const st = {places: [], byId: {}, sel: new Set(store.get("gastKies", store.get("mdKies", []))), q: "", cat: "", district: "", only: false, onlyNew: false, view: "lijst",
   map: null, markers: {}, open: null};
 
+const NEWTAG = '<em class="newtag">NIEUW</em> ';
 const BTN_ON = "✓ Wil ik langs fietsen", BTN_OFF = "Wil ik langs fietsen";
 const rows = () => {
   const s = norm(st.q);
   return st.places.filter(p => (!st.cat || p.cat === st.cat) && (!st.district || p.district === st.district) &&
-    (!st.only || st.sel.has(p.id)) && (!s || s.split(/\s+/).every(w => p.hay.includes(w))));
+    (!st.only || st.sel.has(p.id)) && (!st.onlyNew || p.new) && (!s || s.split(/\s+/).every(w => p.hay.includes(w))));
 };
 const save = () => store.set("gastKies", [...st.sel]);
 const chosen = () => st.places.filter(p => st.sel.has(p.id));
@@ -63,7 +64,7 @@ function renderList() {
   $("list").innerHTML = r.map(p => {
     const on = st.sel.has(p.id);
     return `<li class="card${on ? " sel" : ""}"><div class="ph">${p.photo ? `<button type="button" class="phb" data-zoom="${p.id}" aria-label="Foto van ${esc(p.name)} groter"><img src="${esc(p.photo)}" alt="" loading="lazy" width="96" height="96"></button>` : `<span class="noph" style="background:${catColor(p.cat)}"></span>`}</div>
-      <div class="tx"><b>${esc(p.name)}</b><small>${esc(catName(p.cat))}${p.district ? " · " + esc(p.district) : ""}</small>
+      <div class="tx"><b>${esc(p.name)}</b><small>${p.new ? NEWTAG : ""}${esc(catName(p.cat))}${p.district ? " · " + esc(p.district) : ""}</small>
       <p>${esc(p.desc || "")}</p>
       <button type="button" class="tg${on ? " on" : ""}" data-t="${p.id}" aria-pressed="${on}">${on ? BTN_ON : BTN_OFF}</button></div></li>`;
   }).join("") || `<li class="empty">Niets gevonden. Wis het zoekveld of een filter.</li>`;
@@ -72,7 +73,7 @@ function renderList() {
 /* ---------- kaart ---------- */
 function dotHtml(p) {
   const on = st.sel.has(p.id);
-  return `<div class="dot${on ? " on" : ""}" style="background:${on ? "#1d4ed8" : catColor(p.cat)}">${on ? "🚲" : ""}</div>`;
+  return `<div class="dot${on ? " on" : ""}${p.new ? " isnew" : ""}" style="background:${on ? "#1d4ed8" : catColor(p.cat)}">${on ? "🚲" : ""}</div>`;
 }
 function paintMarker(id) {
   const m = st.markers[id]; if (!m) return;
@@ -111,7 +112,7 @@ function renderMSheet() {
   if (!p) { el.innerHTML = `<p class="hint">Tik op een bol voor foto en uitleg. Blauwe bol met fiets = jouw keuze. Kleine afstand tussen bollen betekent dicht bij elkaar.</p>`; return; }
   const on = st.sel.has(p.id);
   el.innerHTML = `<div class="card in">${p.photo ? `<div class="ph"><button type="button" class="phb" data-zoom="${p.id}" aria-label="Foto groter"><img src="${esc(p.photo)}" alt="" width="96" height="96"></button></div>` : ""}
-    <div class="tx"><b>${esc(p.name)}</b><small>${esc(catName(p.cat))}${p.district ? " · " + esc(p.district) : ""}</small><p>${esc(p.desc || "")}</p>
+    <div class="tx"><b>${esc(p.name)}</b><small>${p.new ? NEWTAG : ""}${esc(catName(p.cat))}${p.district ? " · " + esc(p.district) : ""}</small><p>${esc(p.desc || "")}</p>
     <button type="button" class="tg${on ? " on" : ""}" data-t="${p.id}" aria-pressed="${on}">${on ? BTN_ON : BTN_OFF}</button></div></div>`;
 }
 
@@ -120,6 +121,7 @@ function refresh() {
   document.querySelectorAll(".seg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === st.view));
   document.querySelectorAll("#cats [data-c]").forEach(b => b.setAttribute("aria-pressed", b.dataset.c === st.cat));
   $("onlysel").setAttribute("aria-pressed", st.only);
+  $("onlynew").setAttribute("aria-pressed", st.onlyNew);
   $("list").hidden = st.view !== "lijst";
   $("mapview").hidden = st.view !== "kaart";
   $("credit").hidden = st.view !== "lijst";
@@ -154,6 +156,7 @@ function bind() {
   $("q").oninput = e => { st.q = e.target.value; refresh(); };
   $("dist").onchange = e => { st.district = e.target.value; refresh(); };
   $("onlysel").onclick = () => { st.only = !st.only; refresh(); };
+  $("onlynew").onclick = () => { st.onlyNew = !st.onlyNew; refresh(); };
   document.querySelectorAll("#cats [data-c]").forEach(b => b.onclick = () => { st.cat = st.cat === b.dataset.c ? "" : b.dataset.c; refresh(); });
   $("send").onclick = () => {
     if (!st.sel.size) { toast("Kies eerst minstens één plaats"); return; }
@@ -179,6 +182,7 @@ async function start() {
   $("cats").innerHTML = Object.keys(CATS).filter(c => used.has(c)).map(c => `<button type="button" class="chip" data-c="${c}" aria-pressed="false">${CATS[c][0]}</button>`).join("");
   const ds = [...new Set(st.places.map(p => p.district).filter(Boolean))].sort((a, b) => a.localeCompare(b, "nl"));
   $("dist").insertAdjacentHTML("beforeend", ds.map(d => `<option>${esc(d)}</option>`).join(""));
+  $("onlynew").hidden = !st.places.some(p => p.new);
   bind(); updateFoot(); refresh();
 }
 start();

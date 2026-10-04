@@ -34,6 +34,8 @@ function openShow(ctx) {
   $("sEs").textContent = ctx.es;
   $("sNl").textContent = ctx.nl;
   $("sTags").innerHTML = ctx.tags || "";
+  $("sPhoto").hidden = !ctx.photo; $("sPhoto").src = ctx.photo ? ctx.photo.file : "";
+  $("sCredit").hidden = !ctx.photo; $("sCredit").textContent = ctx.photo ? "Foto: " + ctx.photo.credit : "";
   $("sFav").hidden = !ctx.fav;
   updFav();
   $("show").hidden = false;
@@ -104,6 +106,7 @@ const FILTERS = [["noFish", "Geen vis"], ["noMeat", "Geen vlees"], ["veg", "Vege
 
 async function viewTapas() {
   const D = prepTapas(await load("tapas"));
+  const PH = await load("tapas-photos").catch(() => ({}));
   const st = tapasState;
   app.innerHTML = `
     <header><h1>Tapes de <span>Barcelona</span></h1>
@@ -144,8 +147,8 @@ async function viewTapas() {
   function render() {
     st.q = q.value;
     const rows = D.filter(pass);
-    list.innerHTML = rows.map(d => `<li><button class="item${favs.has(d.ca) ? " fav" : ""}" data-id="${d.id}">
-      <span class="cat">${esc(d.ca)}</span>
+    list.innerHTML = rows.map(d => `<li><button class="item${favs.has(d.ca) ? " fav" : ""}${PH[d.ca] ? " hasph" : ""}" data-id="${d.id}">
+      ${PH[d.ca] ? `<img class="tthumb" src="${esc(PH[d.ca].file)}" alt="" loading="lazy" width="64" height="64">` : ""}<span class="cat">${esc(d.ca)}</span>
       <span class="tags">${tagHTML(d)}<span class="star" aria-label="${favs.has(d.ca) ? "op mijn lijstje" : ""}">★</span></span>
       <span class="es">${esc(d.es)}</span><span class="nl">${esc(d.nl)}</span></button></li>`).join("");
     $("count").textContent = `${rows.length} van ${D.length} tapes`;
@@ -164,7 +167,7 @@ async function viewTapas() {
   list.addEventListener("click", e => {
     const b = e.target.closest(".item"); if (!b) return;
     const d = D[+b.dataset.id];
-    openShow({hint: "Toon dit aan de ober", big: d.ca, es: d.es, nl: d.nl, tags: tagHTML(d),
+    openShow({hint: "Toon dit aan de ober", photo: PH[d.ca], big: d.ca, es: d.es, nl: d.nl, tags: tagHTML(d),
       fav: {has: () => favs.has(d.ca), toggle: () => { favs.has(d.ca) ? favs.delete(d.ca) : favs.add(d.ca); saveFavs(); }},
       onClose: render});
   });
@@ -173,7 +176,7 @@ async function viewTapas() {
 
 /* vertalingen */
 const GROUPS = [["all", "Alles"], ["groet", "Groeten"], ["bar", "Bar"], ["eten", "Eten"], ["weg", "Stad"],
-  ["museum", "Museum"], ["fiets", "Fiets"], ["nood", "Nood"]];
+  ["museum", "Museum"], ["fiets", "Fiets"], ["feest", "Receptie"], ["nood", "Nood"]];
 const phraseState = {q: "", g: "all"};
 
 async function viewZinnen() {

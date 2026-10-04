@@ -1,4 +1,7 @@
 {
+  "Casa Xina (Casa Ferran Guardiola)": {"cat": "gebouw", "new": true, "desc": "Eclectisch pand uit 1929 met Chinese invloeden: pagodedaken, draken en lantaarns. Ook bekend als Casa Xinesa. Vooral de gevel is de moeite."},
+  "Carrer de Vilamarí, 80": {"cat": "straat", "new": true, "desc": "Beginpunt voor een wandeling of rit over Consell de Cent, de autoluwe groene straat door de Eixample."},
+  "Carrer del Consell de Cent": {"cat": "straat", "new": true, "wiki": "ca:Carrer_del_Consell_de_Cent", "desc": "De hele straat is een bezoek waard: een van de mooiste straten van de Eixample, door de stad omgevormd tot autoluwe groene as met bomen, banken en speelplekken. Loop of fiets hem van begin tot eind, langs Modernisme-gevels."},
   "Fanals d'Antoni Gaudí": {"cat": "overig", "file": "Plaça Reial - Fanal de Gaudí.JPG", "wiki": "en:Plaça_Reial", "desc": "De lantaarnpalen die Gaudí in 1879 ontwierp voor Plaça Reial, zijn eerste opdracht van de stad. Let op de gevleugelde helmen van Mercurius bovenaan."},
   "Recinte Modernista de Sant Pau": {"cat": "gebouw", "wiki": "en:Hospital_de_la_Santa_Creu_i_Sant_Pau", "desc": "Voormalig ziekenhuiscomplex van Domènech i Montaner met kleurrijke paviljoenen en tuinen. Werelderfgoed en veel rustiger dan de Sagrada Família."},
   "Parc de l'España Industrial": {"cat": "park", "file": "Barcelona - Parc de l'Espanya Industrial 1.jpg", "wiki": "en:Parc_de_l'Espanya_Industrial", "desc": "Park uit de jaren 80 op een oud fabrieksterrein, met een groot meer, een draakvormige glijbaan en moderne beelden. Leuk voor een rustpauze."},
