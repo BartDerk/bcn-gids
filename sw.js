@@ -1,5 +1,5 @@
 // Verhoog VERSION bij elke nieuwe release: dan verschijnt "Nieuwe versie beschikbaar".
-const VERSION = "v23";
+const VERSION = "v24";
 const CACHE = "bcn-" + VERSION;
 const TILES = "bcn-tiles";
 const MAX_TILES = 2000;
@@ -42,8 +42,8 @@ function routeNote(stops, idx, quiet) {
   const p = stops[idx], last = idx === stops.length - 1, actions = [];
   if (idx > 0) actions.push({action: "prev", title: "◀ Vorige"});
   if (!last) actions.push({action: "next", title: "Volgende ▶"});
-  return self.registration.showNotification((p.back ? "↺" : idx + 1) + " · " + p.name, {
-    body: (p.back ? "Terug naar start · " : "") + "stop " + (idx + 1) + " van " + stops.length + (p.district ? " · " + p.district : "") + (last ? " · laatste stop" : ""),
+  return self.registration.showNotification((idx === 0 ? "S" : String.fromCharCode(64 + idx)) + " · " + p.name, {
+    body: (p.back ? "Terug naar start · " : "") + "punt " + (idx === 0 ? "S" : String.fromCharCode(64 + idx)) + " (" + (idx + 1) + " van " + stops.length + ")" + (p.district ? " · " + p.district : "") + (last ? " · laatste stop" : ""),
     image: p.photo || undefined, icon: "icons/icon-192.png", badge: "icons/icon-192.png",
     tag: "bcn-route", requireInteraction: true, silent: !!quiet, actions, data: {stops, idx}
   });

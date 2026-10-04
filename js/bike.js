@@ -187,6 +187,8 @@ function flWrap(ctx, text, maxW, maxLines) {
   if (lines.length > maxLines) { lines.length = maxLines; lines[maxLines - 1] = lines[maxLines - 1].replace(/.{0,2}$/, "…"); }
   return lines;
 }
+// zelfde letters als Google Maps: S = start, daarna A, B, C, ...
+const flLabel = i => i === 0 ? "S" : String.fromCharCode(64 + i);
 function flDraw() {
   const stops = flStops(); if (!fl.canvas) return;
   fl.idx = Math.max(0, Math.min(fl.idx, stops.length - 1));
@@ -202,17 +204,17 @@ function flDraw() {
   c.fillStyle = g; c.fillRect(0, FL_H * .38, FL_W, FL_H * .62);
   c.fillStyle = "#1d4ed8"; c.beginPath(); c.arc(54, 54, 40, 0, 7); c.fill();
   c.fillStyle = "#fff"; c.textAlign = "center"; c.textBaseline = "middle"; c.font = "bold 44px sans-serif";
-  c.fillText(p.back ? "↺" : String(fl.idx + 1), 54, 56);
+  c.fillText(flLabel(fl.idx), 54, 56);
   c.textAlign = "left"; c.textBaseline = "alphabetic";
   c.font = "bold 46px sans-serif"; const lines = flWrap(c, p.name, FL_W - 50, 2);
   const y0 = FL_H - 56 - (lines.length - 1) * 52;
   c.shadowColor = "#000"; c.shadowBlur = 6; c.fillStyle = "#fff";
   lines.forEach((l, i) => c.fillText(l, 24, y0 + i * 52));
   c.font = "26px sans-serif"; c.fillStyle = "#e5e7eb";
-  c.fillText((p.back ? "Terug naar start · " : "") + `stop ${Math.min(fl.idx + 1, flStops().length)} van ${flStops().length}` + (p.district ? " · " + p.district : ""), 24, FL_H - 16);
+  c.fillText((p.back ? "Terug naar start · " : "") + `punt ${flLabel(fl.idx)} (${fl.idx + 1} van ${flStops().length})` + (p.district ? " · " + p.district : ""), 24, FL_H - 16);
   c.shadowBlur = 0;
   c.fillStyle = (Date.now() / 1000 | 0) % 2 ? "rgba(255,255,255,.35)" : "rgba(255,255,255,.2)"; c.fillRect(FL_W - 8, FL_H - 8, 4, 4);   // houdt de videostroom levend
-  if ("mediaSession" in navigator) navigator.mediaSession.metadata = new MediaMetadata({title: p.name, artist: `Stop ${fl.idx + 1} van ${flStops().length}`});
+  if ("mediaSession" in navigator) navigator.mediaSession.metadata = new MediaMetadata({title: flLabel(fl.idx) + " · " + p.name, artist: `Punt ${flLabel(fl.idx)} (${fl.idx + 1} van ${flStops().length})`});
 }
 function flStep(d) { fl.idx += d; flDraw(); }
 async function startFloat() {
