@@ -1,5 +1,5 @@
 // Verhoog VERSION bij elke nieuwe release: dan verschijnt "Nieuwe versie beschikbaar".
-const VERSION = "v24";
+const VERSION = "v25";
 const CACHE = "bcn-" + VERSION;
 const TILES = "bcn-tiles";
 const MAX_TILES = 2000;

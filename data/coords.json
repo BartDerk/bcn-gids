@@ -490,5 +490,149 @@
                                        "lng":  2.166,
                                        "address":  "Carrer del Consell de Cent, Eixample",
                                        "district":  "Eixample"
-                                   }
+                                   },
+    "Casa Jaume Moysi":  {
+        "lat":  41.388828,
+        "lng":  2.166271,
+        "address":  "Rambla de Catalunya 23, Eixample",
+        "district":  "Eixample"
+    },
+    "Casa R. Sala":  {
+        "lat":  41.3957,
+        "lng":  2.1536,
+        "address":  "Carrer d\u0027Enric Granados 106, Eixample",
+        "district":  "Eixample"
+    },
+    "Casa Dolors Calm":  {
+        "lat":  41.3908886,
+        "lng":  2.164106,
+        "address":  "Rambla de Catalunya, Eixample",
+        "district":  "Eixample"
+    },
+    "Casa Fargas":  {
+        "lat":  41.39036,
+        "lng":  2.16411,
+        "address":  "Rambla de Catalunya 47, Eixample",
+        "district":  "Eixample"
+    },
+    "Casa Bonaventura Ferrer":  {
+        "lat":  41.3969,
+        "lng":  2.15837,
+        "address":  "Passeig de Gràcia 113, Eixample",
+        "district":  "Eixample"
+    },
+    "Casa Cama i Escurra":  {
+        "lat":  41.3983,
+        "lng":  2.1569,
+        "address":  "Carrer Gran de Gràcia 15, Eixample",
+        "district":  "Eixample"
+    },
+    "Casa Jeroni Granell":  {
+        "lat":  41.3973493,
+        "lng":  2.1682581,
+        "address":  "Carrer de Girona, Eixample",
+        "district":  "Eixample"
+    },
+    "Casa Mulleras":  {
+        "lat":  41.3912124,
+        "lng":  2.1651211,
+        "address":  "Passeig de Gràcia (zijstraat), Eixample",
+        "district":  "Eixample"
+    },
+    "Cases Ramos":  {
+        "lat":  41.4059699,
+        "lng":  2.1494007,
+        "address":  "Carrer de Mont-Roig, Sarrià - Sant Gervasi",
+        "district":  "Sarrià-Sant Gervasi"
+    },
+    "Casa Pere Brias":  {
+        "lat":  41.379,
+        "lng":  2.1527,
+        "address":  "Gran Via de les Corts Catalanes 439, Eixample",
+        "district":  "Eixample"
+    },
+    "Casa Golferichs":  {
+        "lat":  41.3809561,
+        "lng":  2.1563272,
+        "address":  "Gran Via de les Corts Catalanes 491, Eixample",
+        "district":  "Eixample"
+    },
+    "Casa Sayrach":  {
+        "lat":  41.3946333,
+        "lng":  2.1530982,
+        "address":  "Carrer d\u0027Enric Granados, Eixample",
+        "district":  "Eixample"
+    },
+    "Institut Botànic de Barcelona":  {
+        "lat":  41.3621893,
+        "lng":  2.1608372,
+        "address":  "Passeig del Migdia, Sants-Montjuïc",
+        "district":  "Sants-Montjuïc"
+    },
+    "Col·lecció de bonsais":  {
+        "lat":  41.3636892,
+        "lng":  2.1600889,
+        "address":  "Montjuïc, Sants-Montjuïc",
+        "district":  "Sants-Montjuïc"
+    },
+    "Fundació Aspace Catalunya":  {
+        "lat":  41.3666421,
+        "lng":  2.1597464,
+        "address":  "Carrer dels Tres Pins, Sants-Montjuïc",
+        "district":  "Sants-Montjuïc"
+    },
+    "Monestir de Sant Miquel":  {
+        "lat":  41.3690199,
+        "lng":  2.1501455,
+        "address":  "Avinguda dels Montanyans, Sants-Montjuïc",
+        "district":  "Sants-Montjuïc"
+    },
+    "Catalan Museum of Archaeology":  {
+        "lat":  41.3697669,
+        "lng":  2.1576723,
+        "address":  "Passeig de Santa Madrona 39, Sants-Montjuïc",
+        "district":  "Sants-Montjuïc"
+    },
+    "Institut Cartogràfic i Geològic de Catalunya":  {
+        "lat":  41.3699882,
+        "lng":  2.1557139,
+        "address":  "Parc de Montjuïc, Sants-Montjuïc",
+        "district":  "Sants-Montjuïc"
+    },
+    "Teatre Grec":  {
+        "lat":  41.3695079,
+        "lng":  2.159655,
+        "address":  "Passeig de Santa Madrona 36, Sants-Montjuïc",
+        "district":  "Sants-Montjuïc"
+    },
+    "Olympisch Stadion Lluís Companys":  {
+        "lat":  41.36472,
+        "lng":  2.1556451,
+        "address":  "Passeig Olímpic, Sants-Montjuïc",
+        "district":  "Sants-Montjuïc"
+    },
+    "Jardins de Montjuïc":  {
+        "lat":  41.369,
+        "lng":  2.159,
+        "address":  "Montjuïc, Sants-Montjuïc",
+        "district":  "Sants-Montjuïc"
+    },
+    "Escultura de la Serena":  {
+        "lat":  41.3672,
+        "lng":  2.1558,
+        "address":  "Jardins de Joan Maragall, Sants-Montjuïc",
+        "district":  "Sants-Montjuïc"
+    },
+    "Palauet Albéniz":  {
+        "lat":  41.3674631,
+        "lng":  2.1559849,
+        "address":  "Passeig de Santa Madrona, Sants-Montjuïc",
+        "district":  "Sants-Montjuïc"
+    },
+    "Sir Victor Hotel, part of Sircle Collection":  {
+        "lat":  41.3962081,
+        "lng":  2.1609608,
+        "address":  "Carrer del Rosselló 265, Eixample",
+        "district":  "Eixample"
+    }
 }
