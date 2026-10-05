@@ -318,5 +318,30 @@
                             "file":  "photos/palauet-albeniz.jpg",
                             "credit":  "Oliver-Bonjoch, CC BY-SA 3.0, Wikimedia Commons",
                             "page":  "https://commons.wikimedia.org/wiki/File:Bcn_3530_Palauet_Albeniz_pp.jpg"
-                        }
+                        },
+    "Casa Xina (Casa Ferran Guardiola)":  {
+                                              "file":  "photos/casa-xina-casa-ferran-guardiola.jpg",
+                                              "credit":  "Enric, CC BY-SA 4.0, Wikimedia Commons",
+                                              "page":  "https://commons.wikimedia.org/wiki/File:271%20Casa%20Ferran%20Guardiola%2C%20c.%20Consell%20de%20Cent%20236%20-%20c.%20Muntaner%2054%20(Barcelona).jpg"
+                                          },
+    "Casa Jeroni Granell":  {
+                                "file":  "photos/casa-jeroni-granell.jpg",
+                                "credit":  "Mutari, Public domain, Wikimedia Commons",
+                                "page":  "https://commons.wikimedia.org/wiki/File:Casa%20Jeroni%20Granell%20-%20001.jpg"
+                            },
+    "Casa Pere Brias":  {
+                            "file":  "photos/casa-pere-brias.jpg",
+                            "credit":  "Enric, CC BY 4.0, Wikimedia Commons",
+                            "page":  "https://commons.wikimedia.org/wiki/File:592%20Casa%20Pere%20Brias%2C%20Gran%20Via%20de%20les%20Corts%20Catalanes%20439%20(Barcelona).jpg"
+                        },
+    "Escultura de la Serena":  {
+                                   "file":  "photos/escultura-de-la-serena.jpg",
+                                   "credit":  "Victoriano Javier Tornel García from Barcelona, España, CC BY-SA 2.0, Wikimedia Commons",
+                                   "page":  "https://commons.wikimedia.org/wiki/File:Serena%2C%20de%20Pilar%20Francesch.jpg"
+                               },
+    "Sir Victor Hotel, part of Sircle Collection":  {
+                                                        "file":  "photos/sir-victor-hotel-part-of-sircle-collection.jpg",
+                                                        "credit":  "Pere prlpz, CC BY-SA 3.0, Wikimedia Commons",
+                                                        "page":  "https://commons.wikimedia.org/wiki/File:Sir%20Victor%20Hotel.jpg"
+                                                    }
 }

@@ -232,6 +232,7 @@ function renderSheet() {
   s.innerHTML = `
     ${p.photo ? `<div class="sphotowrap"><img class="sphoto" src="${esc(p.photo)}" alt="${esc(p.name)}"><div class="sover sh">${head}</div></div>` : `<div class="sh sheadplain">${head}</div>`}
     <button class="sx" id="sx" type="button" aria-label="Sluiten">×</button>
+    <button class="sbikeq${bike ? " on" : ""}" id="sbikeq" type="button" aria-pressed="${bike}" aria-label="${bike ? "Van fietsroute halen" : "Voor fietsroute"}">${bike ? "🚲 ✓" : "🚲 +"}</button>
     <button class="smore" id="smore" type="button" aria-expanded="${pl.more}">${pl.more ? "Minder ▴" : "Meer ▾"}</button>
     ${pl.more ? `<div class="sbody">
       ${p.desc ? `<p class="sdesc">${esc(p.desc)}</p>` : ""}
@@ -248,6 +249,7 @@ function renderSheet() {
     </div>` : ""}`;
   s.hidden = false;
   $("sx").onclick = closeSheet;
+  $("sbikeq").onclick = () => { toggleCand(p.id, true); refreshPlaces(); };
   $("smore").onclick = () => { pl.more = !pl.more; renderSheet(); };
   if (pl.more) {
     $("sfav").onclick = () => { toggleFav(p.id); refreshPlaces(); };

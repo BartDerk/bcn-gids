@@ -634,5 +634,59 @@
         "lng":  2.1609608,
         "address":  "Carrer del Rosselló 265, Eixample",
         "district":  "Eixample"
+    },
+    "Bike rental":  {
+        "lat":  41.3813044,
+        "lng":  2.1785675,
+        "address":  "Carrer d\u0027Ataülf 8 (bij benadering), Ciutat Vella",
+        "district":  "Ciutat Vella"
+    },
+    "Noor | Specialty Coffee":  {
+        "lat":  41.4014572,
+        "lng":  2.1734687,
+        "address":  "Carrer de Sicília 217, Eixample",
+        "district":  "Eixample"
+    },
+    "Il Caffé di Francesco":  {
+        "lat":  41.390701,
+        "lng":  2.1650135,
+        "address":  "Carrer del Consell de Cent 343, Eixample",
+        "district":  "Eixample"
+    },
+    "Ripa Coffee - Eixample":  {
+        "lat":  41.3884871,
+        "lng":  2.1620623,
+        "address":  "Carrer del Consell de Cent 291A, Eixample",
+        "district":  "Eixample"
+    },
+    "Noor | Specialty Coffee #2":  {
+        "lat":  41.4016846,
+        "lng":  2.1531753,
+        "address":  "Carrer Gran de Gràcia 125, Gràcia",
+        "district":  "Gràcia"
+    },
+    "TASCAFÉ":  {
+        "lat":  41.3813643,
+        "lng":  2.1523457,
+        "address":  "Carrer del Consell de Cent 121, Eixample",
+        "district":  "Eixample"
+    },
+    "SandwiChez Rocafort":  {
+        "lat":  41.3843703,
+        "lng":  2.1466063,
+        "address":  "Carrer de Rocafort 112, Eixample",
+        "district":  "Eixample"
+    },
+    "Restaurant Reñé 1910":  {
+        "lat":  41.3943738,
+        "lng":  2.1702864,
+        "address":  "Carrer del Consell de Cent 362, Eixample",
+        "district":  "Eixample"
+    },
+    "Green Bikes Verhuur \u0026 Tours":  {
+        "lat":  41.380384,
+        "lng":  2.1775339,
+        "address":  "Carrer dels Escudellers 48, Ciutat Vella",
+        "district":  "Ciutat Vella"
     }
 }

@@ -23,7 +23,7 @@ $coords = LoadMap (Join-Path $root 'data\coords.json')
 $curated = LoadMap (Join-Path $root 'data\curated.json')
 $photos = LoadMap (Join-Path $root 'data\photos.json')
 $lists = [ordered]@{ 'BCN.csv' = 'bcn'; 'BCN Bar.csv' = 'bar'; 'BCN shop.csv' = 'shop' }
-$places = @(); $noCoords = @(); $noCurated = @(); $ids = @{}
+$places = @(); $noCoords = @(); $noCurated = @(); $ids = @{}; $seenName = @{}
 foreach ($file in $lists.Keys) {
   $list = $lists[$file]
   $path = Join-Path $root "ToVisit\$file"
@@ -31,16 +31,18 @@ foreach ($file in $lists.Keys) {
   foreach ($row in (Import-Csv $path -Encoding UTF8)) {
     $name = $row.'Titel'
     if (-not $name) { continue }
-    if (-not $coords.ContainsKey($name)) { $noCoords += $name; continue }
-    $c = $coords[$name]
-    $cur = $curated[$name]
+    # dezelfde naam twee keer (twee vestigingen): de tweede zoekt "Naam #2" in coords/curated
+    $key = $name; if ($seenName.ContainsKey($name)) { $seenName[$name]++; $key = "$name #" + $seenName[$name] } else { $seenName[$name] = 1 }
+    if (-not $coords.ContainsKey($key)) { $noCoords += $key; continue }
+    $c = $coords[$key]
+    $cur = $curated[$key]
     $cat = $list; $desc = $null; $isNew = $false
     if ($list -eq 'bcn') { $cat = 'overig' }
     if ($cur) { if ($cur.cat) { $cat = $cur.cat }; $desc = $cur.desc; if ($cur.new) { $isNew = $true } } elseif ($list -eq 'bcn') { $noCurated += $name }
     $id = Slug $name; $n = 2; $base = $id
     while ($ids.ContainsKey($id)) { $id = "$base-$n"; $n++ }
     $ids[$id] = $true
-    $ph = $photos[$name]
+    $ph = $photos[$key]
     $photo = $null; $credit = $null
     if ($ph) { $photo = $ph.file; $credit = $ph.credit }
     elseif (Test-Path (Join-Path $root "photos\$id.jpg")) { $photo = "photos/$id.jpg" }   # zelf toegevoegde foto (bestandsnaam = id)

@@ -10,8 +10,8 @@
         "district":  "Eixample",
         "desc":  "Modernistisch pand aan de Rambla de Catalunya, een mooie stop als je door de Eixample wandelt.",
         "maps":  "https://www.google.com/maps/place/Casa+Jaume+Moysi/data=!4m2!3m1!1s0x12a4a372c6038141:0x331e2e00247724e6",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/casa-jaume-moysi.jpg",
+        "credit":  "Amadalvarez, CC BY-SA 3.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -25,8 +25,8 @@
         "district":  "Eixample",
         "desc":  "Modernistisch huis van Domènec Boada uit 1906, ook Casa Cairó genoemd. Let op de grote erker met gekleurd glas-in-lood.",
         "maps":  "https://www.google.com/maps/place/Casa+R.+Sala/data=!4m2!3m1!1s0x12a4a307e5a3fd7d:0x8eb6feaa49d89b88",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/casa-r-sala.jpg",
+        "credit":  "Kent Wang, CC BY-SA 4.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -40,8 +40,8 @@
         "district":  "Eixample",
         "desc":  "Modernistisch woonhuis aan de Rambla de Catalunya, vlak bij Casa Fargas en Casa Mulleras.",
         "maps":  "https://www.google.com/maps/place/Casa+Dolors+Calm/data=!4m2!3m1!1s0x12a4a28d58394f0b:0x945c3428823895e",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/casa-dolors-calm.jpg",
+        "credit":  "Amadalvarez, CC BY-SA 3.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -55,8 +55,8 @@
         "district":  "Eixample",
         "desc":  "Gebouw aan de Rambla de Catalunya 47; op de eerste verdieping zit de Fundació Ramon Trias Fargas.",
         "maps":  "https://www.google.com/maps/place/Casa+Fargas/data=!4m2!3m1!1s0x12a4a307c68eeed3:0x38555be7bf924b6d",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/casa-fargas.jpg",
+        "credit":  "Mutari, Public domain, Wikimedia Commons",
         "new":  true
     },
     {
@@ -70,8 +70,8 @@
         "district":  "Eixample",
         "desc":  "Modernistisch pand aan Passeig de Gràcia 113, rustiger dan de drukke Gaudí-huizen verderop.",
         "maps":  "https://www.google.com/maps/place/Casa+Bonaventura+Ferrer/data=!4m2!3m1!1s0x12a4a296c6efecc5:0xe6fcaa759e13eb29",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/casa-bonaventura-ferrer.jpg",
+        "credit":  "Agustin Bartolome, CC BY-SA 3.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -85,8 +85,8 @@
         "district":  "Eixample",
         "desc":  "Modernistisch gebouw aan Carrer Gran de Gràcia 15, onderweg naar de winkelstraat van Gràcia.",
         "maps":  "https://www.google.com/maps/place/Casa+Cama+i+Escurra/data=!4m2!3m1!1s0x12a4a29705bcf4ef:0x8c37e7b9facbfff0",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/casa-cama-i-escurra.jpg",
+        "credit":  "Amadalvarez, CC BY-SA 3.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -100,8 +100,8 @@
         "district":  "Eixample",
         "desc":  "Modernistisch huis in Carrer de Girona, ten oosten van Passeig de Gràcia.",
         "maps":  "https://www.google.com/maps/place/Casa+Jeroni+Granell/data=!4m2!3m1!1s0x12a4a28b737774c7:0x713fac1e524f8791",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/casa-jeroni-granell.jpg",
+        "credit":  "Mutari, Public domain, Wikimedia Commons",
         "new":  true
     },
     {
@@ -115,8 +115,8 @@
         "district":  "Eixample",
         "desc":  "Modernistisch huis van Enric Sagnier bij Passeig de Gràcia, direct naast Casa Dolors Calm.",
         "maps":  "https://www.google.com/maps/place/Casa+Mulleras/data=!4m2!3m1!1s0x12a4a30034c2aed3:0xb8d25f3d52596eab",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/casa-mulleras.jpg",
+        "credit":  "Amadalvarez, CC BY 3.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -130,8 +130,8 @@
         "district":  "Sarrià-Sant Gervasi",
         "desc":  "Modernistische huizen in Sant Gervasi, ver van de toeristische route.",
         "maps":  "https://www.google.com/maps/place/Cases+Ramos/data=!4m2!3m1!1s0x12a4a2a153100001:0x64fdc3107b80ff93",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/cases-ramos.jpg",
+        "credit":  "Kent Wang, CC BY-SA 4.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -145,8 +145,8 @@
         "district":  "Eixample",
         "desc":  "Modernistisch huis van Julián García Núñez aan de Gran Via 439. Let op de golvende steenlijsten en de twee stenen erkers; de bovenkant is helaas aangepast.",
         "maps":  "https://www.google.com/maps/place/Casa+Pere+Brias/data=!4m2!3m1!1s0x12a4a3002e77aca1:0x3a03bea474ff6afe",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/casa-pere-brias.jpg",
+        "credit":  "Enric, CC BY 4.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -160,8 +160,8 @@
         "district":  "Eixample",
         "desc":  "Neogotisch-modernistisch landhuis uit 1901, nu een buurtcentrum. Een van de weinige vrijstaande villa\u0027s die in de Eixample bewaard zijn.",
         "maps":  "https://www.google.com/maps/place/Casa+Golferichs/data=!4m2!3m1!1s0x12a4a26298fb3969:0x9d679a28bace3d3d",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/casa-golferichs.jpg",
+        "credit":  "Enric, CC BY-SA 4.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -175,8 +175,23 @@
         "district":  "Eixample",
         "desc":  "Huis uit 1918 van Manuel Sayrach met golvende vormen en veel details, een late vorm van het Modernisme.",
         "maps":  "https://www.google.com/maps/place/Casa+Sayrach/data=!4m2!3m1!1s0x12a4a3003e5b9171:0x6290b0901761d011",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/casa-sayrach.jpg",
+        "credit":  "Amadalvarez, CC BY-SA 4.0, Wikimedia Commons",
+        "new":  true
+    },
+    {
+        "id":  "sir-victor-hotel-part-of-sircle-collection",
+        "name":  "Sir Victor Hotel, part of Sircle Collection",
+        "list":  "bcn",
+        "cat":  "overig",
+        "lat":  41.3962081,
+        "lng":  2.1609608,
+        "address":  "Carrer del Rosselló 265, Eixample",
+        "district":  "Eixample",
+        "desc":  "Hotel aan Carrer del Rosselló 265 in de Eixample, vlak bij Passeig de Gràcia.",
+        "maps":  "https://www.google.com/maps/place/Sir+Victor+Hotel,+part+of+Sircle+Collection/data=!4m2!3m1!1s0x12a4a3e3c9cb9f75:0x92a138c763e7fea0",
+        "photo":  "photos/sir-victor-hotel-part-of-sircle-collection.jpg",
+        "credit":  "Pere prlpz, CC BY-SA 3.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -190,8 +205,8 @@
         "district":  "Sants-Montjuïc",
         "desc":  "Onderzoeksinstituut met tuinen op Montjuïc, naast het Jardí Botànic. Rustige plek met uitzicht.",
         "maps":  "https://www.google.com/maps/place/Institut+Bot%C3%A0nic+de+Barcelona/data=!4m2!3m1!1s0x12a4a26b501c815f:0x39f71bb24de84aef",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/institut-botanic-de-barcelona.jpg",
+        "credit":  "Enric, CC BY-SA 4.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -250,8 +265,8 @@
         "district":  "Sants-Montjuïc",
         "desc":  "Romaanse kerk op Montjuïc, een van de oudere stukjes erfgoed op de berg.",
         "maps":  "https://www.google.com/maps/place/Monestir+de+Sant+Miquel/data=!4m2!3m1!1s0x12a4a270d15a6083:0xa3203a8706e47ce0",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/monestir-de-sant-miquel.jpg",
+        "credit":  "Espencat, Public domain, Wikimedia Commons",
         "new":  true
     },
     {
@@ -265,8 +280,8 @@
         "district":  "Sants-Montjuïc",
         "desc":  "Archeologisch museum van Catalonië, met vondsten van de prehistorie tot de Romeinse en Visigotische tijd.",
         "maps":  "https://www.google.com/maps/place/Catalan+Museum+of+Archaeology/data=!4m2!3m1!1s0x12a4a26f6eddefaf:0x67d278233daf5582",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/catalan-museum-of-archaeology.jpg",
+        "credit":  "Didier Descouens, CC BY-SA 4.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -280,8 +295,8 @@
         "district":  "Sants-Montjuïc",
         "desc":  "Kaarten- en geologie-instituut van Catalonië op Montjuïc. Vooral van buiten te bekijken.",
         "maps":  "https://www.google.com/maps/place/Institut+Cartogr%C3%A0fic+i+Geol%C3%B2gic+de+Catalunya/data=!4m2!3m1!1s0x12a4a25a97f28ebd:0xd34aa46d39f8159f",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/institut-cartografic-i-geologic-de-catalunya.jpg",
+        "credit":  "Llumeureka, CC BY-SA 4.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -295,8 +310,8 @@
         "district":  "Sants-Montjuïc",
         "desc":  "Openluchttheater uit 1929 in een oude steengroeve, gebouwd naar Grieks voorbeeld. In de zomer is het podium van het Grec-festival.",
         "maps":  "https://www.google.com/maps/place/Teatre+Grec/data=!4m2!3m1!1s0x12a4a26f34e3bcb5:0xeaacfa7e41d6439a",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/teatre-grec.jpg",
+        "credit":  "Josep Aznar, CC BY-SA 3.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -310,8 +325,8 @@
         "district":  "Sants-Montjuïc",
         "desc":  "Stadion van de Olympische Spelen van 1992. De gevel stamt uit 1929.",
         "maps":  "https://www.google.com/maps/place/Olympisch+Stadion+Llu%C3%ADs+Companys/data=!4m2!3m1!1s0x12a4a26de2468693:0x573e709baa49c20c",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/olympisch-stadion-lluis-companys.jpg",
+        "credit":  "Sprok, CC BY 3.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -340,8 +355,8 @@
         "district":  "Sants-Montjuïc",
         "desc":  "Bronzen beeld \"Serena\" van Pilar Francesch in de Jardins de Joan Maragall, rond het Palauet Albéniz.",
         "maps":  "https://www.google.com/maps/place/Escultura+de+la+Serena/data=!4m2!3m1!1s0x12a4a26e1f99793b:0x4944648d2fd49714",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/escultura-de-la-serena.jpg",
+        "credit":  "Victoriano Javier Tornel García from Barcelona, España, CC BY-SA 2.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -355,8 +370,8 @@
         "district":  "Sants-Montjuïc",
         "desc":  "Paleisje uit 1929 midden in de Jardins de Joan Maragall; dient als ontvangstplek voor gasten van de stad.",
         "maps":  "https://www.google.com/maps/place/Palauet+Alb%C3%A9niz/data=!4m2!3m1!1s0x12a4a26e16f8fd93:0xcb9e44019b5e714e",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/palauet-albeniz.jpg",
+        "credit":  "Oliver-Bonjoch, CC BY-SA 3.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -370,8 +385,8 @@
         "district":  "Eixample",
         "desc":  "Eclectisch pand uit 1929 met Chinese invloeden: pagodedaken, draken en lantaarns. Ook bekend als Casa Xinesa. Vooral de gevel is de moeite.",
         "maps":  "https://www.google.com/maps/place/Casa+Xina+(Casa+Ferran+Guardiola)/data=!4m2!3m1!1s0x12a4a28c024effe5:0x149a6bb17881438a",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/casa-xina-casa-ferran-guardiola.jpg",
+        "credit":  "Enric, CC BY-SA 4.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -1275,6 +1290,126 @@
         "new":  false
     },
     {
+        "id":  "bike-rental",
+        "name":  "Bike rental",
+        "list":  "bar",
+        "cat":  "bar",
+        "lat":  41.3813044,
+        "lng":  2.1785675,
+        "address":  "Carrer d\u0027Ataülf 8 (bij benadering), Ciutat Vella",
+        "district":  "Ciutat Vella",
+        "desc":  null,
+        "maps":  "https://www.google.com/maps/place/Bike+rental/data=!4m2!3m1!1s0x12a4a2f885094441:0x59b70e04e47c259b",
+        "photo":  null,
+        "credit":  null,
+        "new":  false
+    },
+    {
+        "id":  "noor-specialty-coffee",
+        "name":  "Noor | Specialty Coffee",
+        "list":  "bar",
+        "cat":  "bar",
+        "lat":  41.4014572,
+        "lng":  2.1734687,
+        "address":  "Carrer de Sicília 217, Eixample",
+        "district":  "Eixample",
+        "desc":  null,
+        "maps":  "https://www.google.com/maps/place/Noor+%7C+Specialty+Coffee/data=!4m2!3m1!1s0x12a4a32fbeb9223f:0xd120f8dcf8053ca",
+        "photo":  null,
+        "credit":  null,
+        "new":  false
+    },
+    {
+        "id":  "il-caffe-di-francesco",
+        "name":  "Il Caffé di Francesco",
+        "list":  "bar",
+        "cat":  "bar",
+        "lat":  41.390701,
+        "lng":  2.1650135,
+        "address":  "Carrer del Consell de Cent 343, Eixample",
+        "district":  "Eixample",
+        "desc":  null,
+        "maps":  "https://www.google.com/maps/place/Il+Caff%C3%A9+di+Francesco/data=!4m2!3m1!1s0x12a4a28d53ea3057:0xa6d5742c9eedd2be",
+        "photo":  null,
+        "credit":  null,
+        "new":  false
+    },
+    {
+        "id":  "ripa-coffee-eixample",
+        "name":  "Ripa Coffee - Eixample",
+        "list":  "bar",
+        "cat":  "bar",
+        "lat":  41.3884871,
+        "lng":  2.1620623,
+        "address":  "Carrer del Consell de Cent 291A, Eixample",
+        "district":  "Eixample",
+        "desc":  null,
+        "maps":  "https://www.google.com/maps/place/Ripa+Coffee+-+Eixample/data=!4m2!3m1!1s0x12a4a3982abbdb8d:0xe665cf028f1db1fd",
+        "photo":  null,
+        "credit":  null,
+        "new":  false
+    },
+    {
+        "id":  "noor-specialty-coffee-2",
+        "name":  "Noor | Specialty Coffee",
+        "list":  "bar",
+        "cat":  "bar",
+        "lat":  41.4016846,
+        "lng":  2.1531753,
+        "address":  "Carrer Gran de Gràcia 125, Gràcia",
+        "district":  "Gràcia",
+        "desc":  null,
+        "maps":  "https://www.google.com/maps/place/Noor+%7C+Specialty+Coffee/data=!4m2!3m1!1s0x12a4a339bdcba4ff:0x1c36c7d30fc88e",
+        "photo":  null,
+        "credit":  null,
+        "new":  false
+    },
+    {
+        "id":  "tascafe",
+        "name":  "TASCAFÉ",
+        "list":  "bar",
+        "cat":  "bar",
+        "lat":  41.3813643,
+        "lng":  2.1523457,
+        "address":  "Carrer del Consell de Cent 121, Eixample",
+        "district":  "Eixample",
+        "desc":  null,
+        "maps":  "https://www.google.com/maps/place/TASCAF%C3%89/data=!4m2!3m1!1s0x12a4a28780495061:0xbaff5c0d31d615ff",
+        "photo":  null,
+        "credit":  null,
+        "new":  false
+    },
+    {
+        "id":  "sandwichez-rocafort",
+        "name":  "SandwiChez Rocafort",
+        "list":  "bar",
+        "cat":  "bar",
+        "lat":  41.3843703,
+        "lng":  2.1466063,
+        "address":  "Carrer de Rocafort 112, Eixample",
+        "district":  "Eixample",
+        "desc":  null,
+        "maps":  "https://www.google.com/maps/place/SandwiChez+Rocafort/data=!4m2!3m1!1s0x12a4a386679bbb99:0x4e3bb7e97de63180",
+        "photo":  null,
+        "credit":  null,
+        "new":  false
+    },
+    {
+        "id":  "restaurant-rene-1910",
+        "name":  "Restaurant Reñé 1910",
+        "list":  "bar",
+        "cat":  "bar",
+        "lat":  41.3943738,
+        "lng":  2.1702864,
+        "address":  "Carrer del Consell de Cent 362, Eixample",
+        "district":  "Eixample",
+        "desc":  null,
+        "maps":  "https://www.google.com/maps/place/Restaurant+Re%C3%B1%C3%A9+1910/data=!4m2!3m1!1s0x12a4a360f3d1e98d:0x63c6c331497ffb66",
+        "photo":  null,
+        "credit":  null,
+        "new":  false
+    },
+    {
         "id":  "cafe-schallert-barcelona",
         "name":  "Café Schallert Barcelona",
         "list":  "bar",
@@ -1465,6 +1600,21 @@
         "district":  "Ciutat Vella",
         "desc":  null,
         "maps":  "https://www.google.com/maps/place/Bar+Central+Raval/data=!4m2!3m1!1s0x12a4a32c3bdcba5d:0x49a98c2a7e8e719",
+        "photo":  null,
+        "credit":  null,
+        "new":  false
+    },
+    {
+        "id":  "green-bikes-verhuur-tours",
+        "name":  "Green Bikes Verhuur \u0026 Tours",
+        "list":  "shop",
+        "cat":  "shop",
+        "lat":  41.380384,
+        "lng":  2.1775339,
+        "address":  "Carrer dels Escudellers 48, Ciutat Vella",
+        "district":  "Ciutat Vella",
+        "desc":  null,
+        "maps":  "https://www.google.com/maps/place/Green+Bikes+Verhuur+%26+Tours/data=!4m2!3m1!1s0x12a4a2f8bb387cc7:0xf3c276e5ba72ce85",
         "photo":  null,
         "credit":  null,
         "new":  false

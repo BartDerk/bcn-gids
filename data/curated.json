@@ -1,5 +1,5 @@
 {
-  "Casa Xina (Casa Ferran Guardiola)": {"cat": "gebouw", "new": true, "desc": "Eclectisch pand uit 1929 met Chinese invloeden: pagodedaken, draken en lantaarns. Ook bekend als Casa Xinesa. Vooral de gevel is de moeite."},
+  "Casa Xina (Casa Ferran Guardiola)": {"cat": "gebouw", "file": "271 Casa Ferran Guardiola, c. Consell de Cent 236 - c. Muntaner 54 (Barcelona).jpg", "new": true, "desc": "Eclectisch pand uit 1929 met Chinese invloeden: pagodedaken, draken en lantaarns. Ook bekend als Casa Xinesa. Vooral de gevel is de moeite."},
   "Carrer de Vilamarí, 80": {"cat": "straat", "new": true, "desc": "Beginpunt voor een wandeling of rit over Consell de Cent, de autoluwe groene straat door de Eixample."},
   "Carrer del Consell de Cent": {"cat": "straat", "new": true, "wiki": "ca:Carrer_del_Consell_de_Cent", "desc": "De hele straat is een bezoek waard: een van de mooiste straten van de Eixample, door de stad omgevormd tot autoluwe groene as met bomen, banken en speelplekken. Loop of fiets hem van begin tot eind, langs Modernisme-gevels."},
   "Fanals d'Antoni Gaudí": {"cat": "overig", "file": "Plaça Reial - Fanal de Gaudí.JPG", "wiki": "en:Plaça_Reial", "desc": "De lantaarnpalen die Gaudí in 1879 ontwierp voor Plaça Reial, zijn eerste opdracht van de stad. Let op de gevleugelde helmen van Mercurius bovenaan."},
@@ -67,10 +67,10 @@
   "Casa Fargas": {"cat": "gebouw", "new": true, "wiki": "ca:Casa_Fargas", "desc": "Gebouw aan de Rambla de Catalunya 47; op de eerste verdieping zit de Fundació Ramon Trias Fargas."},
   "Casa Bonaventura Ferrer": {"cat": "gebouw", "new": true, "wiki": "ca:Casa_Bonaventura_Ferrer", "desc": "Modernistisch pand aan Passeig de Gràcia 113, rustiger dan de drukke Gaudí-huizen verderop."},
   "Casa Cama i Escurra": {"cat": "gebouw", "new": true, "wiki": "ca:Casa_Cama_i_Escurra", "desc": "Modernistisch gebouw aan Carrer Gran de Gràcia 15, onderweg naar de winkelstraat van Gràcia."},
-  "Casa Jeroni Granell": {"cat": "gebouw", "new": true, "wiki": "ca:Casa_Jeroni_Granell", "desc": "Modernistisch huis in Carrer de Girona, ten oosten van Passeig de Gràcia."},
+  "Casa Jeroni Granell": {"cat": "gebouw", "file": "Casa Jeroni Granell - 001.jpg", "new": true, "wiki": "ca:Casa_Jeroni_Granell", "desc": "Modernistisch huis in Carrer de Girona, ten oosten van Passeig de Gràcia."},
   "Casa Mulleras": {"cat": "gebouw", "new": true, "wiki": "ca:Casa_Mulleras", "desc": "Modernistisch huis van Enric Sagnier bij Passeig de Gràcia, direct naast Casa Dolors Calm."},
   "Cases Ramos": {"cat": "gebouw", "new": true, "wiki": "ca:Cases_Ramos", "desc": "Modernistische huizen in Sant Gervasi, ver van de toeristische route."},
-  "Casa Pere Brias": {"cat": "gebouw", "new": true, "wiki": "ca:Casa_Pere_Brias", "desc": "Modernistisch huis van Julián García Núñez aan de Gran Via 439. Let op de golvende steenlijsten en de twee stenen erkers; de bovenkant is helaas aangepast."},
+  "Casa Pere Brias": {"cat": "gebouw", "file": "592 Casa Pere Brias, Gran Via de les Corts Catalanes 439 (Barcelona).jpg", "new": true, "wiki": "ca:Casa_Pere_Brias", "desc": "Modernistisch huis van Julián García Núñez aan de Gran Via 439. Let op de golvende steenlijsten en de twee stenen erkers; de bovenkant is helaas aangepast."},
   "Casa Golferichs": {"cat": "gebouw", "new": true, "wiki": "ca:Casa_Golferichs", "desc": "Neogotisch-modernistisch landhuis uit 1901, nu een buurtcentrum. Een van de weinige vrijstaande villa\u0027s die in de Eixample bewaard zijn."},
   "Casa Sayrach": {"cat": "gebouw", "new": true, "wiki": "ca:Casa_Sayrach", "desc": "Huis uit 1918 van Manuel Sayrach met golvende vormen en veel details, een late vorm van het Modernisme."},
   "Institut Botànic de Barcelona": {"cat": "park", "new": true, "wiki": "ca:Institut_Botànic_de_Barcelona", "desc": "Onderzoeksinstituut met tuinen op Montjuïc, naast het Jardí Botànic. Rustige plek met uitzicht."},
@@ -82,7 +82,7 @@
   "Teatre Grec": {"cat": "gebouw", "new": true, "wiki": "ca:Teatre_Grec", "desc": "Openluchttheater uit 1929 in een oude steengroeve, gebouwd naar Grieks voorbeeld. In de zomer is het podium van het Grec-festival."},
   "Olympisch Stadion Lluís Companys": {"cat": "gebouw", "new": true, "wiki": "ca:Estadi_Olímpic_Lluís_Companys", "desc": "Stadion van de Olympische Spelen van 1992. De gevel stamt uit 1929."},
   "Jardins de Montjuïc": {"cat": "park", "new": true, "desc": "Groene tuinen op Montjuïc, tussen de musea en het Teatre Grec."},
-  "Escultura de la Serena": {"cat": "overig", "new": true, "desc": "Bronzen beeld \"Serena\" van Pilar Francesch in de Jardins de Joan Maragall, rond het Palauet Albéniz."},
+  "Escultura de la Serena": {"cat": "overig", "file": "Serena, de Pilar Francesch.jpg", "new": true, "desc": "Bronzen beeld \"Serena\" van Pilar Francesch in de Jardins de Joan Maragall, rond het Palauet Albéniz."},
   "Palauet Albéniz": {"cat": "gebouw", "new": true, "wiki": "ca:Palauet_Albéniz", "desc": "Paleisje uit 1929 midden in de Jardins de Joan Maragall; dient als ontvangstplek voor gasten van de stad."},
-  "Sir Victor Hotel, part of Sircle Collection": {"cat": "overig", "new": true, "desc": "Hotel aan Carrer del Rosselló 265 in de Eixample, vlak bij Passeig de Gràcia."}
+  "Sir Victor Hotel, part of Sircle Collection": {"cat": "overig", "file": "Sir Victor Hotel.jpg", "new": true, "desc": "Hotel aan Carrer del Rosselló 265 in de Eixample, vlak bij Passeig de Gràcia."}
 }
