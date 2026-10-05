@@ -343,5 +343,15 @@
                                                         "file":  "photos/sir-victor-hotel-part-of-sircle-collection.jpg",
                                                         "credit":  "Pere prlpz, CC BY-SA 3.0, Wikimedia Commons",
                                                         "page":  "https://commons.wikimedia.org/wiki/File:Sir%20Victor%20Hotel.jpg"
-                                                    }
+                                                    },
+    "Carrer de Vilamarí, 80":  {
+                                   "file":  "photos/carrer-de-vilamari-80.jpg",
+                                   "credit":  "Pere López Brosa, CC BY-SA 4.0, Wikimedia Commons",
+                                   "page":  "https://commons.wikimedia.org/wiki/File:Carrer%20de%20Vilamar%C3%AD%20-%2020220807%20102011.jpg"
+                               },
+    "Jardins de Montjuïc":  {
+                                "file":  "photos/jardins-de-montjuic.jpg",
+                                "credit":  "Lee Vilenski, CC BY-SA 4.0, Wikimedia Commons",
+                                "page":  "https://commons.wikimedia.org/wiki/File:Jardins%20de%20Laribal%20(28436).jpg"
+                            }
 }

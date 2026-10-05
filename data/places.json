@@ -340,8 +340,8 @@
         "district":  "Sants-Montjuïc",
         "desc":  "Groene tuinen op Montjuïc, tussen de musea en het Teatre Grec.",
         "maps":  "https://www.google.com/maps/place/Jardins+de+Montju%C3%AFc/data=!4m2!3m1!1s0x12a4a3a9ca13f989:0x52531d2f21ebe121",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/jardins-de-montjuic.jpg",
+        "credit":  "Lee Vilenski, CC BY-SA 4.0, Wikimedia Commons",
         "new":  true
     },
     {
@@ -400,8 +400,8 @@
         "district":  "Eixample",
         "desc":  "Beginpunt voor een wandeling of rit over Consell de Cent, de autoluwe groene straat door de Eixample.",
         "maps":  "https://www.google.com/maps/place/Carrer+de+Vilamar%C3%AD,+80/data=!4m2!3m1!1s0x12a4a27e7ccd3a0f:0x7545ae93aa379c7b",
-        "photo":  null,
-        "credit":  null,
+        "photo":  "photos/carrer-de-vilamari-80.jpg",
+        "credit":  "Pere López Brosa, CC BY-SA 4.0, Wikimedia Commons",
         "new":  true
     },
     {

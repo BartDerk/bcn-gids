@@ -1,6 +1,6 @@
 {
   "Casa Xina (Casa Ferran Guardiola)": {"cat": "gebouw", "file": "271 Casa Ferran Guardiola, c. Consell de Cent 236 - c. Muntaner 54 (Barcelona).jpg", "new": true, "desc": "Eclectisch pand uit 1929 met Chinese invloeden: pagodedaken, draken en lantaarns. Ook bekend als Casa Xinesa. Vooral de gevel is de moeite."},
-  "Carrer de Vilamarí, 80": {"cat": "straat", "new": true, "desc": "Beginpunt voor een wandeling of rit over Consell de Cent, de autoluwe groene straat door de Eixample."},
+  "Carrer de Vilamarí, 80": {"cat": "straat", "file": "Carrer de Vilamarí - 20220807 102011.jpg", "new": true, "desc": "Beginpunt voor een wandeling of rit over Consell de Cent, de autoluwe groene straat door de Eixample."},
   "Carrer del Consell de Cent": {"cat": "straat", "new": true, "wiki": "ca:Carrer_del_Consell_de_Cent", "desc": "De hele straat is een bezoek waard: een van de mooiste straten van de Eixample, door de stad omgevormd tot autoluwe groene as met bomen, banken en speelplekken. Loop of fiets hem van begin tot eind, langs Modernisme-gevels."},
   "Fanals d'Antoni Gaudí": {"cat": "overig", "file": "Plaça Reial - Fanal de Gaudí.JPG", "wiki": "en:Plaça_Reial", "desc": "De lantaarnpalen die Gaudí in 1879 ontwierp voor Plaça Reial, zijn eerste opdracht van de stad. Let op de gevleugelde helmen van Mercurius bovenaan."},
   "Recinte Modernista de Sant Pau": {"cat": "gebouw", "wiki": "en:Hospital_de_la_Santa_Creu_i_Sant_Pau", "desc": "Voormalig ziekenhuiscomplex van Domènech i Montaner met kleurrijke paviljoenen en tuinen. Werelderfgoed en veel rustiger dan de Sagrada Família."},
@@ -81,7 +81,7 @@
   "Institut Cartogràfic i Geològic de Catalunya": {"cat": "overig", "new": true, "wiki": "ca:Institut_Cartogràfic_i_Geològic_de_Catalunya", "desc": "Kaarten- en geologie-instituut van Catalonië op Montjuïc. Vooral van buiten te bekijken."},
   "Teatre Grec": {"cat": "gebouw", "new": true, "wiki": "ca:Teatre_Grec", "desc": "Openluchttheater uit 1929 in een oude steengroeve, gebouwd naar Grieks voorbeeld. In de zomer is het podium van het Grec-festival."},
   "Olympisch Stadion Lluís Companys": {"cat": "gebouw", "new": true, "wiki": "ca:Estadi_Olímpic_Lluís_Companys", "desc": "Stadion van de Olympische Spelen van 1992. De gevel stamt uit 1929."},
-  "Jardins de Montjuïc": {"cat": "park", "new": true, "desc": "Groene tuinen op Montjuïc, tussen de musea en het Teatre Grec."},
+  "Jardins de Montjuïc": {"cat": "park", "file": "Jardins de Laribal (28436).jpg", "new": true, "desc": "Groene tuinen op Montjuïc, tussen de musea en het Teatre Grec."},
   "Escultura de la Serena": {"cat": "overig", "file": "Serena, de Pilar Francesch.jpg", "new": true, "desc": "Bronzen beeld \"Serena\" van Pilar Francesch in de Jardins de Joan Maragall, rond het Palauet Albéniz."},
   "Palauet Albéniz": {"cat": "gebouw", "new": true, "wiki": "ca:Palauet_Albéniz", "desc": "Paleisje uit 1929 midden in de Jardins de Joan Maragall; dient als ontvangstplek voor gasten van de stad."},
   "Sir Victor Hotel, part of Sircle Collection": {"cat": "overig", "file": "Sir Victor Hotel.jpg", "new": true, "desc": "Hotel aan Carrer del Rosselló 265 in de Eixample, vlak bij Passeig de Gràcia."}
